@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.demo/
+data/
+out/
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+plan.txt
+crash.log
+
+# local scratch
+/rayjob.yaml
+/raycronjob.yaml
+/build.log
+/image.env
+.DS_Store
+
+# not part of the submission
+.claude/
+*.pdf

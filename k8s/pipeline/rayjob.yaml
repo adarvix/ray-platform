@@ -1,0 +1,150 @@
+# Single source of truth for the pipeline's Ray cluster + job. Rendered by k8s/render.py into a
+# RayJob (CI, one run) or a RayCronJob (schedule), for env=aws or env=local.
+# Placeholders (dollar-prefixed) are substituted at render time; per-env values live in k8s/envs/<env>.yaml.
+apiVersion: ray.io/v1
+kind: RayJob
+metadata:
+  name: $JOB_NAME
+  namespace: $NAMESPACE
+  labels:
+    app.kubernetes.io/name: corpreg-pipeline
+    app.kubernetes.io/version: "$IMAGE_TAG"
+    corpreg.io/run-id: "$RUN_ID"
+spec:
+  entrypoint: python /home/ray/app/ray_pipeline.py --run-id $RUN_ID
+  # Re-running the whole job is safe because every write is idempotent (see README).
+  backoffLimit: 2
+  activeDeadlineSeconds: 7200
+  # Success: tear the cluster down at once. Failure: keep the head for an hour so the dashboard
+  # can be inspected. Workers need no rule: the autoscaler scales idle workers to 0 after 60s
+  # (KubeRay rejects DeleteWorkers when autoscaling is enabled).
+  deletionStrategy:
+    deletionRules:
+      - { condition: { jobStatus: SUCCEEDED, ttlSeconds: 0 }, policy: DeleteCluster }
+      - { condition: { jobStatus: SUCCEEDED, ttlSeconds: 86400 }, policy: DeleteSelf }
+      - { condition: { jobStatus: FAILED, ttlSeconds: 3600 }, policy: DeleteCluster }
+      - { condition: { jobStatus: FAILED, ttlSeconds: 604800 }, policy: DeleteSelf }
+  submitterPodTemplate:
+    metadata:
+      labels: { app.kubernetes.io/name: corpreg-pipeline, app.kubernetes.io/component: submitter }
+    spec:
+      restartPolicy: Never
+      securityContext: &podsec
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 100
+        fsGroup: 100
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: ray-job-submitter
+          image: $IMAGE
+          resources: { requests: { cpu: 100m, memory: 256Mi }, limits: { memory: 512Mi } }
+          securityContext: &ctrsec
+            allowPrivilegeEscalation: false   # also neutralises the base image's sudo
+            capabilities: { drop: [ALL] }
+  rayClusterSpec:
+    rayVersion: "$RAY_VERSION"
+    # Two-level autoscaling: Ray autoscaler adds worker pods for pending tasks/actors,
+    # Karpenter adds nodes for pending pods; both scale back to zero when idle.
+    enableInTreeAutoscaling: true
+    autoscalerOptions:
+      # 300s, not 60s: shorter timeouts removed workers during the driver's Iceberg commit and
+      # re-added them for training moments later (on EKS = new Spot nodes + minutes of churn).
+      idleTimeoutSeconds: 300
+      resources: { requests: { cpu: 100m, memory: 256Mi }, limits: { memory: 512Mi } }
+      securityContext: *ctrsec
+    # Ray token auth: dashboard + job API reject requests without the token (Secrets Manager).
+    authOptions:
+      mode: token
+      secretName: ray-dashboard-token
+    headGroupSpec:
+      rayStartParams:
+        num-cpus: "0"              # head schedules no tasks: driver + GCS only, stays stable
+        dashboard-host: "0.0.0.0"
+      template:
+        metadata:
+          labels: { app.kubernetes.io/name: corpreg-pipeline, app.kubernetes.io/component: ray-head }
+          annotations: { karpenter.sh/do-not-disrupt: "true" }
+        spec:
+          serviceAccountName: ray-job
+          securityContext: *podsec
+          containers:
+            - name: ray-head
+              image: $IMAGE
+              ports:
+                - { containerPort: 6379, name: gcs-server }
+                - { containerPort: 8265, name: dashboard }
+                - { containerPort: 10001, name: client }
+                - { containerPort: 8080, name: metrics }
+              # The driver runs here: it collects golden records and commits to Iceberg.
+              resources: { requests: { cpu: "1", memory: 4Gi }, limits: { cpu: "1", memory: 4Gi } }
+              securityContext: *ctrsec
+              volumeMounts:
+                - { name: dshm, mountPath: /dev/shm }
+                - { name: ray-tmp, mountPath: /tmp/ray }
+          volumes:
+            - { name: dshm, emptyDir: { medium: Memory, sizeLimit: 1Gi } }
+            - { name: ray-tmp, emptyDir: { sizeLimit: 10Gi } }
+    workerGroupSpecs:
+      # General CPU workers: Ray Data ingest/standardize + Ray Train. Spot (with On-Demand
+      # fallback): everything they do is retryable or checkpointed.
+      - groupName: cpu-workers
+        replicas: 2
+        minReplicas: 0
+        maxReplicas: 10
+        labels: { corpreg.io/pool: worker }
+        rayStartParams:
+          # Object store lives in /dev/shm; size it explicitly below the shm volume so Ray
+          # never silently falls back to slow disk-backed /tmp.
+          object-store-memory: "2147483648"
+        template:
+          metadata:
+            labels: { app.kubernetes.io/name: corpreg-pipeline, app.kubernetes.io/component: ray-worker }
+            annotations: { karpenter.sh/do-not-disrupt: "true" }
+          spec:
+            serviceAccountName: ray-job
+            automountServiceAccountToken: false   # workers never call the Kubernetes API
+            securityContext: *podsec
+            terminationGracePeriodSeconds: 60
+            containers:
+              - name: ray-worker
+                image: $IMAGE
+                resources: { requests: { cpu: "2", memory: 8Gi }, limits: { cpu: "2", memory: 8Gi } }
+                securityContext: *ctrsec
+                volumeMounts:
+                  - { name: dshm, mountPath: /dev/shm }
+                  - { name: ray-tmp, mountPath: /tmp/ray }
+            volumes:
+              - { name: dshm, emptyDir: { medium: Memory, sizeLimit: 3Gi } }
+              - { name: ray-tmp, emptyDir: { sizeLimit: 20Gi } }
+      # Resolver workers: the only Ray nodes labelled corpreg.io/pool=resolver, so the only
+      # place the EntityResolver actors (label_selector) can run. On-Demand node pool, and the
+      # only pods that receive LLM_API_KEY.
+      - groupName: resolver-workers
+        replicas: 1
+        minReplicas: 0
+        maxReplicas: 2
+        labels: { corpreg.io/pool: resolver }
+        rayStartParams: {}
+        template:
+          metadata:
+            labels: { app.kubernetes.io/name: corpreg-pipeline, app.kubernetes.io/component: resolver-worker }
+            annotations: { karpenter.sh/do-not-disrupt: "true" }
+          spec:
+            serviceAccountName: ray-job
+            automountServiceAccountToken: false
+            securityContext: *podsec
+            containers:
+              - name: ray-worker
+                image: $IMAGE
+                resources: { requests: { cpu: "2", memory: 4Gi }, limits: { cpu: "2", memory: 4Gi } }
+                securityContext: *ctrsec
+                env:
+                  - name: LLM_API_KEY
+                    valueFrom: { secretKeyRef: { name: llm-api-key, key: LLM_API_KEY, optional: true } }
+                volumeMounts:
+                  - { name: dshm, mountPath: /dev/shm }
+                  - { name: ray-tmp, mountPath: /tmp/ray }
+            volumes:
+              - { name: dshm, emptyDir: { medium: Memory, sizeLimit: 1Gi } }
+              - { name: ray-tmp, emptyDir: { sizeLimit: 10Gi } }

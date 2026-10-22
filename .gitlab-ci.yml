@@ -1,0 +1,152 @@
+# GitLab equivalent of .github/workflows/*. Same scripts, same gates, same separation:
+#   merge requests -> tests, image scan, terraform static + plan      (read-only)
+#   main (app/**)  -> build + push image, run RayJob                   (ci-deploy role)
+#   main (infra/**)-> terraform apply, manual + protected environment  (ci-apply role)
+# AWS access is OIDC federation (id_tokens); no AWS keys are stored in CI variables.
+# Required CI/CD variables: AWS_PLAN_ROLE_ARN, AWS_DEPLOY_ROLE_ARN, AWS_APPLY_ROLE_ARN.
+
+stages: [test, plan, build, deploy, infra]
+
+variables:
+  AWS_REGION: ap-south-1
+  TF_VERSION: "1.16.6"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+# OIDC token for AWS federation. Kept separate so jobs can combine it with other templates
+# through `extends` (GitLab deep-merges them), so the file is plain YAML with no custom tags.
+.oidc_token:
+  id_tokens:
+    GITLAB_OIDC_TOKEN:
+      aud: https://gitlab.com
+
+.aws:
+  extends: .oidc_token
+  before_script:
+    - eval "$(scripts/ci/gitlab-aws-oidc.sh "$AWS_ROLE_ARN")"
+
+.terraform:
+  image:
+    name: hashicorp/terraform:$TF_VERSION
+    entrypoint: [""]
+  before_script:
+    - apk add --no-cache bash aws-cli >/dev/null
+
+# ---------------------------------------------------------------- merge requests
+app-tests:
+  stage: test
+  image: python:3.12-slim
+  cache: { paths: [.cache/pip] }
+  script:
+    - pip install -r requirements-dev.txt
+    - pytest -q
+    - LAKE_BUCKET=example GLUE_DATABASE=corporate_registry AWS_REGION=$AWS_REGION python k8s/render.py --env aws --image x:y --run-id mr > /dev/null
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+image-scan:
+  stage: test
+  image: docker:28-cli
+  services: ["docker:28-dind"]
+  variables: { DOCKER_TLS_CERTDIR: "/certs" }
+  script:
+    - apk add --no-cache bash git >/dev/null
+    - GIT_SHA=$CI_COMMIT_SHORT_SHA scripts/ci/build-push.sh --no-push
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+shellcheck:
+  stage: test
+  image: koalaman/shellcheck-alpine:v0.11.0
+  script:
+    - shellcheck -S warning scripts/ci/*.sh scripts/local/*.sh scripts/*.sh
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+terraform-static:
+  stage: test
+  extends: .terraform
+  script:
+    - scripts/ci/tf.sh static
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+terraform-plan:
+  stage: plan
+  extends: [.terraform, .oidc_token]
+  variables: { AWS_ROLE_ARN: $AWS_PLAN_ROLE_ARN }
+  parallel:
+    matrix:
+      - LAYER: [10-network, 20-eks, 30-data, 40-identity, 50-platform]
+  script:
+    - apk add --no-cache bash aws-cli >/dev/null
+    - eval "$(scripts/ci/gitlab-aws-oidc.sh "$AWS_ROLE_ARN")"
+    - scripts/ci/tf.sh plan "$LAYER"
+  artifacts:
+    paths: ["infra/$LAYER/plan.txt"]
+    expire_in: 7 days
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $AWS_PLAN_ROLE_ARN
+
+# ---------------------------------------------------------------- application release (main)
+build-push:
+  stage: build
+  extends: .aws
+  image: docker:28-cli
+  services: ["docker:28-dind"]
+  variables: { DOCKER_TLS_CERTDIR: "/certs", AWS_ROLE_ARN: $AWS_DEPLOY_ROLE_ARN }
+  before_script:
+    - apk add --no-cache bash git aws-cli >/dev/null
+    - docker buildx create --use >/dev/null
+    - docker run --privileged --rm tonistiigi/binfmt --install arm64 >/dev/null
+    - eval "$(scripts/ci/gitlab-aws-oidc.sh "$AWS_ROLE_ARN")"
+  script:
+    - eval "$(scripts/ci/env-from-ssm.sh)"
+    - GIT_SHA=$CI_COMMIT_SHORT_SHA scripts/ci/build-push.sh | tee build.log
+    - grep '^IMAGE=' build.log > image.env
+  artifacts:
+    reports: { dotenv: image.env }
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes: ["app/**/*", "k8s/**/*", "scripts/ci/**/*"]
+      when: on_success
+
+run-pipeline:
+  stage: deploy
+  extends: .aws
+  image: python:3.12-slim
+  needs: [build-push]
+  environment: { name: dev }
+  resource_group: corpreg-pipeline-dev   # one run at a time
+  variables: { AWS_ROLE_ARN: $AWS_DEPLOY_ROLE_ARN }
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq curl unzip >/dev/null
+    - curl -sSLo /tmp/awscli.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && unzip -q /tmp/awscli.zip -d /tmp && /tmp/aws/install >/dev/null
+    - curl -sSLo /usr/local/bin/kubectl "https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl" && chmod +x /usr/local/bin/kubectl
+    - pip install -q pyyaml
+    - eval "$(scripts/ci/gitlab-aws-oidc.sh "$AWS_ROLE_ARN")"
+  script:
+    - RUN_ID="gl-$CI_PIPELINE_ID" GIT_SHA=$CI_COMMIT_SHORT_SHA scripts/ci/run-rayjob.sh
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes: ["app/**/*", "k8s/**/*", "scripts/ci/**/*"]
+
+# ---------------------------------------------------------------- infrastructure release (main, manual)
+terraform-apply:
+  stage: infra
+  extends: [.terraform, .oidc_token]
+  environment: { name: infra-dev }      # protect this environment: approvers required
+  resource_group: terraform-dev         # never two applies at once
+  variables: { AWS_ROLE_ARN: $AWS_APPLY_ROLE_ARN }
+  script:
+    - apk add --no-cache bash aws-cli >/dev/null
+    - eval "$(scripts/ci/gitlab-aws-oidc.sh "$AWS_ROLE_ARN")"
+    - for layer in 10-network 20-eks 30-data 40-identity 50-platform; do scripts/ci/tf.sh apply "$layer"; done
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes: ["infra/**/*"]
+      when: manual

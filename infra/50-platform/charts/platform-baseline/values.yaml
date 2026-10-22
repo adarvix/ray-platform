@@ -1,0 +1,46 @@
+clusterName: corpreg-dev
+
+karpenter:
+  nodeRoleName: corpreg-dev-karpenter-node
+  # Production: pin a specific release (e.g. al2023@v20260901) and roll it via PR.
+  amiAlias: al2023@latest
+  pools:
+    ray-worker-spot:
+      pool: worker
+      capacityType: spot
+      weight: 100
+      # Wide diversification = many Spot pools to draw from (price-capacity-optimized),
+      # which lowers both interruption rate and the chance of "insufficient capacity".
+      categories: [c, m, r]
+      cpus: ["4", "8", "16"]
+      arch: [amd64, arm64]
+      cpuLimit: 256
+    ray-worker-ondemand:
+      pool: worker
+      capacityType: on-demand
+      weight: 10            # fallback only; capped lower to bound the cost of a Spot drought
+      categories: [c, m]
+      cpus: ["4", "8", "16"]
+      arch: [amd64, arm64]
+      cpuLimit: 64
+    ray-resolver:
+      pool: resolver
+      capacityType: on-demand
+      # Prod with a self-hosted model: GPU instead, e.g. categories [g], instance-family g6.
+      categories: [m, c]
+      cpus: ["4", "8"]
+      arch: [amd64, arm64]
+      cpuLimit: 32
+
+ray:
+  namespace: ray
+  jobRoleArn: ""
+  secretsRoleArn: ""
+  llmSecretName: ""
+  dashboardSecret: ""
+  region: ap-south-1
+
+quota:
+  cpu: "128"
+  memory: 512Gi
+  pods: "100"

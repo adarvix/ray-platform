@@ -1,0 +1,34 @@
+# Local Kubernetes (OrbStack / kind / Docker Desktop): same RayJob, same image, same code path.
+# Differences: one node (no node pools), SeaweedFS instead of S3, Iceberg REST catalog instead
+# of Glue, static dev credentials instead of IRSA, smaller resource requests.
+namespace: ray
+placement: {}
+# Sized for an 8 GiB laptop VM: one 2-CPU worker hosts both Ray Train workers. The head gets
+# the most memory: it runs the driver (golden records, Iceberg diff on upsert) and Ray Data /
+# Train coordination tasks (num_cpus=0, so they can land on the head). 2 GiB OOM'd on replay.
+resources:
+  ray-head: { requests: { cpu: "1", memory: 3Gi }, limits: { cpu: "1", memory: 3Gi } }
+  cpu-workers: { requests: { cpu: "2", memory: 2560Mi }, limits: { cpu: "2", memory: 2560Mi } }
+  resolver-workers: { requests: { cpu: "1", memory: 768Mi }, limits: { cpu: "1", memory: 768Mi } }
+  submitter: { requests: { cpu: 50m, memory: 128Mi }, limits: { memory: 256Mi } }
+  autoscaler: { requests: { cpu: 50m, memory: 128Mi }, limits: { memory: 384Mi } }
+replicas:
+  cpu-workers: { replicas: 1, maxReplicas: 1 }
+  resolver-workers: { replicas: 1, maxReplicas: 1 }
+objectStoreMemory: "536870912"
+env:
+  INPUT_URI: s3://lake/raw
+  ARTIFACT_URI: s3://lake/artifacts
+  S3_ENDPOINT_URL: http://seaweedfs.lakehouse-local.svc:8333
+  AWS_REGION: us-east-1
+  ICEBERG_NAMESPACE: corporate_registry
+  PYICEBERG_CATALOG__REGISTRY__TYPE: rest
+  PYICEBERG_CATALOG__REGISTRY__URI: http://iceberg-rest.lakehouse-local.svc:8181
+  PYICEBERG_CATALOG__REGISTRY__S3__ENDPOINT: http://seaweedfs.lakehouse-local.svc:8333
+  PYICEBERG_CATALOG__REGISTRY__S3__REGION: us-east-1
+  GENERATE_SOURCES: "true"     # demo only: seed synthetic CSVs if absent
+  RESOLVER_CONCURRENCY: "1"
+  SHUFFLE_PARTITIONS: "2"
+  TRAIN_WORKERS: "2"
+envFromSecret: local-lake-credentials   # AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY for SeaweedFS
+headEnv: {}

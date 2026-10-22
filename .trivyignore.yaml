@@ -1,0 +1,15 @@
+# Accepted misconfiguration findings. Each one is a deliberate trade-off with a mitigation and
+# an expiry date, after which the scan fails again and the decision must be re-made.
+misconfigurations:
+  - id: AWS-0040
+    statement: >-
+      EKS public API endpoint is enabled for CI on GitHub-hosted runners, restricted to
+      endpoint_public_access_cidrs (variable validation rejects 0.0.0.0/0) and still
+      IAM-authenticated. Exit plan: in-VPC runners (ARC) and endpoint_public_access=false.
+    expired_at: 2027-03-31
+  - id: AWS-0104
+    statement: >-
+      Node security group allows egress to 0.0.0.0/0: nodes need ECR, STS, EKS and the LLM API
+      via NAT. Pod egress is restricted by NetworkPolicy (443 only) and AWS data-plane traffic
+      goes over the S3 gateway endpoint. Exit plan: interface endpoints + egress proxy allow-list.
+    expired_at: 2027-03-31

@@ -1,0 +1,222 @@
+{{- $ns := .Values.ray.namespace }}
+# The tenant namespace for Ray workloads. Everything a team gets "for free" on the paved road:
+# identity, secrets, RBAC, network isolation, quota and Pod Security - none of it is in the
+# application repo, so an application change cannot weaken it.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $ns }}
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: latest
+    pod-security.kubernetes.io/warn: restricted
+---
+# Identity for Ray head + workers: IRSA role scoped to the lake prefixes and ONE Glue database.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ray-job
+  namespace: {{ $ns }}
+  annotations:
+    eks.amazonaws.com/role-arn: {{ .Values.ray.jobRoleArn | quote }}
+---
+# Identity used ONLY by External Secrets to read this namespace's two secrets.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ray-secrets-reader
+  namespace: {{ $ns }}
+  annotations:
+    eks.amazonaws.com/role-arn: {{ .Values.ray.secretsRoleArn | quote }}
+automountServiceAccountToken: false
+---
+# Ray in-tree autoscaler (head sidecar) scales worker pods by patching the RayCluster.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ray-autoscaler
+  namespace: {{ $ns }}
+rules:
+  - apiGroups: [""]
+    resources: [pods]
+    verbs: [get, list, watch, patch]
+  - apiGroups: [ray.io]
+    resources: [rayclusters]
+    verbs: [get, list, watch, patch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ray-autoscaler
+  namespace: {{ $ns }}
+roleRef: { apiGroup: rbac.authorization.k8s.io, kind: Role, name: ray-autoscaler }
+subjects:
+  - { kind: ServiceAccount, name: ray-job, namespace: {{ $ns }} }
+---
+# CI deploy role (mapped from the ci-deploy IAM role by an EKS access entry): submit and
+# observe RayJobs in this namespace only. No secrets, no RBAC, no other namespaces.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ci-deployer
+  namespace: {{ $ns }}
+rules:
+  - apiGroups: [ray.io]
+    resources: [rayjobs, raycronjobs]
+    verbs: [get, list, watch, create, update, patch, delete]
+  - apiGroups: [ray.io]
+    resources: [rayclusters]
+    verbs: [get, list, watch]
+  - apiGroups: [""]
+    resources: [pods, pods/log, events, services]
+    verbs: [get, list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ci-deployer
+  namespace: {{ $ns }}
+roleRef: { apiGroup: rbac.authorization.k8s.io, kind: Role, name: ci-deployer }
+subjects:
+  - { kind: Group, name: "corpreg:ci-deployers", apiGroup: rbac.authorization.k8s.io }
+---
+# Data scientists / on-call: read state and logs, port-forward to the Ray dashboard.
+# The dashboard additionally requires the Ray auth token (kept in Secrets Manager, IAM-gated).
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ray-user
+  namespace: {{ $ns }}
+rules:
+  - apiGroups: [ray.io]
+    resources: [rayjobs, rayclusters, raycronjobs]
+    verbs: [get, list, watch]
+  - apiGroups: [""]
+    resources: [pods, pods/log, services, events]
+    verbs: [get, list, watch]
+  - apiGroups: [""]
+    resources: [pods/portforward, services/portforward]
+    verbs: [create]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ray-user
+  namespace: {{ $ns }}
+roleRef: { apiGroup: rbac.authorization.k8s.io, kind: Role, name: ray-user }
+subjects:
+  - { kind: Group, name: "corpreg:ray-users", apiGroup: rbac.authorization.k8s.io }
+---
+# Secrets: AWS Secrets Manager -> (ESO, authenticating as ray-secrets-reader) -> K8s Secrets.
+# Namespaced SecretStore, not ClusterSecretStore: other namespaces cannot reference it.
+apiVersion: external-secrets.io/v1
+kind: SecretStore
+metadata:
+  name: aws-secrets-manager
+  namespace: {{ $ns }}
+spec:
+  provider:
+    aws:
+      service: SecretsManager
+      region: {{ .Values.ray.region }}
+      auth:
+        jwt:
+          serviceAccountRef:
+            name: ray-secrets-reader
+---
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: llm-api-key
+  namespace: {{ $ns }}
+spec:
+  refreshInterval: 1h   # rotation in Secrets Manager propagates without a redeploy
+  secretStoreRef: { name: aws-secrets-manager, kind: SecretStore }
+  target: { name: llm-api-key, creationPolicy: Owner }
+  data:
+    - secretKey: LLM_API_KEY
+      remoteRef: { key: {{ .Values.ray.llmSecretName | quote }} }
+---
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: ray-dashboard-token
+  namespace: {{ $ns }}
+spec:
+  refreshInterval: 1h
+  secretStoreRef: { name: aws-secrets-manager, kind: SecretStore }
+  target: { name: ray-dashboard-token, creationPolicy: Owner }
+  data:
+    - secretKey: auth_token   # key name KubeRay expects for authOptions.secretName
+      remoteRef: { key: {{ .Values.ray.dashboardSecret | quote }} }
+---
+# Network: default deny, then allow only what Ray actually needs.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+  namespace: {{ $ns }}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ray-intra-cluster
+  namespace: {{ $ns }}
+spec:
+  # Head <-> workers use many dynamic ports (GCS, raylet, object manager, workers).
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from: [{ podSelector: {} }]
+  egress:
+    - to: [{ podSelector: {} }]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ray-platform-access
+  namespace: {{ $ns }}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+  ingress:
+    # KubeRay operator polls the head's dashboard/job API.
+    - from: [{ namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: kuberay } } }]
+      ports: [{ port: 8265, protocol: TCP }]
+    # Prometheus scrapes Ray metrics (node, autoscaler, dashboard exporters).
+    - from: [{ namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: monitoring } } }]
+      ports: [{ port: 8080, protocol: TCP }, { port: 44217, protocol: TCP }, { port: 44227, protocol: TCP }]
+  egress:
+    - to: [{ namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: kube-system } } }]
+      ports: [{ port: 53, protocol: UDP }, { port: 53, protocol: TCP }]
+    # Ray dashboard reads Prometheus/Grafana to render embedded metrics.
+    - to: [{ namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: monitoring } } }]
+      ports: [{ port: 9090, protocol: TCP }, { port: 80, protocol: TCP }, { port: 3000, protocol: TCP }]
+    # HTTPS out: AWS APIs (S3, Glue, STS - via VPC endpoints where enabled), K8s API, LLM API.
+    # Tightening further = egress gateway / FQDN policy; see docs/decisions.md.
+    - ports: [{ port: 443, protocol: TCP }]
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: ray-quota
+  namespace: {{ $ns }}
+spec:
+  hard:
+    requests.cpu: {{ .Values.quota.cpu | quote }}
+    requests.memory: {{ .Values.quota.memory }}
+    pods: {{ .Values.quota.pods | quote }}
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: ray-defaults
+  namespace: {{ $ns }}
+spec:
+  limits:
+    - type: Container
+      defaultRequest: { cpu: 100m, memory: 128Mi }
+      default: { memory: 512Mi }

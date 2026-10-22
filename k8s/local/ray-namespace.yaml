@@ -1,0 +1,48 @@
+# Local equivalent of the platform-baseline `ray` namespace (no IRSA/ESO/Karpenter locally).
+# Pod Security "restricted" is enforced here too, so the local run proves the pipeline's pods
+# pass the same admission rules they will face on EKS.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ray
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: latest
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ray-job
+  namespace: ray
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ray-autoscaler
+  namespace: ray
+rules:
+  - apiGroups: [""]
+    resources: [pods]
+    verbs: [get, list, watch, patch]
+  - apiGroups: [ray.io]
+    resources: [rayclusters]
+    verbs: [get, list, watch, patch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ray-autoscaler
+  namespace: ray
+roleRef: { apiGroup: rbac.authorization.k8s.io, kind: Role, name: ray-autoscaler }
+subjects:
+  - { kind: ServiceAccount, name: ray-job, namespace: ray }
+---
+# Dev-only static credentials for SeaweedFS. On EKS these do not exist: pods use IRSA.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: local-lake-credentials
+  namespace: ray
+stringData:
+  AWS_ACCESS_KEY_ID: local-dev
+  AWS_SECRET_ACCESS_KEY: local-dev-secret-not-for-prod

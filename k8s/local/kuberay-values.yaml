@@ -1,0 +1,12 @@
+featureGates:
+  - { name: RayClusterStatusConditions, enabled: true }
+  - { name: RayJobDeletionPolicy, enabled: true }
+  - { name: RayMultiHostIndexing, enabled: true }
+  - { name: RayServiceIncrementalUpgrade, enabled: true }
+  - { name: RayCronJob, enabled: true }
+  - { name: RayClusterMTLS, enabled: false }
+  - { name: RayClusterNetworkPolicy, enabled: false }
+  - { name: RayClusterHistoryServer, enabled: false }
+resources:
+  requests: { cpu: 100m, memory: 256Mi }
+  limits: { memory: 512Mi }

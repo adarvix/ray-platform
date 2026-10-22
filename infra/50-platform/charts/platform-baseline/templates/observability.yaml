@@ -1,0 +1,113 @@
+{{- $ns := .Values.ray.namespace }}
+# Scrape every Ray cluster in the namespace automatically: teams get metrics without config.
+# Head uses a PodMonitor (not ServiceMonitor) to avoid double counting via multiple services.
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: ray-head
+  namespace: {{ $ns }}
+spec:
+  jobLabel: ray-head
+  selector: { matchLabels: { ray.io/node-type: head } }
+  podMetricsEndpoints:
+    {{- range list "metrics" "as-metrics" "dash-metrics" }}
+    - port: {{ . }}
+      relabelings:
+        - { action: replace, sourceLabels: [__meta_kubernetes_pod_label_ray_io_cluster], targetLabel: ray_io_cluster }
+    {{- end }}
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: ray-workers
+  namespace: {{ $ns }}
+spec:
+  jobLabel: ray-workers
+  selector: { matchLabels: { ray.io/node-type: worker } }
+  podMetricsEndpoints:
+    - port: metrics
+      relabelings:
+        - { action: replace, sourceLabels: [__meta_kubernetes_pod_label_ray_io_cluster], targetLabel: ray_io_cluster }
+---
+# Alerts are phrased as "what is broken + what to check". Metric names verified against
+# Ray 2.59 /metrics output, KubeRay v1.7.1 source and Karpenter v1.15 metrics reference.
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ray-platform
+  namespace: {{ $ns }}
+spec:
+  groups:
+    - name: rayjob
+      rules:
+        - alert: RayJobFailed
+          expr: max by (name, namespace) (kuberay_job_deployment_status{deployment_status="Failed"}) == 1
+          labels: { severity: critical }
+          annotations:
+            summary: "RayJob {{`{{ $labels.name }}`}} failed"
+            runbook: "docs/runbook.md#rayjob-failed - check submitter logs, then CloudWatch Insights filtered by run_id"
+        - alert: RayJobRunningTooLong
+          expr: max by (name, namespace) (kuberay_job_deployment_status{deployment_status="Running"}) == 1
+          for: 2h
+          labels: { severity: warning }
+          annotations:
+            summary: "RayJob {{`{{ $labels.name }}`}} running > 2h (normal run: minutes)"
+    - name: ray-cluster
+      rules:
+        - alert: RayInfeasibleWork
+          expr: max by (ray_io_cluster) (ray_internal_num_infeasible_scheduling_classes) > 0
+          for: 10m
+          labels: { severity: warning }
+          annotations:
+            summary: "Tasks/actors request a label or resource no worker group provides (e.g. resolver pool missing or maxReplicas=0)"
+        - alert: RayObjectStoreSpilling
+          expr: sum by (ray_io_cluster) (ray_object_store_memory{Location="SPILLED"}) > 0
+          for: 5m
+          labels: { severity: warning }
+          annotations:
+            summary: "Ray is spilling objects to disk: object store / /dev/shm undersized for this workload"
+        - alert: RayNodeMemoryPressure
+          expr: max by (ray_io_cluster, instance) (ray_node_mem_used / ray_node_mem_total) > 0.9
+          for: 5m
+          labels: { severity: warning }
+          annotations:
+            summary: "Ray node > 90% memory: Ray's OOM killer will start killing workers"
+    - name: ray-capacity
+      rules:
+        - alert: RayPodsPending
+          expr: sum by (namespace) (kube_pod_status_phase{namespace="{{ $ns }}", phase="Pending"}) > 0
+          for: 10m
+          labels: { severity: warning }
+          annotations:
+            summary: "Ray pods pending > 10m: check Karpenter (Spot capacity, NodePool limits) and ResourceQuota"
+        - alert: RayPodsRestarting
+          expr: sum by (pod) (increase(kube_pod_container_status_restarts_total{namespace="{{ $ns }}"}[15m])) > 3
+          labels: { severity: warning }
+          annotations:
+            summary: "Ray pod {{`{{ $labels.pod }}`}} restarting repeatedly (OOMKilled? probe failures?)"
+        - alert: SpotInterruptionsElevated
+          expr: sum(increase(karpenter_interruption_received_messages_total{message_type="spot_interrupted"}[30m])) > 3
+          labels: { severity: info }
+          annotations:
+            summary: "Elevated Spot reclaims: jobs retry but will run longer; consider widening instance diversity"
+        - alert: KarpenterNodePoolNearLimit
+          expr: max by (nodepool) (karpenter_nodepools_usage{resource_type="cpu"} / karpenter_nodepools_limit{resource_type="cpu"}) > 0.8
+          for: 10m
+          labels: { severity: warning }
+          annotations:
+            summary: "NodePool {{`{{ $labels.nodepool }}`}} > 80% of its CPU limit (cost guardrail)"
+        - alert: KarpenterCloudProviderErrors
+          expr: sum(increase(karpenter_cloudprovider_errors_total[10m])) > 5
+          labels: { severity: warning }
+          annotations:
+            summary: "Karpenter EC2 API errors (insufficient capacity, quota, IAM)"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: corpreg-platform-dashboard
+  namespace: monitoring
+  labels: { grafana_dashboard: "1" }
+data:
+  corpreg-platform.json: |-
+{{ .Files.Get "dashboards/corpreg-platform.json" | indent 4 }}

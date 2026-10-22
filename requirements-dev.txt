@@ -1,0 +1,4 @@
+# Local development / CI unit tests (outside the container).
+-r app/requirements.txt
+ray[data,train]==2.59.0
+pytest==8.4.2

@@ -1,0 +1,66 @@
+# Ray worker capacity, provisioned just-in-time by Karpenter.
+#
+#   ray-worker-spot      weight 100  Spot, diversified across c/m/r families, sizes, amd64+arm64
+#   ray-worker-ondemand  weight 10   same shape, On-Demand: used only when Spot is unavailable
+#   ray-resolver         -           On-Demand, for the stateful EntityResolver actors
+#
+# Pods select a pool by label (corpreg.io/pool) and must tolerate its taint, so nothing lands
+# on Ray capacity by accident and Ray pods never land on the system node group.
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: ray
+spec:
+  role: {{ .Values.karpenter.nodeRoleName }}
+  amiSelectorTerms:
+    - alias: {{ .Values.karpenter.amiAlias }}
+  subnetSelectorTerms:
+    - tags: { karpenter.sh/discovery: {{ .Values.clusterName }} }
+  securityGroupSelectorTerms:
+    - tags: { karpenter.sh/discovery: {{ .Values.clusterName }} }
+  metadataOptions:
+    httpEndpoint: enabled
+    httpTokens: required          # IMDSv2 only
+    httpPutResponseHopLimit: 1    # containers cannot reach the node role: pods must use IRSA
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs: { volumeSize: 100Gi, volumeType: gp3, encrypted: true, deleteOnTermination: true }
+  tags:
+    corpreg.io/managed-by: karpenter
+---
+{{- range $name, $pool := .Values.karpenter.pools }}
+apiVersion: karpenter.sh/v1
+kind: NodePool
+metadata:
+  name: {{ $name }}
+spec:
+  {{- with $pool.weight }}
+  weight: {{ . }}
+  {{- end }}
+  template:
+    metadata:
+      labels:
+        corpreg.io/pool: {{ $pool.pool }}
+        corpreg.io/capacity: {{ $pool.capacityType }}
+    spec:
+      nodeClassRef: { group: karpenter.k8s.aws, kind: EC2NodeClass, name: ray }
+      taints:
+        - { key: corpreg.io/pool, value: {{ $pool.pool }}, effect: NoSchedule }
+      expireAfter: 168h  # weekly node refresh picks up patched AMIs
+      requirements:
+        - { key: karpenter.sh/capacity-type, operator: In, values: [{{ $pool.capacityType }}] }
+        - { key: karpenter.k8s.aws/instance-category, operator: In, values: {{ toJson $pool.categories }} }
+        - { key: karpenter.k8s.aws/instance-generation, operator: Gt, values: ["5"] }
+        - { key: karpenter.k8s.aws/instance-cpu, operator: In, values: {{ toJson $pool.cpus }} }
+        - { key: kubernetes.io/arch, operator: In, values: {{ toJson $pool.arch }} }
+  disruption:
+    # Batch nodes: remove only when EMPTY. Consolidating an under-utilised node would kill a
+    # running Ray worker mid-job; Ray pods additionally carry karpenter.sh/do-not-disrupt.
+    consolidationPolicy: WhenEmpty
+    consolidateAfter: 60s
+    budgets:
+      - nodes: "20%"
+  limits:
+    cpu: {{ $pool.cpuLimit | quote }}   # cost guardrail per pool
+---
+{{- end }}

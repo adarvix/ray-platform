@@ -1,0 +1,26 @@
+# EKS: Ray pods pinned to their Karpenter pools; data in S3; Iceberg catalog = AWS Glue.
+# ${VARS} come from the environment (CI reads them from SSM, see scripts/ci/env-from-ssm.sh).
+namespace: ray
+placement:
+  head: { nodeSelector: { corpreg.io/pool: system } }
+  cpu-workers:
+    nodeSelector: { corpreg.io/pool: worker }   # matches both Spot and On-Demand fallback pools
+    tolerations: [{ key: corpreg.io/pool, operator: Equal, value: worker, effect: NoSchedule }]
+  resolver-workers:
+    nodeSelector: { corpreg.io/pool: resolver }
+    tolerations: [{ key: corpreg.io/pool, operator: Equal, value: resolver, effect: NoSchedule }]
+env:
+  AWS_REGION: ${AWS_REGION}
+  INPUT_URI: s3://${LAKE_BUCKET}/raw
+  ARTIFACT_URI: s3://${LAKE_BUCKET}/artifacts
+  ICEBERG_NAMESPACE: ${GLUE_DATABASE}
+  PYICEBERG_CATALOG__REGISTRY__TYPE: glue
+  PYICEBERG_CATALOG__REGISTRY__GLUE__REGION: ${AWS_REGION}
+  PYICEBERG_CATALOG__REGISTRY__S3__REGION: ${AWS_REGION}
+  RESOLVER_CONCURRENCY: "2"
+  TRAIN_WORKERS: "2"
+headEnv:
+  # Ray dashboard embeds Grafana panels; Grafana reached through port-forward on :3000.
+  RAY_GRAFANA_HOST: http://kube-prometheus-stack-grafana.monitoring.svc:80
+  RAY_PROMETHEUS_HOST: http://kube-prometheus-stack-prometheus.monitoring.svc:9090
+  RAY_GRAFANA_IFRAME_HOST: http://localhost:3000

@@ -1,0 +1,1201 @@
+supplier_id,company_name,country,city,industry,website,employee_count,active_contracts,annual_spend_usd,onboarded_date
+SC-000001,Crescentgate Mfg Ltd,IN,Pune,manufacturing,https://www.crescentgatemanufacturing.in/,911,1,45044.22,2019-08-01
+SC-000002,Crescnetcrest Industries Limited,GB,Manchester,manufacturing,https://www.crescentcrestindustries.co.uk/,1874,6,1548352.93,2025-11-01
+SC-000003,Apexpath Mfg Intl AG,DE,Munich,manufacturing,,1292,4,227759.34,2021-03-01
+SC-000004,NORTHCORE MFG PRIVATE LIMITED,IN,Bengaluru,manufacturing,,257,1,89178.43,2018-03-01
+SC-000005,Orionline & Industries,IN,Mumbai,manufacturing,https://www.orionlineindustries.in/,96,1,104273.89,2018-07-01
+SC-000006,Quantumdale Manufacturing GmbH,DE,Berlin,manufacturing,https://www.quantumdalemanufacturing.de/,515,1,89700.57,2021-05-01
+SC-000007,Ironcore Retail Intl Pte. Ltd.,SG,Singapore,retail,,145,1,52378.58,2016-11-01
+SC-000008,Lumenline Logistix PLC,GB,London,logistics,https://lumenlinelogistics.co.uk,416,1,103254.93,2017-12-01
+SC-000009,Northbridge Biotech Ltd,GB,Manchester,healthcare,,1891,7,599710.29,2019-06-01
+SC-000010,Maplepeak Retail AG,DE,Berlin,retail,https://www.maplepeakretail.de/,7735,21,4893452.8,2024-05-01
+SC-000011,Northforge Manufacturing Private Limited,IN,Pune,manufacturing,www.northforgemanufacturing.in,414,1,289682.01,2023-10-01
+SC-000012,falconstar freight,DE,Berlin,logistics,https://falconstarfreight.de,633,1,122983.09,2020-02-01
+SC-000013,VERTEXSTAR RETAIL INCORPORATED,US,New York,retail,https://vertexstarretail.com,82,1,50820.27,2013-08-01
+SC-000014,Cedarforge Health International Limited,GB,Manchester,healthcare,https://www.cedarforgehealthinternational.co.uk/,504,1,116238.58,2015-04-01
+SC-000015,Orionbridge Industries International PLC,GB,Manchester,manufacturing,https://orionbridgeindustriesinternational.co.uk,424,1,138527.76,2019-06-01
+SC-000016,SILVERSTAR MANUFACTURING INTERNATIONAL LLC,US,New York,manufacturing,https://silverstarmanufacturinginternational.com,1526,4,832336.92,2023-01-01
+SC-000017,apexdale labs pte. ltd.,SG,Singapore,software,apexdalelabs.sg,713,1,179328.28,2016-05-01
+SC-000018,Bluevale Medical Intl GmbH,DE,Munich,healthcare,,40,1,122395.34,2019-03-01
+SC-000019,Crescentstone Stores International Pte Ltd,SG,Singapore,retail,,680,3,367485.52,2016-08-01
+SC-000020,Novapath & Industries,GB,Manchester,manufacturing,,96,1,46435.05,2012-02-01
+SC-000021,Crescentlight Freight Pte. Ltd.,SG,Singapore,logistics,crescentlightfreight.sg,23,1,119501.82,2022-07-01
+SC-000022,Summitstar Stores Pte. Ltd.,SG,Singapore,retail,https://summitstarstores.sg,1277,2,211929.57,2021-10-01
+SC-000023,Novawave Software LLC,US,New York,software,,185,1,145116.45,2013-03-01
+SC-000024,LUMENCREST FREIGHT PTE LTD,SG,Singapore,logistics,lumencrestfreight.sg,522,1,264420.79,2018-06-01
+SC-000025,Lumenlight Systems Pte Ltd,SG,Singapore,software,www.lumenlightsystems.sg,702,1,184738.23,2020-02-01
+SC-000026,Orioncore Biotech Ltd,GB,London,healthcare,,411,1,22856.65,2012-11-01
+SC-000027,Falconworks Retail PLC,GB,London,retail,,2286,4,319475.72,2015-04-01
+SC-000028,ATLASVIEW STORES,GB,Manchester,retail,https://www.atlasviewstores.co.uk/,2000,6,1282855.63,2012-09-01
+SC-000029,Summitfield Manufacturing PLC,GB,London,manufacturing,,99,1,133723.7,2015-10-01
+SC-000030,CEDARWAVE MFG INTL CORP,US,Chicago,manufacturing,https://cedarwavemanufacturinginternational.com,942,4,299913.51,2020-03-01
+SC-000031,Vertexcore Manufacturing Pte Ltd,SG,Singapore,manufacturing,https://vertexcoremanufacturing.sg,355,1,114010.17,2020-07-01
+SC-000032,harborpoint mfg ltd,IN,Bengaluru,manufacturing,https://www.harborpointmanufacturing.in/,2238,4,664982.48,2013-11-01
+SC-000033,Atlascrest & Energy PLC,GB,Manchester,energy,www.atlascrestenergy.co.uk,2395,5,1002246.23,2014-02-01
+SC-000034,Crescentcrest Stores,SG,Singapore,retail,,8662,44,4460060.87,2021-12-01
+SC-000035,Northfield Health,DE,Munich,healthcare,https://northfieldhealth.de,338,1,92096.88,2019-01-01
+SC-000036,qauntumlight health pte. ltd.,SG,Singapore,healthcare,,1193,3,644897.46,2014-06-01
+SC-000037,Quantumcrest Labs,GB,London,software,www.quantumcrestlabs.co.uk,117,1,104668.76,2019-08-01
+SC-000038,Sterlingstar Logistics LLC,US,Chicago,logistics,sterlingstarlogistics.com,128,1,66197.01,2025-01-01
+SC-000039,Crescentforge Medical,IN,Mumbai,healthcare,https://www.crescentforgemedical.in/,124,1,18262.26,2023-10-01
+SC-000040,pioneerport energy incorporated,US,New York,energy,https://pioneerportenergy.com,8316,12,1688643.15,2013-05-01
+SC-000041,Ironcore Stores Pte Ltd,SG,Singapore,retail,www.ironcorestores.sg,881,1,102793.02,2013-11-01
+SC-000042,Crescentstone Power International GmbH,DE,Berlin,energy,,406,1,124633.29,2013-02-01
+SC-000043,Cedarport Labs PLC,GB,London,software,,340,1,64928.92,2021-08-01
+SC-000044,STERLINGPEAK MEDICAL INTL PTE LTD,SG,Singapore,healthcare,,301,1,38596.73,2019-07-01
+SC-000045,Lumnevale Retail Inc,US,New York,retail,https://lumenvaleretail.com,313,1,119126.58,2023-05-01
+SC-000046,NORTHBRIDGE POWER INTERNATIONAL PTE. LTD.,SG,Singapore,energy,www.northbridgepowerinternational.sg,225,1,52767.62,2023-08-01
+SC-000047,SILVERRIDGE RETAIL,GB,Manchester,retail,https://www.silverridgeretail.co.uk/,537,1,245662.72,2024-04-01
+SC-000048,orionline logistics,DE,Berlin,logistics,https://www.orionlinelogistics.de/,157,1,97597.82,2020-03-01
+SC-000049,Silverpath Health,SG,Singapore,healthcare,https://silverpathhealth.sg,178,1,95294.79,2018-03-01
+SC-000050,Novapoint Medical Pte. Ltd.,SG,Singapore,healthcare,https://www.novapointmedical.sg/,253,1,85669.33,2022-09-01
+SC-000051,MAPLECORE SYSTEMS,IN,Mumbai,software,,292,1,127529.67,2017-11-01
+SC-000052,Pioneergate Medical International,SG,Singapore,healthcare,,369,1,93873.79,2020-11-01
+SC-000053,Vertexfield Freight Intl Ltd,IN,Bengaluru,logistics,www.vertexfieldfreightinternational.in,350,1,68008.84,2025-04-01
+SC-000054,Sterlingridge Stores Limited,GB,London,retail,sterlingridgestores.co.uk,577,1,79605.27,2021-01-01
+SC-000055,Northlight & Manufacturing Pvt Ltd,IN,Mumbai,manufacturing,https://www.northlightmanufacturing.in/,300,1,447944.77,2013-06-01
+SC-000056,Summitstone Industries,IN,Mumbai,manufacturing,https://www.summitstoneindustries.in/,567,1,159077.34,2015-10-01
+SC-000057,summitgate health ltd,GB,Manchester,healthcare,,462,2,42476.44,2023-04-01
+SC-000058,Summitdale Medical,SG,Singapore,healthcare,summitdalemedical.sg,70,1,108110.61,2023-05-01
+SC-000059,Atlaspath Inds Pte Ltd,SG,Singapore,manufacturing,atlaspathindustries.sg,480,1,124148.6,2012-01-01
+SC-000060,QUANTUMFORGE & SOFTWARE LLC,US,Austin,software,https://www.quantumforgesoftware.com/,397,1,51162.59,2017-11-01
+SC-000061,Novafield Manufacturing Private Limited,IN,Bengaluru,manufacturing,https://www.novafieldmanufacturing.in/,537,2,135836.83,2022-10-01
+SC-000062,Crescentview Freight Inc,US,New York,logistics,https://www.crescentviewfreight.com/,496,1,64513.16,2025-07-01
+SC-000063,Silverwave Power,IN,Bengaluru,energy,https://www.silverwavepower.in/,9246,14,1229422.01,2012-07-01
+SC-000064,Graniteline Health Inc,US,New York,healthcare,,1135,2,235388.63,2023-12-01
+SC-000065,Vertexlight Energy Limited,GB,Manchester,energy,vertexlightenergy.co.uk,65,1,91801.41,2017-05-01
+SC-000066,Sterlingport Power,GB,Manchester,energy,,247,1,93308.35,2022-03-01
+SC-000067,Novapath Software Pte Ltd,SG,Singapore,software,https://www.novapathsoftware.sg/,63,1,158848.83,2016-12-01
+SC-000068,Lumenlight Freight,SG,Singapore,logistics,lumenlightfreight.sg,58,1,115961.72,2023-09-01
+SC-000069,novastar freight,GB,Manchester,logistics,https://novastarfreight.co.uk,424,1,127174.06,2018-02-01
+SC-000070,NORTHGATE FREIGHT,SG,Singapore,logistics,,1502,3,412358.85,2018-12-01
+SC-000071,Mapellight Power,GB,London,energy,,902,2,384155.11,2025-11-01
+SC-000072,Blueview Manufacturing Pte. Ltd.,SG,Singapore,manufacturing,,666,1,263512.25,2014-03-01
+SC-000073,Quantumcroe Mfg,IN,Bengaluru,manufacturing,https://www.quantumcoremanufacturing.in/,940,3,351878.32,2012-12-01
+SC-000074,Granitepeak Manufacturing PLC,GB,London,manufacturing,,489,1,57303.42,2018-09-01
+SC-000075,bluebridge industries gmbh,DE,Munich,manufacturing,https://www.bluebridgeindustries.de/,259,1,114492.15,2020-04-01
+SC-000076,SUMMITVALE LOGISTICS,DE,Munich,logistics,www.summitvalelogistics.de,171,1,52334.29,2019-11-01
+SC-000077,Vertexcore Logistics Limited,GB,London,logistics,https://www.vertexcorelogistics.co.uk/,88,1,89891.79,2013-09-01
+SC-000078,SILVERFIELD STORES INTL LIMITED,GB,Manchester,retail,,116,1,25734.23,2012-09-01
+SC-000079,quantumridge power llc,US,Austin,energy,www.quantumridgepower.com,247,1,61778.74,2017-04-01
+SC-000080,LUMENPORT STORES INTERNATIONAL,SG,Singapore,retail,lumenportstoresinternational.sg,4995,17,1630766.28,2014-07-01
+SC-000081,SUMMITFIELD RETAIL PVT LTD,IN,Bengaluru,retail,summitfieldretail.in,739,1,92700.39,2019-09-01
+SC-000082,lumengate labs pvt ltd,IN,Mumbai,software,https://lumengatelabs.in,541,1,114860.04,2015-05-01
+SC-000083,APEXDALE HEALTH,DE,Munich,healthcare,www.apexdalehealth.de,885,3,157662.81,2022-12-01
+SC-000084,Lumenport Biotech Ltd,IN,Pune,healthcare,https://www.lumenportbiotech.in/,3865,4,458854.45,2021-09-01
+SC-000085,granitewave energy pte ltd,SG,Singapore,energy,granitewaveenergy.sg,25,1,288072.91,2018-10-01
+SC-000086,Apexdale Stores GmbH,DE,Berlin,retail,apexdalestores.de,1319,2,329647.1,2017-05-01
+SC-000087,Ironpoint Retail AG,DE,Berlin,retail,https://ironpointretail.de,5740,9,989275.01,2025-08-01
+SC-000088,Harborvale Logistics Pte Ltd,SG,Singapore,logistics,https://harborvalelogistics.sg,353,2,517603.03,2020-09-01
+SC-000089,Ironcrest Stores International AG,DE,Munich,retail,www.ironcreststoresinternational.de,1574,6,327172.23,2017-06-01
+SC-000090,Quantumcore Freight Pte. Ltd.,SG,Singapore,logistics,https://www.quantumcorefreight.sg/,196,1,257951.04,2016-05-01
+SC-000091,Summitwave Energy International Pte Ltd,SG,Singapore,energy,,128,1,80474.56,2024-12-01
+SC-000092,Maplelight & Energy AG,DE,Berlin,energy,,532,1,151600.41,2019-10-01
+SC-000093,Sterlingpath Manufacturing AG,DE,Berlin,manufacturing,https://sterlingpathmanufacturing.de,96,1,94573.52,2014-11-01
+SC-000094,Apexport Software Limited,GB,London,software,https://apexportsoftware.co.uk,567,1,206153.16,2014-05-01
+SC-000095,Apexworks Retail International Private Limited,IN,Pune,retail,,181,1,102824.81,2015-05-01
+SC-000096,Pioneerbridge Systems Pte. Ltd.,SG,Singapore,software,https://www.pioneerbridgesystems.sg/,3222,4,397695.12,2022-08-01
+SC-000097,Silverstar Logistics Private Limited,IN,Mumbai,logistics,,129,1,35053.09,2024-01-01
+SC-000098,Granitebridge Freight Pvt Ltd,IN,Bengaluru,logistics,https://www.granitebridgefreight.in/,436,1,93178.46,2015-01-01
+SC-000099,MAPLEDALE MEDICAL INC,US,Austin,healthcare,https://mapledalemedical.com,1345,5,608995.05,2018-04-01
+SC-000100,Pioneerworks Stores PLC,GB,London,retail,www.pioneerworksstores.co.uk,721,2,152893.34,2014-01-01
+SC-000101,VERTEXPORT SOFTWARE INTERNATIONAL PVT LTD,IN,Bengaluru,software,vertexportsoftwareinternational.in,1205,2,195740.83,2014-02-01
+SC-000102,Quantumlight Manufacturing Incorporated,US,Chicago,manufacturing,,357,1,44487.47,2018-04-01
+SC-000103,Bluepath Biotech Inc.,US,Austin,healthcare,,1948,11,772069.63,2022-05-01
+SC-000104,Orionline Retail,GB,Manchester,retail,,599,1,78275.49,2025-02-01
+SC-000105,Mapleport Manufacturing Inc.,US,New York,manufacturing,https://www.mapleportmanufacturing.com/,422,1,109632.77,2012-09-01
+SC-000106,Bluepath Power AG,DE,Berlin,energy,bluepathpower.de,341,1,90366.33,2019-09-01
+SC-000107,Mapleview Energy,GB,London,energy,https://www.mapleviewenergy.co.uk/,187,1,74414.03,2014-07-01
+SC-000108,ironline inds private limited,IN,Pune,manufacturing,https://www.ironlineindustries.in/,458,1,69460.38,2021-08-01
+SC-000109,irongate health ltd,IN,Bengaluru,healthcare,irongatehealth.in,1168,4,300957.1,2018-10-01
+SC-000110,Summitgate & Manufacturing Limited,GB,London,manufacturing,https://www.summitgatemanufacturing.co.uk/,154,1,31763.99,2016-06-01
+SC-000111,Northpeak Biotech Limited,GB,Manchester,healthcare,www.northpeakbiotech.co.uk,149,1,51405.41,2025-01-01
+SC-000112,VERTEXSTONE ENERGY PTE LTD,SG,Singapore,energy,,421,1,63545.49,2023-09-01
+SC-000113,Atlasline Energy AG,DE,Berlin,energy,https://atlaslineenergy.de,322,1,202856.12,2025-03-01
+SC-000114,atlasport stores gmbh,DE,Munich,retail,,491,1,54086.12,2022-12-01
+SC-000115,Sterlingfield Stores Intl Limited,GB,Manchester,retail,www.sterlingfieldstoresinternational.co.uk,47,1,96189.37,2021-12-01
+SC-000116,ironstar inds,US,Austin,manufacturing,https://www.ironstarindustries.com/,832,2,288230.16,2020-06-01
+SC-000117,apexport reatil international pvt ltd,IN,Mumbai,retail,apexportretailinternational.in,262,1,81405.2,2020-09-01
+SC-000118,ATLASRIDGE RETAIL INTERNATIONAL PTE LTD,SG,Singapore,retail,,938,1,34296.54,2025-10-01
+SC-000119,Northdale Biotech AG,DE,Munich,healthcare,www.northdalebiotech.de,142,1,40964.66,2014-11-01
+SC-000120,BLUEBRIDGE ENERGY LIMITED,GB,London,energy,https://www.bluebridgeenergy.co.uk/,425,1,86338.09,2022-07-01
+SC-000121,Atlasdale Logistics,DE,Berlin,logistics,https://atlasdalelogistics.de,1202,1,147233.11,2024-10-01
+SC-000122,Atlasfield Biotech,DE,Berlin,healthcare,www.atlasfieldbiotech.de,2705,8,831800.59,2020-08-01
+SC-000123,Atlasfield Stores Pvt Ltd,IN,Pune,retail,https://www.atlasfieldstores.in/,113,1,359360.29,2018-07-01
+SC-000124,ATLASFIELD & FERIGHT CORP,US,New York,logistics,www.atlasfieldfreight.com,147,1,109996.21,2019-10-01
+SC-000125,Orionpoint Energy,SG,Singapore,energy,,547,1,52855.98,2012-04-01
+SC-000126,Summitline Manufacturing Private Limited,IN,Pune,manufacturing,https://www.summitlinemanufacturing.in/,605,1,139670.16,2014-07-01
+SC-000127,Blueforge Software GmbH,DE,Berlin,software,blueforgesoftware.de,707,2,142679.85,2017-08-01
+SC-000128,NorthridgeL ogistics,GB,Manchester,logistics,https://www.northridgelogistics.co.uk/,283,1,83531.59,2012-08-01
+SC-000129,Orionforge Power Incorporated,US,New York,energy,www.orionforgepower.com,324,1,113055.68,2023-12-01
+SC-000130,lumencore logistics corporation,US,Chicago,logistics,,344,1,200306.24,2018-06-01
+SC-000131,Silverlight Software Corporation,US,New York,software,silverlightsoftware.com,114,1,50956.0,2019-08-01
+SC-000132,Apexcrest Energy Ltd,IN,Mumbai,energy,apexcrestenergy.in,475,1,93510.23,2014-07-01
+SC-000133,Novafield & Stores,DE,Munich,retail,,250,1,118765.36,2024-04-01
+SC-000134,poineerwave sys private limited,IN,Bengaluru,software,www.pioneerwavesystems.in,46,1,102986.56,2018-10-01
+SC-000135,Orionridge Health,DE,Munich,healthcare,www.orionridgehealth.de,317,1,349320.17,2012-02-01
+SC-000136,Novawave Labs AG,DE,Berlin,software,www.novawavelabs.de,63,1,55423.21,2022-08-01
+SC-000137,Apexridge Energy Intl Limited,GB,London,energy,https://apexridgeenergyinternational.co.uk,53,1,61991.7,2021-09-01
+SC-000138,Maplecrest Energy,GB,London,energy,www.maplecrestenergy.co.uk,357,1,51380.57,2022-11-01
+SC-000139,Orionpath Systems International AG,DE,Berlin,software,,345,1,34980.89,2025-01-01
+SC-000140,Sterlingview Freight PLC,GB,London,logistics,sterlingviewfreight.co.uk,737,1,176959.37,2021-05-01
+SC-000141,Crescentpath Logistics Pvt Ltd,IN,Mumbai,logistics,,195,1,110446.35,2015-08-01
+SC-000142,Apexpeak Manufacturing,IN,Bengaluru,manufacturing,https://www.apexpeakmanufacturing.in/,292,1,193597.38,2018-10-01
+SC-000143,Northcore & Logistics Inc.,US,Chicago,logistics,https://northcorelogistics.com,220,1,242176.97,2012-07-01
+SC-000144,Vertexforge eRtail Limited,GB,Manchester,retail,,1882,6,342824.03,2015-08-01
+SC-000145,Crescentlight Energy International AG,DE,Berlin,energy,https://crescentlightenergyinternational.de,1383,6,469891.08,2015-10-01
+SC-000146,Falconbridge Freight AG,DE,Munich,logistics,,22,1,36219.92,2013-12-01
+SC-000147,Northwave Logistix Private Limited,IN,Pune,logistics,www.northwavelogistics.in,397,1,123298.67,2012-01-01
+SC-000148,Falconpath Energy International Limited,GB,Manchester,energy,https://falconpathenergyinternational.co.uk,236,1,62683.53,2022-10-01
+SC-000149,Falconlight Retail nItl AG,DE,Munich,retail,,134,1,226621.34,2012-10-01
+SC-000150,Granitefield Sys Intl,GB,London,software,https://www.granitefieldsystemsinternational.co.uk/,374,1,163819.54,2013-05-01
+SC-000151,Blueport Logistics GmbH,DE,Berlin,logistics,,307,1,94234.03,2021-05-01
+SC-000152,Novapeak Sys,IN,Mumbai,software,,339,1,340787.55,2016-01-01
+SC-000153,Orionwave Labs Inc.,US,Chicago,software,https://orionwavelabs.com,1588,4,568995.99,2016-11-01
+SC-000154,Crescentlight Industries Pvt Ltd,IN,Mumbai,manufacturing,www.crescentlightindustries.in,1832,3,431299.54,2015-08-01
+SC-000155,ORIONPORT INDS PVT LTD,IN,Bengaluru,manufacturing,,51,1,66852.01,2019-03-01
+SC-000156,Lumenstone Biotech Private Limited,IN,Bengaluru,healthcare,https://www.lumenstonebiotech.in/,890,2,101478.77,2018-02-01
+SC-000157,Vertexworks Medical AG,DE,Munich,healthcare,vertexworksmedical.de,203,1,88710.89,2017-03-01
+SC-000158,ATLASLIGHT ENERGY PTE LTD,SG,Singapore,energy,www.atlaslightenergy.sg,610,1,19086.05,2025-08-01
+SC-000159,Atlaslight Power International,US,Chicago,energy,https://atlaslightpowerinternational.com,443,1,107894.3,2023-12-01
+SC-000160,Harborcrest Logistics PLC,GB,London,logistics,www.harborcrestlogistics.co.uk,495,1,64379.92,2016-07-01
+SC-000161,Apefxield Health,IN,Pune,healthcare,,63,1,35350.8,2021-08-01
+SC-000162,Graniteline Logistics,DE,Berlin,logistics,https://granitelinelogistics.de,203,1,126969.02,2023-06-01
+SC-000163,ORIONWORKS MANUFACTURING PTE LTD,SG,Singapore,manufacturing,www.orionworksmanufacturing.sg,189,1,73368.79,2015-03-01
+SC-000164,Pioneerfield & Retail International AG,DE,Berlin,retail,www.pioneerfieldretailinternational.de,714,2,189785.53,2018-12-01
+SC-000165,Falcondale Industries Ltd,IN,Bengaluru,manufacturing,https://www.falcondaleindustries.in/,145,1,127675.69,2012-05-01
+SC-000166,Summitgate & Retail GmbH,DE,Berlin,retail,www.summitgateretail.de,161,1,157693.52,2017-10-01
+SC-000167,Maplewave Power Pte Ltd,SG,Singapore,energy,https://www.maplewavepower.sg/,48,1,84561.03,2016-01-01
+SC-000168,bleuwave health corp,US,Chicago,healthcare,https://bluewavehealth.com,1380,3,382966.21,2020-09-01
+SC-000169,Maplepeak Stores Pte. Ltd.,SG,Singapore,retail,www.maplepeakstores.sg,1294,3,109940.73,2020-11-01
+SC-000170,Maplestar Freight,IN,Mumbai,logistics,https://maplestarfreight.in,745,2,236658.13,2014-09-01
+SC-000171,LUMENPEAK ENERGY AG,DE,Berlin,energy,lumenpeakenergy.de,615,2,84645.3,2013-03-01
+SC-000172,MAPLEBRIDGE LABS,SG,Singapore,software,www.maplebridgelabs.sg,313,1,76761.28,2018-04-01
+SC-000173,Mapleport Medical Private Limited,IN,Pune,healthcare,mapleportmedical.in,38,1,48322.69,2013-03-01
+SC-000174,SUMMITVIEW MANUFACTURING,DE,Berlin,manufacturing,https://summitviewmanufacturing.de,49,1,190255.04,2014-02-01
+SC-000175,Quantumlight Retail Ltd,IN,Mumbai,retail,quantumlightretail.in,362,1,76436.76,2019-11-01
+SC-000176,Vertexforge Stores,SG,Singapore,retail,,268,1,89136.88,2024-04-01
+SC-000177,Atlasview Software Ltd,GB,Manchester,software,atlasviewsoftware.co.uk,721,2,396434.85,2013-03-01
+SC-000178,Lumenpath Labs Ltd,IN,Pune,software,https://lumenpathlabs.in,1150,3,286925.95,2012-06-01
+SC-000179,Lumenlight Power,SG,Singapore,energy,https://www.lumenlightpower.sg/,19,1,151422.4,2015-03-01
+SC-000180,Summitcore Software Pte Ltd,SG,Singapore,software,https://www.summitcoresoftware.sg/,1216,2,100575.39,2020-08-01
+SC-000181,Maplewaev Health Inc.,US,New York,healthcare,,498,1,123703.66,2017-01-01
+SC-000182,Atlasvale Biotech International,US,Chicago,healthcare,https://atlasvalebiotechinternational.com,554,1,224904.8,2025-08-01
+SC-000183,Orionwave Freight,GB,Manchester,logistics,,1247,4,394153.05,2014-08-01
+SC-000184,Falconstar Medical,GB,London,healthcare,falconstarmedical.co.uk,1813,6,647382.98,2024-11-01
+SC-000185,summitport & energy private limited,IN,Bengaluru,energy,,345,1,100579.83,2016-11-01
+SC-000186,Pioneerstar Retail AG,DE,Munich,retail,https://www.pioneerstarretail.de/,88,1,78129.01,2013-09-01
+SC-000187,Falconfiel dEnergy Pte. Ltd.,SG,Singapore,energy,falconfieldenergy.sg,705,1,52624.83,2025-03-01
+SC-000188,Cedarpoint Biotech Inc,US,New York,healthcare,https://cedarpointbiotech.com,179,1,86600.42,2017-02-01
+SC-000189,harborgate software intl pte ltd,SG,Singapore,software,harborgatesoftwareinternational.sg,175,1,27682.0,2024-12-01
+SC-000190,Silvercore Logistics PLC,GB,Manchester,logistics,silvercorelogistics.co.uk,263,1,205248.76,2018-01-01
+SC-000191,IRONVALE & SOFTWARE,US,New York,software,www.ironvalesoftware.com,123,1,311225.07,2013-02-01
+SC-000192,Orionport Stroes GmbH,DE,Berlin,retail,orionportstores.de,597,1,101055.69,2016-03-01
+SC-000193,PIONEERDALE SOFTWARE INC.,US,Chicago,software,pioneerdalesoftware.com,5683,16,2626859.8,2022-01-01
+SC-000194,IRONBRIDGE SOFTWARE INTERNATIONAL,GB,Manchester,software,www.ironbridgesoftwareinternational.co.uk,399,1,67295.88,2018-01-01
+SC-000195,Orionfield Labs,DE,Munich,software,https://www.orionfieldlabs.de/,25,1,151170.7,2020-04-01
+SC-000196,Apexlight Sys LLC,US,New York,software,www.apexlightsystems.com,802,3,190659.24,2018-10-01
+SC-000197,pioneerdale freight incorporated,US,Chicago,logistics,,676,1,118515.82,2018-05-01
+SC-000198,Pioneerbridge Energy International GmbH,DE,Munich,energy,www.pioneerbridgeenergyinternational.de,278,1,98646.5,2021-03-01
+SC-000199,cedarview logistics llc,US,New York,logistics,,639,1,188230.65,2015-12-01
+SC-000200,ATLASVALE SYS INTL CORP,US,New York,software,atlasvalesystemsinternational.com,680,4,213852.54,2022-04-01
+SC-000201,VERTEXLIGHT INDUSTRIES,GB,Manchester,manufacturing,,878,1,184501.56,2014-03-01
+SC-000202,Northstar Industries,SG,Singapore,manufacturing,https://northstarindustries.sg,620,1,60480.35,2019-11-01
+SC-000203,Orionpath Logistix Pte Ltd,SG,Singapore,logistics,www.orionpathlogistics.sg,304,1,84453.31,2019-08-01
+SC-000204,QUANTUMFIELD LABS AG,DE,Munich,software,,277,1,85735.34,2025-01-01
+SC-000205,Novaridge Manufacturing Ltd,GB,Manchester,manufacturing,,448,1,265108.87,2016-03-01
+SC-000206,Bluepoint Industries International Pte Ltd,SG,Singapore,manufacturing,https://www.bluepointindustriesinternational.sg/,402,1,87560.7,2015-12-01
+SC-000207,Bluestar Labs,US,Austin,software,https://www.bluestarlabs.com/,309,1,109397.63,2014-01-01
+SC-000208,sterlingstone retail corp,US,New York,retail,www.sterlingstoneretail.com,5036,7,657481.52,2013-05-01
+SC-000209,lumenforge stores international gmbh,DE,Munich,retail,https://www.lumenforgestoresinternational.de/,3050,5,658250.83,2012-02-01
+SC-000210,quantumpath industries,IN,Mumbai,manufacturing,www.quantumpathindustries.in,464,1,103655.97,2022-08-01
+SC-000211,Mapleport Manufacturing International Pte Ltd,SG,Singapore,manufacturing,https://mapleportmanufacturinginternational.sg,52,1,99491.98,2012-08-01
+SC-000212,Vertexstar Energy AG,DE,Munich,energy,https://vertexstarenergy.de,138,1,81310.5,2021-04-01
+SC-000213,ATLASWORKS STORES AG,DE,Munich,retail,,160,1,69647.98,2015-06-01
+SC-000214,Pioneerworks Mfg AG,DE,Berlin,manufacturing,https://www.pioneerworksmanufacturing.de/,131,1,17645.36,2020-01-01
+SC-000215,quantumbridge logistics gmbh,DE,Berlin,logistics,,179,1,35987.13,2018-09-01
+SC-000216,Silverline Retail AG,DE,Munich,retail,,175,1,62544.42,2017-02-01
+SC-000217,Bluepeak Energy Corporation,US,New York,energy,https://www.bluepeakenergy.com/,202,1,262062.6,2015-02-01
+SC-000218,CEDARPORT & LOGISTICS PTE LTD,SG,Singapore,logistics,www.cedarportlogistics.sg,897,2,444954.57,2012-08-01
+SC-000219,Falconcore Logistics International GmbH,DE,Berlin,logistics,https://www.falconcorelogisticsinternational.de/,533,1,66945.44,2017-02-01
+SC-000220,LUMENWAVE BIOTECH PTE. LTD.,SG,Singapore,healthcare,https://www.lumenwavebiotech.sg/,592,1,27712.92,2020-12-01
+SC-000221,Maplepoint Mfg,SG,Singapore,manufacturing,www.maplepointmanufacturing.sg,846,2,520693.18,2014-03-01
+SC-000222,CRESCENTPATH FREIGHT INTL PVT LTD,IN,Bengaluru,logistics,,563,1,64914.13,2019-01-01
+SC-000223,CRESCENTPEAK HEALTH PTE LTD,SG,Singapore,healthcare,https://crescentpeakhealth.sg,6170,7,1271495.18,2022-05-01
+SC-000224,Vertexlight Logistics GmbH,DE,Berlin,logistics,www.vertexlightlogistics.de,1258,7,653883.6,2017-01-01
+SC-000225,BLUEPATH STORES CORP,US,Chicago,retail,,1075,2,679428.12,2014-07-01
+SC-000226,sterlingridge inds gmbh,DE,Berlin,manufacturing,https://sterlingridgeindustries.de,2830,5,1138872.87,2019-03-01
+SC-000227,Crescentworks Energy GmbH,DE,Munich,energy,https://www.crescentworksenergy.de/,327,1,66076.8,2016-06-01
+SC-000228,Vertexworks & Industries Ltd,IN,Mumbai,manufacturing,,1492,3,1787548.61,2016-07-01
+SC-000229,Quantumwave Medical Pvt Ltd,IN,Bengaluru,healthcare,quantumwavemedical.in,338,1,142900.61,2015-12-01
+SC-000230,HARBORWAVE LOGISTICS,GB,Manchester,logistics,www.harborwavelogistics.co.uk,324,1,52739.22,2012-09-01
+SC-000231,Atlasview Mfg Intl,SG,Singapore,manufacturing,,809,2,240315.41,2025-10-01
+SC-000232,Maplecore Stores Ltd,IN,Mumbai,retail,https://maplecorestores.in,1471,4,692784.52,2016-06-01
+SC-000233,GRANITESTONE LOGISTICS,GB,London,logistics,www.granitestonelogistics.co.uk,180,1,68871.44,2024-04-01
+SC-000234,Northfield Freight GmHb,DE,Berlin,logistics,https://northfieldfreight.de,261,1,74087.37,2019-03-01
+SC-000235,Iornview Biotech,US,New York,healthcare,ironviewbiotech.com,227,1,36654.57,2025-12-01
+SC-000236,Orioncore Inds Ltd,IN,Mumbai,manufacturing,,2557,6,324955.67,2015-08-01
+SC-000237,FALCONVALE ENERGY AG,DE,Berlin,energy,falconvaleenergy.de,1527,3,371930.99,2023-03-01
+SC-000238,Apexfield Freight Pte Ltd,SG,Singapore,logistics,https://apexfieldfreight.sg,477,1,75946.44,2016-03-01
+SC-000239,Lumenfield Freight,SG,Singapore,logistics,https://www.lumenfieldfreight.sg/,357,1,61719.77,2020-02-01
+SC-000240,summitcrest power intl,SG,Singapore,energy,,26258,101,14304010.61,2018-08-01
+SC-000241,IRONDALE MFG INTL PTE TLD,SG,Singapore,manufacturing,www.irondalemanufacturinginternational.sg,34,1,222415.23,2018-06-01
+SC-000242,Harborcrest Retail LLC,US,New York,retail,harborcrestretail.com,648,1,124529.39,2015-07-01
+SC-000243,Novadale Retail Intl GmbH,DE,Berlin,retail,,214,1,123042.69,2016-03-01
+SC-000244,Novaview Labs Inetrnational GmbH,DE,Munich,software,,860,1,38105.96,2015-04-01
+SC-000245,Granitegate Logistics,GB,London,logistics,granitegatelogistics.co.uk,17142,31,2101871.98,2024-10-01
+SC-000246,Vertexfield Stores,IN,Mumbai,retail,,149,1,120753.6,2012-05-01
+SC-000247,Summitforge Logistics,US,New York,logistics,summitforgelogistics.com,87,1,164278.74,2016-11-01
+SC-000248,Apexport Stores,US,Austin,retail,www.apexportstores.com,156,1,161674.06,2020-04-01
+SC-000249,Falconworsk Medical,SG,Singapore,healthcare,,695,2,1380425.89,2022-02-01
+SC-000250,Maplepath Logistix Intl AG,DE,Munich,logistics,https://maplepathlogisticsinternational.de,183,1,58363.46,2018-05-01
+SC-000251,Vertexstar Stores Pte. Ltd.,SG,Singapore,retail,https://www.vertexstarstores.sg/,288,1,275328.65,2015-02-01
+SC-000252,FALCONVALE & BIOTECH,DE,Munich,healthcare,https://falconvalebiotech.de,300,1,46471.94,2022-07-01
+SC-000253,Crescentpoint Health,SG,Singapore,healthcare,www.crescentpointhealth.sg,166,1,40437.68,2018-04-01
+SC-000254,Ironforge Industries International PLC,GB,London,manufacturing,ironforgeindustriesinternational.co.uk,24,1,169740.53,2022-02-01
+SC-000255,Ironline Manufacturing International Limited,GB,London,manufacturing,ironlinemanufacturinginternational.co.uk,3936,11,601453.03,2024-04-01
+SC-000256,Falcondale Retail Pte Ltd,SG,Singapore,retail,www.falcondaleretail.sg,624,1,29672.58,2019-10-01
+SC-000257,Ironforge Stores Ltd,IN,Pune,retail,https://ironforgestores.in,2659,9,1499622.07,2015-04-01
+SC-000258,NORTHBRIDGE MANUFACTURING AG,DE,Berlin,manufacturing,northbridgemanufacturing.de,931,3,422016.19,2018-12-01
+SC-000259,ORIONCORE FREIGHT LTD,GB,Manchester,logistics,https://www.orioncorefreight.co.uk/,38,1,106296.29,2023-02-01
+SC-000260,lumenforge industries pvt ltd,IN,Mumbai,manufacturing,https://www.lumenforgeindustries.in/,148,1,322934.85,2015-03-01
+SC-000261,APEXRIDGE BIOTECH PVT LTD,IN,Pune,healthcare,,529,1,54345.42,2013-02-01
+SC-000262,Vertexstar Labs PLC,GB,Manchester,software,vertexstarlabs.co.uk,99,1,123946.66,2019-09-01
+SC-000263,Bluegate Software,SG,Singapore,software,,54,1,172189.4,2014-04-01
+SC-000264,ORIONPEAK MANUFACTURING,SG,Singapore,manufacturing,orionpeakmanufacturing.sg,3908,19,1094695.22,2020-03-01
+SC-000265,cedarline industries pte ltd,SG,Singapore,manufacturing,https://www.cedarlineindustries.sg/,534,1,104972.5,2016-12-01
+SC-000266,PIONEERPATH & LOGISTICS,GB,Manchester,logistics,pioneerpathlogistics.co.uk,3380,15,1443813.7,2021-11-01
+SC-000267,LUMENDALE MFG INTL PIRVATE LIMITED,IN,Bengaluru,manufacturing,lumendalemanufacturinginternational.in,22,1,62328.05,2025-09-01
+SC-000268,Vertexridge Stores Pte Ltd,SG,Singapore,retail,https://www.vertexridgestores.sg/,562,1,201779.44,2017-01-01
+SC-000269,Atlaspoint Labs,US,Austin,software,www.atlaspointlabs.com,1431,6,642120.42,2021-10-01
+SC-000270,novapeak power private limited,IN,Bengaluru,energy,,138,1,151424.37,2016-01-01
+SC-000271,northgate software,SG,Singapore,software,northgatesoftware.sg,632,1,132608.72,2025-06-01
+SC-000272,Ironcore Software,SG,Singapore,software,https://www.ironcoresoftware.sg/,619,1,187872.73,2024-12-01
+SC-000273,Harborfield Biotech Intl Ltd,GB,Manchester,healthcare,harborfieldbiotechinternational.co.uk,173,1,30979.42,2015-01-01
+SC-000274,Granitepath Stores Pte. Ltd.,SG,Singapore,retail,granitepathstores.sg,104,1,39499.71,2018-03-01
+SC-000275,STERLINGWAVE MANUFACTURING GMBH,DE,Berlin,manufacturing,,136,1,100009.34,2017-06-01
+SC-000276,PIONEERPATH BIOTECH PLC,GB,Manchester,healthcare,https://www.pioneerpathbiotech.co.uk/,563,2,121124.55,2018-09-01
+SC-000277,Vertexcrest Systems Inc.,US,Austin,software,vertexcrestsystems.com,740,2,249128.14,2013-04-01
+SC-000278,Northworks & Logistics Pte. Ltd.,SG,Singapore,logistics,,119,1,271723.99,2025-11-01
+SC-000279,Falconcore Systems International,SG,Singapore,software,,29,1,159122.98,2022-06-01
+SC-000280,Quantumcore Retail GmbH,DE,Munich,retail,quantumcoreretail.de,434,1,194629.81,2020-06-01
+SC-000281,Lumenworks Stores Pte Ltd,SG,Singapore,retail,,665,1,106164.42,2012-12-01
+SC-000282,Apexport Industries,US,Austin,manufacturing,https://www.apexportindustries.com/,453,1,66108.3,2024-10-01
+SC-000283,maplefield medical llc,US,Chicago,healthcare,https://www.maplefieldmedical.com/,392,1,133589.17,2013-09-01
+SC-000284,Quantumwave & Logistics AG,DE,Berlin,logistics,www.quantumwavelogistics.de,2623,6,707477.58,2017-10-01
+SC-000285,Northview Mfg Ltd,IN,Pune,manufacturing,www.northviewmanufacturing.in,69,1,98430.2,2014-04-01
+SC-000286,Blueridge Mfg,SG,Singapore,manufacturing,https://www.blueridgemanufacturing.sg/,3790,14,1335098.29,2018-10-01
+SC-000287,Silvercore Health,GB,Manchester,healthcare,https://www.silvercorehealth.co.uk/,504,1,73059.02,2014-07-01
+SC-000288,Novadale Medica lPrivate Limited,IN,Bengaluru,healthcare,,609,1,81279.29,2015-05-01
+SC-000289,mapleport freight,SG,Singapore,logistics,https://mapleportfreight.sg,41,1,70968.45,2022-04-01
+SC-000290,Cedardale Energy Pte Ltd,SG,Singapore,energy,https://cedardaleenergy.sg,343,1,287545.89,2018-11-01
+SC-000291,Bluebridge Mfg Pte. Ltd.,SG,Singapore,manufacturing,www.bluebridgemanufacturing.sg,1319,4,379616.17,2018-10-01
+SC-000292,Harborforge Logistics Pte Ltd,SG,Singapore,logistics,https://www.harborforgelogistics.sg/,1624,3,507386.93,2021-07-01
+SC-000293,CRESCENTFIELD & RETAIL INTERNATIONAL PTE LTD,SG,Singapore,retail,www.crescentfieldretailinternational.sg,2348,5,424627.84,2024-04-01
+SC-000294,Apexridge Health International AG,DE,Berlin,healthcare,www.apexridgehealthinternational.de,101,1,66151.95,2024-05-01
+SC-000295,Pioneerridge Software PLC,GB,London,software,pioneerridgesoftware.co.uk,826,1,246845.83,2025-01-01
+SC-000296,LUMENWAVE MEDICAL INTERNATIONAL PVT LTD,IN,Mumbai,healthcare,https://www.lumenwavemedicalinternational.in/,4561,19,1600766.92,2018-02-01
+SC-000297,Ironforge Health Limitde,GB,Manchester,healthcare,,196,1,258498.71,2021-06-01
+SC-000298,VERTEXLIGHT RETAIL,GB,London,retail,vertexlightretail.co.uk,971,1,60046.08,2021-11-01
+SC-000299,ATLASCORE & MANUFACTURING PLC,GB,London,manufacturing,,853,2,256687.9,2018-03-01
+SC-000300,Pioneerworks Logistics Corporation,US,New York,logistics,pioneerworkslogistics.com,661,2,402781.34,2023-06-01
+SC-000301,Cedarworks Sys Pte Ltd,SG,Singapore,software,https://www.cedarworkssystems.sg/,860,1,44620.32,2014-01-01
+SC-000302,Ironpoint Industries GmbH,DE,Berlin,manufacturing,www.ironpointindustries.de,393,1,197491.46,2021-03-01
+SC-000303,Apexport & Logistics Inc,US,New York,logistics,https://www.apexportlogistics.com/,90,1,51475.38,2018-01-01
+SC-000304,NOVAPEAK SOFTWARE INTERNATIONAL LTD,IN,Bengaluru,software,,174,1,213694.38,2020-11-01
+SC-000305,ATLASLIGHT STORES INC.,US,Chicago,retail,,197,1,223360.19,2014-06-01
+SC-000306,granitebridge retail,IN,Pune,retail,https://www.granitebridgeretail.in/,144,1,175449.54,2020-02-01
+SC-000307,Vertexirdge Freight Inc.,US,New York,logistics,,5080,12,2085835.61,2013-04-01
+SC-000308,FALCONPORT INDUSTRIES PTE. LTD.,SG,Singapore,manufacturing,https://falconportindustries.sg,710,1,96367.62,2018-02-01
+SC-000309,Northcore Biotech PLC,GB,Manchester,healthcare,www.northcorebiotech.co.uk,398,1,65463.62,2025-10-01
+SC-000310,quanutmridge & stores corp,US,New York,retail,https://quantumridgestores.com,37,1,389441.91,2012-04-01
+SC-000311,Silverwave Health Ltd,GB,London,healthcare,https://www.silverwavehealth.co.uk/,3768,5,257176.24,2023-08-01
+SC-000312,GRANITELIGHT MANUFACTURING PTE LTD,SG,Singapore,manufacturing,https://www.granitelightmanufacturing.sg/,870,3,197565.09,2025-10-01
+SC-000313,VERTEXCORE SOFTWARE INTERNATIONAL LLC,US,New York,software,www.vertexcoresoftwareinternational.com,213,1,119840.69,2021-09-01
+SC-000314,Cedarbridge & Manufacturing,DE,Berlin,manufacturing,https://www.cedarbridgemanufacturing.de/,367,1,44447.56,2025-04-01
+SC-000315,Lumenvale Biotech Pvt Ltd,IN,Mumbai,healthcare,https://lumenvalebiotech.in,3393,11,2180219.56,2018-01-01
+SC-000316,Summitpeak & Manufacturing Lmiited,GB,Manchester,manufacturing,summitpeakmanufacturing.co.uk,311,1,96720.86,2019-08-01
+SC-000317,silverpoint power corp,US,Chicago,energy,www.silverpointpower.com,413,1,87570.38,2025-01-01
+SC-000318,NORTHWORKS HEALTH GMBH,DE,Berlin,healthcare,,2407,3,159667.81,2022-06-01
+SC-000319,Maplecrest & Manufacturing Private Limited,IN,Bengaluru,manufacturing,,1017,1,32415.36,2017-09-01
+SC-000320,Granitepoint Software,SG,Singapore,software,,143,1,169318.81,2013-09-01
+SC-000321,MAPLEPATH INDUSTRIES,GB,Manchester,manufacturing,https://www.maplepathindustries.co.uk/,833,2,104324.13,2019-10-01
+SC-000322,Silverpath Systems PLC,GB,Manchester,software,https://silverpathsystems.co.uk,105,1,132150.04,2024-09-01
+SC-000323,APEXVIEW LABS,US,New York,software,apexviewlabs.com,320,1,123384.48,2021-12-01
+SC-000324,Bluewave Freight International AG,DE,Munich,logistics,https://bluewavefreightinternational.de,482,1,74089.84,2022-03-01
+SC-000325,Harborstone & Systems International LLC,US,Chicago,software,,567,1,116019.26,2013-05-01
+SC-000326,Bluebridge & Labs Ltd,IN,Mumbai,software,https://www.bluebridgelabs.in/,116,1,144530.46,2013-06-01
+SC-000327,Orioncrest Manufacturing Ltd,IN,Mumbai,manufacturing,,1167,4,590463.41,2024-11-01
+SC-000328,Novavale Biotech,US,Chicago,healthcare,,3249,6,1385991.21,2021-02-01
+SC-000329,Sterlingview Systems International Corp,US,Chicago,software,www.sterlingviewsystemsinternational.com,367,1,310293.6,2025-10-01
+SC-000330,Northvale Power Pte. Ltd.,SG,Singapore,energy,https://northvalepower.sg,1181,2,128011.3,2020-10-01
+SC-000331,CEDARVALE ENERGY,US,Austin,energy,cedarvaleenergy.com,290,1,87163.68,2018-11-01
+SC-000332,Sterlingcrest Logistix Inc.,US,New York,logistics,https://sterlingcrestlogistics.com,5289,10,1219603.93,2024-07-01
+SC-000333,Irontsone Health PLC,GB,Manchester,healthcare,,123,1,152353.36,2020-03-01
+SC-000334,silverdale health incorporated,US,New York,healthcare,https://www.silverdalehealth.com/,182,1,25972.2,2021-07-01
+SC-000335,LUMENSTAR INDS INTL AG,DE,Munich,manufacturing,https://lumenstarindustriesinternational.de,38,1,103207.8,2024-07-01
+SC-000336,Bluefield Stores Pvt Ltd,IN,Mumbai,retail,bluefieldstores.in,51,1,47325.36,2017-07-01
+SC-000337,Orionlight Sys Ltd,IN,Bengaluru,software,https://www.orionlightsystems.in/,610,1,125670.57,2014-06-01
+SC-000338,NORTHLINE LOGISTICS,US,Chicago,logistics,,996,2,136104.05,2023-04-01
+SC-000339,Ironvale & Logistics LLC,US,Austin,logistics,ironvalelogistics.com,218,1,103258.28,2020-12-01
+SC-000340,Cedarpoint Stores PLC,GB,Manchester,retail,https://cedarpointstores.co.uk,431,1,54583.63,2012-10-01
+SC-000341,granitebridge & medical llc,US,Austin,healthcare,,227,1,60861.71,2016-11-01
+SC-000342,Ironworks Retail,US,New York,retail,,830,2,84725.77,2025-02-01
+SC-000343,BLUEFORGE RETAIL INTERNATIONAL PVT LTD,IN,Pune,retail,www.blueforgeretailinternational.in,191,1,86111.08,2016-01-01
+SC-000344,Quantumview Software Limited,GB,London,software,https://quantumviewsoftware.co.uk,157,1,142354.87,2025-06-01
+SC-000345,Graniteworks Energy Ltd,GB,London,energy,https://www.graniteworksenergy.co.uk/,106,1,122306.46,2023-09-01
+SC-000346,Maplecore Biotech,GB,Manchester,healthcare,,237,1,26213.59,2021-05-01
+SC-000347,Atlasline Logistics International Ltd,IN,Pune,logistics,atlaslinelogisticsinternational.in,108,1,106888.53,2012-06-01
+SC-000348,Bluegate Power Corporation,US,Chicago,energy,https://www.bluegatepower.com/,233,1,47934.46,2020-01-01
+SC-000349,Summitpeak Sfotware,IN,Pune,software,,610,1,276119.44,2025-09-01
+SC-000350,Harborpath Power,DE,Berlin,energy,,447,1,54010.63,2017-09-01
+SC-000351,Harborridge LogisticsI nternational,IN,Pune,logistics,https://www.harborridgelogisticsinternational.in/,147,1,138180.62,2024-08-01
+SC-000352,QUANTUMPOINT LABS INC.,US,Chicago,software,https://quantumpointlabs.com,1279,2,217866.03,2020-11-01
+SC-000353,Maplepath & Biotech Limited,GB,London,healthcare,https://maplepathbiotech.co.uk,71,1,69736.77,2014-09-01
+SC-000354,Cedardale Mfg,DE,Munich,manufacturing,https://www.cedardalemanufacturing.de/,2450,3,1318710.32,2017-01-01
+SC-000355,Pioneerfiedl Software,SG,Singapore,software,www.pioneerfieldsoftware.sg,98,1,62074.03,2021-11-01
+SC-000356,MAPLEPEAK POWER INC.,US,New York,energy,maplepeakpower.com,836,2,95359.84,2024-06-01
+SC-000357,Graniteforge Retail Pvt Ltd,IN,Mumbai,retail,https://www.graniteforgeretail.in/,285,1,165834.75,2020-12-01
+SC-000358,pioneerpoint health pte. ltd.,SG,Singapore,healthcare,https://www.pioneerpointhealth.sg/,18,1,143303.28,2021-10-01
+SC-000359,Harborfield Health International Pte. Ltd.,SG,Singapore,healthcare,https://www.harborfieldhealthinternational.sg/,449,1,125887.52,2019-11-01
+SC-000360,northstone systems,US,New York,software,www.northstonesystems.com,148,1,182746.53,2017-09-01
+SC-000361,Bluevale Biotech,SG,Singapore,healthcare,bluevalebiotech.sg,46,1,243109.95,2020-04-01
+SC-000362,Novaworks Labs Ltd,IN,Pune,software,,531,1,108527.62,2025-02-01
+SC-000363,STERLINGBRIDGE FREIGHT INTL LLC,US,New York,logistics,,234,1,88217.49,2018-12-01
+SC-000364,Summitgate Inds Pte Ltd,SG,Singapore,manufacturing,,83,1,109338.44,2020-08-01
+SC-000365,Vertexfield & Systems Pte. Ltd.,SG,Singapore,software,www.vertexfieldsystems.sg,56,1,130181.88,2024-03-01
+SC-000366,bluevale retail ag,DE,Munich,retail,https://bluevaleretail.de,157,1,64232.75,2019-03-01
+SC-000367,Atlasview Labs,IN,Bengaluru,software,https://www.atlasviewlabs.in/,253,1,272091.47,2018-11-01
+SC-000368,Graniteline Freight,SG,Singapore,logistics,,111,1,123881.43,2019-02-01
+SC-000369,Orionpoint Energy International Pte. Ltd.,SG,Singapore,energy,www.orionpointenergyinternational.sg,437,1,86707.59,2021-11-01
+SC-000370,Apexworks Software Pte Ltd,SG,Singapore,software,www.apexworkssoftware.sg,427,1,130838.87,2023-07-01
+SC-000371,Silverforge Power,US,Austin,energy,silverforgepower.com,146,1,65522.88,2022-05-01
+SC-000372,Apexforge Freight GmbH,DE,Berlin,logistics,www.apexforgefreight.de,157,1,78083.76,2024-10-01
+SC-000373,Bluestone Health Incorporated,US,Chicago,healthcare,https://www.bluestonehealth.com/,129,1,100603.72,2023-11-01
+SC-000374,Summitdale Industries,GB,London,manufacturing,www.summitdaleindustries.co.uk,144,1,110619.75,2012-10-01
+SC-000375,Atlasridge & Power,US,New York,energy,atlasridgepower.com,126,1,73796.01,2014-08-01
+SC-000376,Harborapth Systems,US,Chicago,software,www.harborpathsystems.com,916,3,21271.93,2012-06-01
+SC-000377,Lumenpeak Biotech,SG,Singapore,healthcare,lumenpeakbiotech.sg,252,1,29805.72,2015-08-01
+SC-000378,GRANITESTONE HEALTH,GB,Manchester,healthcare,www.granitestonehealth.co.uk,236,1,173303.45,2014-03-01
+SC-000379,HARBORFORGE HEALTH LTD,GB,London,healthcare,harborforgehealth.co.uk,82,1,129014.84,2020-04-01
+SC-000380,bluestone inds,DE,Munich,manufacturing,https://www.bluestoneindustries.de/,341,1,140210.0,2020-09-01
+SC-000381,Cedarwave Freight Private Limited,IN,Pune,logistics,https://cedarwavefreight.in,347,1,149509.98,2022-09-01
+SC-000382,Luemnlight Logistics Ltd,IN,Bengaluru,logistics,,413,1,29949.7,2016-05-01
+SC-000383,Northridge Freight Pvt Ltd,IN,Pune,logistics,northridgefreight.in,212,1,37957.21,2019-02-01
+SC-000384,Vertexdale & Software International,IN,Bengaluru,software,vertexdalesoftwareinternational.in,329,1,41850.04,2012-03-01
+SC-000385,Apexstone Power Pte. Ltd.,SG,Singapore,energy,,1829,6,426285.25,2016-11-01
+SC-000386,Vertexstone Stores Pvt Ltd,IN,Mumbai,retail,,649,1,80873.6,2018-08-01
+SC-000387,BLUEPOINT SOFTWARE CORP,US,Austin,software,,1843,4,495647.62,2012-11-01
+SC-000388,PIONEERPOINT LOGISTIX INTL PVT LTD,IN,Mumbai,logistics,https://www.pioneerpointlogisticsinternational.in/,1329,3,351628.06,2018-08-01
+SC-000389,Sterlinggate Energy Pte Ltd,SG,Singapore,energy,,1550,5,597192.54,2013-07-01
+SC-000390,GRANITECORE ENERGY INTERNATIONAL INC.,US,New York,energy,,10,1,135094.23,2014-12-01
+SC-000391,Apexdale & Energy,GB,London,energy,,3241,6,602421.53,2021-12-01
+SC-000392,Silvercore Labs GmbH,DE,Berlin,software,www.silvercorelabs.de,753,1,72774.97,2019-11-01
+SC-000393,Crescentworks Logistics,IN,Mumbai,logistics,https://crescentworkslogistics.in,881,1,113428.52,2014-02-01
+SC-000394,Novawave Health Ltd,IN,Bengaluru,healthcare,,2229,8,2462460.76,2017-01-01
+SC-000395,ORIONVIEW LABS INC.,US,Chicago,software,,5175,11,598202.33,2025-10-01
+SC-000396,Novaforge Inds,IN,Bengaluru,manufacturing,novaforgeindustries.in,78,1,224726.74,2024-12-01
+SC-000397,Graniteworks Retail Pvt Ltd,IN,Mumbai,retail,https://www.graniteworksretail.in/,66,1,292658.19,2025-01-01
+SC-000398,ATLASBRIDGE POWER LIMITED,GB,Manchester,energy,https://atlasbridgepower.co.uk,2397,5,1169156.8,2020-06-01
+SC-000399,novcaore health ltd,GB,London,healthcare,www.novacorehealth.co.uk,921,2,229206.94,2012-03-01
+SC-000400,Ironpeak Energy,SG,Singapore,energy,,1004,2,65182.71,2015-09-01
+SC-000401,Vertexstone Retail PLC,GB,Manchester,retail,vertexstoneretail.co.uk,482,1,141393.28,2018-07-01
+SC-000402,SILVERVALE ENERGY LTD,GB,Manchester,energy,silvervaleenergy.co.uk,219,1,113110.87,2017-06-01
+SC-000403,Silverpeak & Labs,DE,Munich,software,www.silverpeaklabs.de,537,1,109102.28,2023-12-01
+SC-000404,LUMENLINE SOFTWARE PTE LTD,SG,Singapore,software,https://www.lumenlinesoftware.sg/,165,1,15075.97,2019-10-01
+SC-000405,Crescentview Freight International Incorporated,US,New York,logistics,https://crescentviewfreightinternational.com,748,1,39933.7,2019-10-01
+SC-000406,Falconlight Medical International,IN,Pune,healthcare,,143,1,74790.81,2015-05-01
+SC-000407,Qunatumline Health Limited,GB,London,healthcare,quantumlinehealth.co.uk,1378,5,540807.21,2024-09-01
+SC-000408,Vertexstone Freight AG,DE,Munich,logistics,vertexstonefreight.de,236,1,665250.34,2019-03-01
+SC-000409,Sterlinggate Medical Pte Ltd,SG,Singapore,healthcare,https://www.sterlinggatemedical.sg/,2375,6,212241.2,2013-03-01
+SC-000410,PIONEERRIDGE FREIGHT,GB,London,logistics,,231,1,44299.38,2013-04-01
+SC-000411,silverstone manufacturing gmbh,DE,Berlin,manufacturing,,1450,1,224683.2,2013-01-01
+SC-000412,Orionview Retail Ltd,IN,Mumbai,retail,,1543,3,97102.22,2018-03-01
+SC-000413,Mapleline Power GmbH,DE,Berlin,energy,https://maplelinepower.de,40,1,33892.89,2019-07-01
+SC-000414,ATLASWAVE POWER CORP,US,Chicago,energy,,2622,9,1752605.58,2015-11-01
+SC-000415,Bluegate Freight,IN,Bengaluru,logistics,https://www.bluegatefreight.in/,1527,4,539677.44,2016-07-01
+SC-000416,VERTEXSTAR LOGISTICS GMBH,DE,Munich,logistics,www.vertexstarlogistics.de,2908,11,441202.67,2023-08-01
+SC-000417,Northpoint Health Incorporated,US,New York,healthcare,https://northpointhealth.com,1738,3,373806.83,2022-10-01
+SC-000418,NORTHLIGHT SYS INTL INC,US,Austin,software,northlightsystemsinternational.com,69,1,196633.56,2016-01-01
+SC-000419,sterlingcore freight corporation,US,New York,logistics,https://sterlingcorefreight.com,89,1,59355.56,2021-01-01
+SC-000420,Pioneervale & Health Pte Ltd,SG,Singapore,healthcare,pioneervalehealth.sg,238,1,12768.96,2024-10-01
+SC-000421,Lumenpoint & Medical,DE,Munich,healthcare,https://www.lumenpointmedical.de/,764,4,276197.76,2022-04-01
+SC-000422,Crescentfield Labs Pte. Ltd.,SG,Singapore,software,https://crescentfieldlabs.sg,129,1,106885.31,2013-07-01
+SC-000423,LUMENLINE BIOTECH,GB,London,healthcare,https://www.lumenlinebiotech.co.uk/,1130,2,185378.76,2019-10-01
+SC-000424,Vertexcore & Labs GmbH,DE,Munich,software,,1277,3,420708.71,2023-09-01
+SC-000425,Atlasgate Energy Ltd,IN,Mumbai,energy,atlasgateenergy.in,343,1,452747.54,2013-12-01
+SC-000426,Sterlingstone Energy AG,DE,Munich,energy,,3808,10,1093573.51,2015-08-01
+SC-000427,LUMENFIELD MFG GMBH,DE,Berlin,manufacturing,lumenfieldmanufacturing.de,925,4,334136.15,2022-11-01
+SC-000428,Lumencrest Systems International Corporation,US,Austin,software,,87,1,72353.56,2022-12-01
+SC-000429,Harborline Stores PLC,GB,Manchester,retail,www.harborlinestores.co.uk,515,1,136161.33,2013-02-01
+SC-000430,Harborpeak Energy,IN,Bengaluru,energy,https://harborpeakenergy.in,27,1,225223.66,2022-09-01
+SC-000431,ORIONPEAK STORES,DE,Berlin,retail,https://orionpeakstores.de,844,3,227088.8,2016-09-01
+SC-000432,Lumenbridge Medical,US,Chicago,healthcare,www.lumenbridgemedical.com,405,1,124893.7,2021-08-01
+SC-000433,Garnitevale Medical Pvt Ltd,IN,Pune,healthcare,granitevalemedical.in,950,5,309920.85,2018-08-01
+SC-000434,Sterlingpath & Energy Pte Ltd,SG,Singapore,energy,,68,1,42767.36,2021-07-01
+SC-000435,Summitfield Energy Intl GmbH,DE,Berlin,energy,https://summitfieldenergyinternational.de,62,1,81916.52,2024-03-01
+SC-000436,BLUEVALE BIOTECH INTERNATIONAL PLC,GB,London,healthcare,https://www.bluevalebiotechinternational.co.uk/,353,1,90222.91,2022-11-01
+SC-000437,crescentview power limited,GB,Manchester,energy,crescentviewpower.co.uk,451,1,307214.44,2024-10-01
+SC-000438,Northcore Stores GmbH,DE,Munich,retail,,79,1,167718.08,2019-05-01
+SC-000439,Summitcrest Retail,DE,Munich,retail,https://summitcrestretail.de,535,1,116253.87,2013-08-01
+SC-000440,Atlasbridge Health,IN,Bengaluru,healthcare,,3138,6,727067.06,2022-01-01
+SC-000441,Pioneerbridge Retail,SG,Singapore,retail,https://www.pioneerbridgeretail.sg/,1426,3,323306.0,2020-04-01
+SC-000442,Cedarridge Freight,IN,Pune,logistics,www.cedarridgefreight.in,559,1,133866.33,2013-08-01
+SC-000443,Granitecore Power Intl GmbH,DE,Berlin,energy,www.granitecorepowerinternational.de,224,1,78063.78,2025-11-01
+SC-000444,ATLASLIGHT MEDICAL INC.,US,Chicago,healthcare,www.atlaslightmedical.com,202,1,111880.34,2016-09-01
+SC-000445,Lumendale Medical International Pte Ltd,SG,Singapore,healthcare,,790,2,177759.94,2016-07-01
+SC-000446,Northport Biotech,GB,London,healthcare,https://www.northportbiotech.co.uk/,867,1,62167.8,2012-10-01
+SC-000447,northpeak manufacturing pte ltd,SG,Singapore,manufacturing,www.northpeakmanufacturing.sg,2106,5,348023.66,2017-11-01
+SC-000448,Maplelight Health Inc.,US,Austin,healthcare,maplelighthealth.com,3127,6,789850.51,2015-04-01
+SC-000449,Northport Retail Inc,US,Austin,retail,,1738,7,1230841.79,2016-06-01
+SC-000450,Orionridge Logistics AG,DE,Berlin,logistics,https://orionridgelogistics.de,107,1,96565.39,2016-05-01
+SC-000451,Apexstone Manufacturing International Pte Ltd,SG,Singapore,manufacturing,https://apexstonemanufacturinginternational.sg,156,1,145675.89,2016-01-01
+SC-000452,Cedarcore Software Pte Ltd,SG,Singapore,software,cedarcoresoftware.sg,548,1,83707.81,2024-09-01
+SC-000453,Pioneervale Energy PLC,GB,Manchester,energy,,4536,15,2928999.28,2020-12-01
+SC-000454,APEXPOINT RETAIL LTD,IN,Mumbai,retail,https://www.apexpointretail.in/,533,2,406960.55,2020-02-01
+SC-000455,Orionwave Industries,US,Austin,manufacturing,https://orionwaveindustries.com,194,1,68561.24,2020-07-01
+SC-000456,Summitgate Biotech Inc.,US,Austin,healthcare,https://www.summitgatebiotech.com/,190,1,218565.75,2016-09-01
+SC-000457,Silvervale Logistics GmbH,DE,Berlin,logistics,silvervalelogistics.de,345,1,109791.47,2013-02-01
+SC-000458,Cedarlight Freight Intrenational,SG,Singapore,logistics,https://cedarlightfreightinternational.sg,1087,7,700394.01,2015-12-01
+SC-000459,CRESCENTVIEW HEALTH,IN,Mumbai,healthcare,https://www.crescentviewhealth.in/,290,1,73037.25,2022-12-01
+SC-000460,Vertexridge Inds Intl,SG,Singapore,manufacturing,www.vertexridgeindustriesinternational.sg,13840,25,4944613.83,2018-06-01
+SC-000461,Quantumwave Labs,US,New York,software,https://quantumwavelabs.com,126,1,95742.2,2017-10-01
+SC-000462,NOVAPOINT ENERGY GMBH,DE,Munich,energy,www.novapointenergy.de,569,1,250731.72,2016-09-01
+SC-000463,maplestar labs pvt ltd,IN,Bengaluru,software,https://maplestarlabs.in,900,2,338224.05,2024-12-01
+SC-000464,Atlasvale Stores Private Lmiited,IN,Pune,retail,www.atlasvalestores.in,233,1,274735.52,2012-05-01
+SC-000465,Orionfield & Systems,IN,Pune,software,orionfieldsystems.in,412,2,200496.46,2021-08-01
+SC-000466,Silvercrest Biotech International AG,DE,Munich,healthcare,silvercrestbiotechinternational.de,128,1,269516.45,2018-03-01
+SC-000467,bluefield biotech,DE,Berlin,healthcare,www.bluefieldbiotech.de,122,1,101807.47,2025-11-01
+SC-000468,summitcore biotech ltd,IN,Mumbai,healthcare,https://summitcorebiotech.in,559,1,107071.87,2015-01-01
+SC-000469,Harborview Logistix,IN,Pune,logistics,,75,1,101881.66,2014-05-01
+SC-000470,Blueworks Stores Intl,IN,Bengaluru,retail,https://www.blueworksstoresinternational.in/,1626,2,448271.65,2016-07-01
+SC-000471,Maplecore Power Ltd,GB,Manchester,energy,,350,1,139331.68,2023-02-01
+SC-000472,Novapoint Mfg,US,Chicago,manufacturing,https://www.novapointmanufacturing.com/,81,1,119178.67,2012-01-01
+SC-000473,ATLASFORGE MANUFACTURING,DE,Berlin,manufacturing,https://www.atlasforgemanufacturing.de/,1450,3,388390.15,2019-12-01
+SC-000474,Lumenwave Power Pvt Ltd,IN,Pune,energy,https://lumenwavepower.in,1992,4,1099879.92,2019-01-01
+SC-000475,Graniteridge Freight GmbH,DE,Munich,logistics,www.graniteridgefreight.de,30,1,46365.79,2022-07-01
+SC-000476,ApexforgeP ower,US,Austin,energy,https://www.apexforgepower.com/,223,1,168968.62,2017-04-01
+SC-000477,Crescentpath Biotech Pte. Ltd.,SG,Singapore,healthcare,https://crescentpathbiotech.sg,334,1,135585.99,2025-11-01
+SC-000478,Irondale Mfg,IN,Mumbai,manufacturing,,275,1,97532.73,2022-09-01
+SC-000479,Northfield Energy Private Limited,IN,Bengaluru,energy,https://northfieldenergy.in,7,1,50365.43,2012-01-01
+SC-000480,Atlasridge Freight Incorporated,US,Chicago,logistics,www.atlasridgefreight.com,3476,11,1566778.24,2025-04-01
+SC-000481,Orionforge Energy Ltd,GB,London,energy,https://www.orionforgeenergy.co.uk/,208,1,146961.99,2016-09-01
+SC-000482,Sterlingcore Energy,US,Chicago,energy,sterlingcoreenergy.com,182,1,33057.7,2019-08-01
+SC-000483,harborpath retail international pvt ltd,IN,Mumbai,retail,www.harborpathretailinternational.in,274,1,185227.9,2019-03-01
+SC-000484,Orioncrest Stores,IN,Bengaluru,retail,,275,2,299650.92,2013-08-01
+SC-000485,PIONEERPATH LABS LTD,IN,Mumbai,software,https://www.pioneerpathlabs.in/,568,1,87198.0,2015-01-01
+SC-000486,QUANTUMDALE & RETAIL INTERNATIONAL,US,Austin,retail,www.quantumdaleretailinternational.com,106,1,157680.27,2017-12-01
+SC-000487,sterlingvale power,IN,Pune,energy,www.sterlingvalepower.in,2079,2,154445.57,2016-01-01
+SC-000488,Northvale Freight,GB,Manchester,logistics,,725,1,94806.61,2013-12-01
+SC-000489,harborstone software ltd,IN,Bengaluru,software,https://harborstonesoftware.in,1829,9,550365.1,2014-05-01
+SC-000490,Harborpeak & Power,DE,Berlin,energy,www.harborpeakpower.de,623,1,246663.89,2025-09-01
+SC-000491,Ironcore Logistics Private Limited,IN,Bengaluru,logistics,ironcorelogistics.in,9128,26,2276543.37,2012-11-01
+SC-000492,Bluestone Stores,SG,Singapore,retail,,646,1,98935.48,2021-02-01
+SC-000493,Granitecrest Stores AG,DE,Berlin,retail,https://www.granitecreststores.de/,269,1,70808.97,2021-09-01
+SC-000494,Novagate Stores Ltd,IN,Pune,retail,https://www.novagatestores.in/,1814,2,485143.18,2021-12-01
+SC-000495,Vertexcore Power Intl Pte. Ltd.,SG,Singapore,energy,www.vertexcorepowerinternational.sg,291,1,22309.01,2012-02-01
+SC-000496,Silvergate Energy,IN,Bengaluru,energy,www.silvergateenergy.in,1271,4,295797.49,2016-03-01
+SC-000497,Northridge Software,IN,Pune,software,,50,1,27602.87,2015-04-01
+SC-000498,Apexline Software Ltd,GB,Manchester,software,https://www.apexlinesoftware.co.uk/,530,1,81767.45,2025-03-01
+SC-000499,Granitepath Industries Pte Ltd,SG,Singapore,manufacturing,,806,1,112908.79,2021-09-01
+SC-000500,HARBORLINE INDUSTRIES INC,US,Austin,manufacturing,,15,1,43059.71,2014-01-01
+SC-000501,Northgate Stores Intl Limited,GB,London,retail,,401,1,165781.54,2012-09-01
+SC-000502,Quantumview Power AG,DE,Munich,energy,https://quantumviewpower.de,54,1,136919.07,2015-06-01
+SC-000503,Graniteridge Systems Inc,US,New York,software,https://graniteridgesystems.com,5182,9,793445.82,2022-04-01
+SC-000504,Summitvale Energy Corporation,US,Chicago,energy,www.summitvaleenergy.com,21,1,150654.72,2015-06-01
+SC-000505,Oriongate & Medical,GB,London,healthcare,oriongatemedical.co.uk,4147,14,821168.13,2012-04-01
+SC-000506,Summitbridge Industries,US,Austin,manufacturing,summitbridgeindustries.com,302,1,39865.49,2017-05-01
+SC-000507,Lumenpeak Manufacturing,SG,Singapore,manufacturing,,323,1,93199.66,2012-12-01
+SC-000508,Silverbridge Logistix AG,DE,Munich,logistics,,1808,2,285300.56,2022-07-01
+SC-000509,Falconforge Stores Pvt Ltd,IN,Pune,retail,www.falconforgestores.in,99,1,104131.24,2016-01-01
+SC-000510,Cedarvale Logistics GmbH,DE,Munich,logistics,https://cedarvalelogistics.de,72,1,26334.78,2024-10-01
+SC-000511,Crescentgate Energy GmbH,DE,Berlin,energy,,1352,3,702624.7,2018-09-01
+SC-000512,Ironforge Sys Corp,US,New York,software,www.ironforgesystems.com,210,1,67407.97,2018-10-01
+SC-000513,Northwave Biotech Pte Ltd,SG,Singapore,healthcare,northwavebiotech.sg,810,1,60818.77,2019-09-01
+SC-000514,Setrlingwave Health Corp,US,Austin,healthcare,https://www.sterlingwavehealth.com/,370,1,95117.67,2014-06-01
+SC-000515,Bluepeak Energy Intenrational AG,DE,Munich,energy,,152,1,157304.6,2012-02-01
+SC-000516,Pioneerstone Labs Intl,SG,Singapore,software,www.pioneerstonelabsinternational.sg,1236,2,143338.84,2018-01-01
+SC-000517,Cedarforge & Logistics Pte Ltd,SG,Singapore,logistics,www.cedarforgelogistics.sg,492,1,63608.19,2013-08-01
+SC-000518,Silverwave Logistics GmbH,DE,Berlin,logistics,www.silverwavelogistics.de,377,1,325662.14,2019-05-01
+SC-000519,CRESCENTPATH ENERGY INC,US,Chicago,energy,www.crescentpathenergy.com,292,1,71530.45,2016-02-01
+SC-000520,Summitvale Manufacturing Ltd,GB,London,manufacturing,,29,1,191131.23,2019-06-01
+SC-000521,Ironwave Logistics International GmbH,DE,Munich,logistics,https://ironwavelogisticsinternational.de,3076,6,650201.77,2023-12-01
+SC-000522,STERLINGWAVE STORES INTERNATIONAL,GB,Manchester,retail,https://sterlingwavestoresinternational.co.uk,678,1,122057.84,2019-01-01
+SC-000523,NOVAFIELD & ENERGY,DE,Munich,energy,,1135,3,148271.9,2025-06-01
+SC-000524,APEXBRIDGE FREIGHT PLC,GB,Manchester,logistics,,313,1,44387.47,2018-04-01
+SC-000525,Mapledale Manufacturing,DE,Berlin,manufacturing,www.mapledalemanufacturing.de,3142,10,1035383.79,2025-03-01
+SC-000526,Bluelight & Logistics,SG,Singapore,logistics,https://bluelightlogistics.sg,355,1,57724.49,2023-05-01
+SC-000527,MAPLEGATE POWER GMBH,DE,Berlin,energy,maplegatepower.de,9,1,60630.86,2014-07-01
+SC-000528,Summitline Biotech,SG,Singapore,healthcare,summitlinebiotech.sg,603,1,50982.92,2019-02-01
+SC-000529,CRESCENTBRIDGE LABS GMBH,DE,Munich,software,www.crescentbridgelabs.de,205,1,157379.13,2025-08-01
+SC-000530,IRONGATE LOGISTICS PLC,GB,Manchester,logistics,,210,1,65419.52,2012-12-01
+SC-000531,Maplegate Manufacturing,US,Chicago,manufacturing,www.maplegatemanufacturing.com,1364,3,242216.9,2015-01-01
+SC-000532,Harborstar Logistix Private Limited,IN,Mumbai,logistics,,641,1,181718.32,2019-05-01
+SC-000533,Orionfield Retail,IN,Bengaluru,retail,https://orionfieldretail.in,1410,5,898532.95,2020-12-01
+SC-000534,NOVAPEAK & INDUSTRIES LTD,IN,Pune,manufacturing,www.novapeakindustries.in,691,1,64530.49,2025-07-01
+SC-000535,Vertexridge & Labs Pte. Ltd.,SG,Singapore,software,vertexridgelabs.sg,999,1,118710.91,2021-12-01
+SC-000536,orionline freight pte. ltd.,SG,Singapore,logistics,www.orionlinefreight.sg,83,1,428303.43,2024-12-01
+SC-000537,NOVAPOINT HEALTH PRIVATE LIMITED,IN,Mumbai,healthcare,https://www.novapointhealth.in/,863,3,251310.19,2015-11-01
+SC-000538,silverforge power intl limited,GB,Manchester,energy,https://silverforgepowerinternational.co.uk,270,1,64813.19,2019-05-01
+SC-000539,granitevale labs,IN,Bengaluru,software,,1391,3,134650.18,2020-01-01
+SC-000540,APEXPEAK LOGISTICS PTE. LTD.,SG,Singapore,logistics,,218,1,75957.0,2020-04-01
+SC-000541,Falconvale Stores,US,New York,retail,https://falconvalestores.com,603,3,521886.65,2014-06-01
+SC-000542,Vertexport Freight LLC,US,Austin,logistics,vertexportfreight.com,1400,3,123944.48,2017-06-01
+SC-000543,Vertexdale Inds,SG,Singapore,manufacturing,https://www.vertexdaleindustries.sg/,46,1,213544.05,2021-06-01
+SC-000544,MAPLECREST POWER LIMITED,GB,London,energy,maplecrestpower.co.uk,1193,2,218638.4,2021-01-01
+SC-000545,NORTHFIELD SOFTWARE PTE. LTD.,SG,Singapore,software,northfieldsoftware.sg,607,2,307054.6,2022-10-01
+SC-000546,Ironcrest Logistix Pvt Ltd,IN,Mumbai,logistics,https://www.ironcrestlogistics.in/,359,1,28260.96,2013-10-01
+SC-000547,Mapleview Freight International AG,DE,Berlin,logistics,https://www.mapleviewfreightinternational.de/,42,1,269631.31,2012-11-01
+SC-000548,Crescentpeak Retail International Ltd,GB,London,retail,https://crescentpeakretailinternational.co.uk,734,1,96204.88,2025-05-01
+SC-000549,Harborpath Medical Pvt Ltd,IN,Pune,healthcare,www.harborpathmedical.in,253,1,72492.67,2019-06-01
+SC-000550,Novabridge Industries,US,Chicago,manufacturing,,983,2,427368.76,2025-07-01
+SC-000551,MAPLECREST INDUSTRIES GMBH,DE,Munich,manufacturing,,516,1,48631.03,2023-03-01
+SC-000552,Crescentridge Power International Ltd,IN,Pune,energy,https://crescentridgepowerinternational.in,992,2,693436.18,2012-08-01
+SC-000553,Lumenpeak & Health,US,New York,healthcare,www.lumenpeakhealth.com,1080,1,53070.97,2019-10-01
+SC-000554,Oriongate Industries,IN,Bengaluru,manufacturing,oriongateindustries.in,151,1,67376.96,2015-11-01
+SC-000555,Vertexvale Medical International GmbH,DE,Munich,healthcare,www.vertexvalemedicalinternational.de,308,1,260028.8,2016-12-01
+SC-000556,VERTEXLIGHT MFG CORPORATION,US,Austin,manufacturing,,179,1,19927.37,2012-04-01
+SC-000557,Harborfield Retail Ltd,IN,Bengaluru,retail,,649,1,218748.39,2016-11-01
+SC-000558,Summitvale Freight GmbH,DE,Munich,logistics,www.summitvalefreight.de,76,1,48006.34,2020-06-01
+SC-000559,Vertexport & Biotech,GB,Manchester,healthcare,vertexportbiotech.co.uk,1852,9,560479.1,2017-07-01
+SC-000560,Orionpoint Stores Private Limited,IN,Pune,retail,https://www.orionpointstores.in/,182,1,51483.84,2021-07-01
+SC-000561,Atlasline Logsitics,GB,Manchester,logistics,https://www.atlaslinelogistics.co.uk/,341,1,30798.2,2016-01-01
+SC-000562,Quantumcore Biotech,GB,London,healthcare,www.quantumcorebiotech.co.uk,123,1,41321.08,2023-04-01
+SC-000563,Silverpeak Manufacturing Private Limited,IN,Mumbai,manufacturing,www.silverpeakmanufacturing.in,1111,3,828390.95,2012-01-01
+SC-000564,Granitework sRetail International Pte Ltd,SG,Singapore,retail,graniteworksretailinternational.sg,108,1,164880.43,2013-08-01
+SC-000565,CRESCENTPORT POWER LIMITED,GB,London,energy,https://www.crescentportpower.co.uk/,343,1,75099.19,2020-05-01
+SC-000566,Mapleline Logistix GmbH,DE,Berlin,logistics,www.maplelinelogistics.de,79,1,137653.77,2024-04-01
+SC-000567,BLUEPOINT & INDUSTRIES,DE,Munich,manufacturing,,913,1,241413.13,2012-11-01
+SC-000568,MAPLEDALE SYSTEMS INTERNATIONAL LLC,US,New York,software,https://www.mapledalesystemsinternational.com/,660,1,87913.06,2020-05-01
+SC-000569,BLUEPOINT LABS PVT LTD,IN,Pune,software,,111,1,230143.36,2014-10-01
+SC-000570,Crescentridge Labs Pte. Ltd.,SG,Singapore,software,https://www.crescentridgelabs.sg/,691,1,67993.95,2017-10-01
+SC-000571,Graniteport Software PLC,GB,London,software,https://www.graniteportsoftware.co.uk/,686,1,179213.08,2012-04-01
+SC-000572,Crescentlight Labs International Ltd,IN,Bengaluru,software,,3913,10,830226.16,2023-03-01
+SC-000573,NORTHWAVE INDUSTRIES INC.,US,Chicago,manufacturing,northwaveindustries.com,39,1,169810.6,2023-10-01
+SC-000574,ORIONPOINT SOFTWARE,IN,Mumbai,software,www.orionpointsoftware.in,598,1,81674.69,2023-09-01
+SC-000575,Sterlingdale Energy PLC,GB,London,energy,www.sterlingdaleenergy.co.uk,74,1,100139.42,2013-06-01
+SC-000576,Sterlingdale Medical Ltd,GB,Manchester,healthcare,https://sterlingdalemedical.co.uk,349,1,168769.81,2021-02-01
+SC-000577,Cedarforge Freight,DE,Munich,logistics,cedarforgefreight.de,164,1,99326.93,2023-10-01
+SC-000578,Lumengate Systems Corp,US,Austin,software,lumengatesystems.com,259,1,292137.38,2018-09-01
+SC-000579,Sterlingstar Stores,US,Chicago,retail,https://www.sterlingstarstores.com/,747,1,89088.07,2020-12-01
+SC-000580,Sterlingpath Biotech Corporation,US,Chicago,healthcare,,414,1,71797.14,2021-08-01
+SC-000581,cedargate logistics,GB,Manchester,logistics,cedargatelogistics.co.uk,414,1,73807.34,2022-02-01
+SC-000582,Granitepeak Retail PLC,GB,Manchester,retail,,537,2,419314.56,2020-04-01
+SC-000583,Lumenpath Energy International LLC,US,Austin,energy,,290,1,293091.94,2014-01-01
+SC-000584,Vertexpeak & Systems International Limited,GB,Manchester,software,vertexpeaksystemsinternational.co.uk,2130,5,759523.61,2013-07-01
+SC-000585,Vertexvale Retail International,IN,Mumbai,retail,www.vertexvaleretailinternational.in,20,1,112607.54,2023-11-01
+SC-000586,vertewxorks labs llc,US,Austin,software,,197,1,99449.7,2014-03-01
+SC-000587,Crescentdale Industries GmbH,DE,Munich,manufacturing,www.crescentdaleindustries.de,91,1,70413.48,2012-03-01
+SC-000588,Falconwave Retail Pvt Ltd,IN,Pune,retail,,402,1,66899.66,2025-01-01
+SC-000589,apexridge & power,US,New York,energy,https://apexridgepower.com,160,1,127679.94,2018-10-01
+SC-000590,Apexpoint Mfg Ltd,GB,London,manufacturing,apexpointmanufacturing.co.uk,111,1,87413.99,2018-11-01
+SC-000591,CRESCENTBRIDGE FREIGHT PLC,GB,Manchester,logistics,crescentbridgefreight.co.uk,47,1,136228.71,2025-03-01
+SC-000592,quantumlight power international,DE,Berlin,energy,,739,6,551437.87,2015-12-01
+SC-000593,Vertexcore Biotech AG,DE,Munich,healthcare,,275,1,177190.5,2025-04-01
+SC-000594,Atlasline Industries Inc,US,Austin,manufacturing,https://atlaslineindustries.com,131,1,461925.12,2025-07-01
+SC-000595,Blueworks Biotech International,US,Chicago,healthcare,https://www.blueworksbiotechinternational.com/,298,1,116902.76,2015-12-01
+SC-000596,Silvercore Medical Corporation,US,Chicago,healthcare,https://silvercoremedical.com,2615,3,166888.76,2021-05-01
+SC-000597,Novabridge Logsitics,GB,Manchester,logistics,www.novabridgelogistics.co.uk,1871,5,355602.59,2022-05-01
+SC-000598,Apexcrest Health Pte Ltd,SG,Singapore,healthcare,https://www.apexcresthealth.sg/,129,1,70578.34,2014-08-01
+SC-000599,Vertexgate Medical,GB,Manchester,healthcare,vertexgatemedical.co.uk,114,1,46594.21,2016-03-01
+SC-000600,Ironworks & Logistics,GB,London,logistics,https://ironworkslogistics.co.uk,1880,4,282118.78,2016-11-01
+SC-000601,Pioneerpeak Power Corporation,US,New York,energy,https://www.pioneerpeakpower.com/,324,1,85578.81,2021-11-01
+SC-000602,Vertexworks Freight,SG,Singapore,logistics,,532,1,347495.28,2016-12-01
+SC-000603,Sterlingport Freight Ltd,IN,Mumbai,logistics,www.sterlingportfreight.in,120,1,210842.76,2014-12-01
+SC-000604,Quantumpath Stores,GB,Manchester,retail,,74,1,205434.66,2017-11-01
+SC-000605,summitwave mfg inc.,US,Chicago,manufacturing,summitwavemanufacturing.com,1312,3,851839.77,2024-12-01
+SC-000606,Quantumvale Software Limited,GB,London,software,https://quantumvalesoftware.co.uk,409,2,143446.94,2023-05-01
+SC-000607,Northlight Power International Pte. Ltd.,SG,Singapore,energy,https://northlightpowerinternational.sg,821,1,43344.48,2024-08-01
+SC-000608,Silverwave Labs,SG,Singapore,software,https://silverwavelabs.sg,951,2,145997.63,2015-06-01
+SC-000609,Cedardale Labs AG,DE,Berlin,software,https://www.cedardalelabs.de/,1487,3,275310.03,2024-02-01
+SC-000610,PIONEERLIGHT RETAIL,GB,London,retail,pioneerlightretail.co.uk,84,1,113976.8,2020-12-01
+SC-000611,Granitepeak Power International AG,DE,Munich,energy,,123,1,85045.87,2018-10-01
+SC-000612,Summitbridge Biotech,IN,Pune,healthcare,https://www.summitbridgebiotech.in/,140,1,32813.02,2014-02-01
+SC-000613,Falconlight Systems International Private Limited,IN,Bengaluru,software,,836,2,419363.6,2024-12-01
+SC-000614,Bluegate Logistics Ltd,GB,Manchester,logistics,https://bluegatelogistics.co.uk,2052,5,297486.72,2022-09-01
+SC-000615,Pioneerbridge Power GmbH,DE,Berlin,energy,https://pioneerbridgepower.de,69,1,54653.75,2016-04-01
+SC-000616,Pioneerwave Manufacturing International Corporation,US,New York,manufacturing,pioneerwavemanufacturinginternational.com,882,3,257211.67,2022-01-01
+SC-000617,Apexcore Stores GmbH,DE,Berlin,retail,www.apexcorestores.de,249,1,124219.8,2014-02-01
+SC-000618,Northwave Freight,SG,Singapore,logistics,https://northwavefreight.sg,910,1,69718.99,2014-04-01
+SC-000619,pioneerstar systems,US,New York,software,https://www.pioneerstarsystems.com/,66,1,160212.81,2016-05-01
+SC-000620,Lumenview Retail Ltd,IN,Bengaluru,retail,,2241,7,417289.68,2014-11-01
+SC-000621,Atlasview Power Pte. Ltd.,SG,Singapore,energy,www.atlasviewpower.sg,315,1,84523.44,2019-08-01
+SC-000622,Cedarstone Health International Corp,US,Chicago,healthcare,,373,1,80188.73,2012-02-01
+SC-000623,Summitport & Labs Ltd,GB,London,software,www.summitportlabs.co.uk,180,1,56090.89,2025-08-01
+SC-000624,Atlasview Medical AG,DE,Berlin,healthcare,atlasviewmedical.de,44,1,352294.29,2012-03-01
+SC-000625,MAPLEFORGE LOGISTICS LTD,IN,Bengaluru,logistics,www.mapleforgelogistics.in,297,1,66409.4,2013-07-01
+SC-000626,Sterlingpeak Stores Intl Corporation,US,Chicago,retail,https://www.sterlingpeakstoresinternational.com/,279,1,148891.44,2020-11-01
+SC-000627,Falconridge Stores Ltd,GB,London,retail,,692,1,78102.82,2021-06-01
+SC-000628,CRESCENTLINE FREIGHT PRIVATE LIMITED,IN,Mumbai,logistics,www.crescentlinefreight.in,636,1,48890.87,2021-12-01
+SC-000629,Apexstone Energy Inc.,US,Austin,energy,https://apexstoneenergy.com,69,1,240701.51,2025-11-01
+SC-000630,ORIONBRIDGE INDUSTRIES,SG,Singapore,manufacturing,https://www.orionbridgeindustries.sg/,303,1,127117.92,2015-12-01
+SC-000631,Novapoint Industries,GB,Manchester,manufacturing,https://www.novapointindustries.co.uk/,5582,14,1741481.77,2023-12-01
+SC-000632,quantumpoint industries,US,Chicago,manufacturing,,607,1,84801.01,2018-07-01
+SC-000633,Crescentfield Medical Pvt Ltd,IN,Bengaluru,healthcare,,714,3,159820.52,2019-01-01
+SC-000634,Falconpeak Stores AG,DE,Berlin,retail,www.falconpeakstores.de,626,1,55579.2,2025-04-01
+SC-000635,MAPLELINE INDUSTRIES CORP,US,Austin,manufacturing,www.maplelineindustries.com,275,1,88545.17,2020-11-01
+SC-000636,Crescentforge Freight,US,Chicago,logistics,https://www.crescentforgefreight.com/,1804,6,510088.05,2023-05-01
+SC-000637,Summitcore Retail Corp,US,Chicago,retail,www.summitcoreretail.com,13,1,283471.41,2014-04-01
+SC-000638,Lumendale Biotech,SG,Singapore,healthcare,,657,1,81726.77,2014-12-01
+SC-000639,crescentpath freight ltd,IN,Mumbai,logistics,www.crescentpathfreight.in,636,1,223284.91,2023-11-01
+SC-000640,IRONBRIDGE ENERGY INC.,US,Austin,energy,https://www.ironbridgeenergy.com/,54,1,93226.87,2014-10-01
+SC-000641,Harborpoint Biotech Pte. Ltd.,SG,Singapore,healthcare,,350,1,19859.69,2022-12-01
+SC-000642,PIONEERVIEW POWER INTERNATIONAL,DE,Munich,energy,https://pioneerviewpowerinternational.de,94,1,240776.24,2018-11-01
+SC-000643,ORIONWORKS LOGISTICS INC.,US,New York,logistics,,394,1,207997.88,2020-05-01
+SC-000644,VERTEXDALE ENERGY PTE. LTD.,SG,Singapore,energy,,154,1,111108.44,2024-07-01
+SC-000645,Quantumworks Energy Intl Pte. Ltd.,SG,Singapore,energy,https://www.quantumworksenergyinternational.sg/,56,1,121100.16,2022-06-01
+SC-000646,Novapath Manufacturin gPrivate Limited,IN,Bengaluru,manufacturing,novapathmanufacturing.in,1393,3,570538.12,2024-03-01
+SC-000647,CEDARVALE RETAIL INTERNATIONAL LIMITED,GB,Manchester,retail,cedarvaleretailinternational.co.uk,218,1,142231.24,2021-11-01
+SC-000648,Harborline & Retail Pvt Ltd,IN,Mumbai,retail,https://www.harborlineretail.in/,2670,6,560857.3,2021-04-01
+SC-000649,Harborstar Medical AG,DE,Berlin,healthcare,harborstarmedical.de,68,1,261229.47,2024-03-01
+SC-000650,Sterlinglight Logistix Pvt Ldt,IN,Pune,logistics,sterlinglightlogistics.in,579,1,237495.53,2014-12-01
+SC-000651,Falconfield Power Pvt Ltd,IN,Pune,energy,https://www.falconfieldpower.in/,111,1,81379.31,2021-07-01
+SC-000652,Cedargate Power Pte. Ltd.,SG,Singapore,energy,www.cedargatepower.sg,102,1,66263.67,2013-03-01
+SC-000653,lumenpath manufacturing international,DE,Munich,manufacturing,www.lumenpathmanufacturinginternational.de,261,1,78807.46,2014-08-01
+SC-000654,Crescentstone Power Pte Ltd,SG,Singapore,energy,https://www.crescentstonepower.sg/,616,2,353304.58,2022-09-01
+SC-000655,Vertexforge Medical LLC,US,New York,healthcare,https://vertexforgemedical.com,234,1,103443.09,2015-02-01
+SC-000656,Harborcore Energy International Limited,GB,Manchester,energy,https://harborcoreenergyinternational.co.uk,334,1,107761.85,2014-04-01
+SC-000657,Atlascrest Mfg Intl Pvt Ltd,IN,Pune,manufacturing,,497,3,453750.33,2017-08-01
+SC-000658,Apexcore Power Private Limited,IN,Pune,energy,https://www.apexcorepower.in/,965,2,108113.14,2012-12-01
+SC-000659,Bluefield Power PLC,GB,London,energy,https://www.bluefieldpower.co.uk/,46,1,95929.59,2019-07-01
+SC-000660,Bluestone & Manufacturing Pte. Ltd.,SG,Singapore,manufacturing,,58,1,85087.22,2025-04-01
+SC-000661,falconline freight pte ltd,SG,Singapore,logistics,,1020,2,160851.83,2015-06-01
+SC-000662,STERLINGFIELD & ENERGY PTE LTD,SG,Singapore,energy,https://www.sterlingfieldenergy.sg/,365,1,70531.84,2021-03-01
+SC-000663,Quantumstone Logistics Inc,US,Austin,logistics,https://www.quantumstonelogistics.com/,786,1,62269.48,2015-06-01
+SC-000664,Blueforge Reatil Ltd,IN,Bengaluru,retail,www.blueforgeretail.in,84,1,76736.24,2020-03-01
+SC-000665,summitlight retail international private limited,IN,Mumbai,retail,https://summitlightretailinternational.in,1415,2,211917.65,2020-10-01
+SC-000666,Silverview Freight,DE,Berlin,logistics,https://silverviewfreight.de,3240,3,498520.63,2018-11-01
+SC-000667,Atlaspeak Manufacturing Pte. Ltd.,SG,Singapore,manufacturing,https://atlaspeakmanufacturing.sg,316,1,209120.45,2023-04-01
+SC-000668,Falconfield & Industries Ltd,GB,London,manufacturing,,595,2,311153.28,2021-10-01
+SC-000669,vertexstar medical,DE,Berlin,healthcare,https://vertexstarmedical.de,231,1,70576.9,2021-08-01
+SC-000670,Ironvale & Energy AG,DE,Berlin,energy,www.ironvaleenergy.de,3482,9,1128066.1,2014-04-01
+SC-000671,BLUELINE ENERGY AG,DE,Munich,energy,www.bluelineenergy.de,384,1,126510.93,2021-11-01
+SC-000672,Silverpoint Health Ltd,IN,Pune,healthcare,,732,1,41219.46,2014-02-01
+SC-000673,Atlasforge Software,IN,Pune,software,,1657,2,253166.13,2014-02-01
+SC-000674,Silverforge Medical,GB,London,healthcare,https://silverforgemedical.co.uk,190,1,155077.63,2015-05-01
+SC-000675,Maplepath Medical International,GB,Manchester,healthcare,www.maplepathmedicalinternational.co.uk,1491,5,559749.98,2012-04-01
+SC-000676,Lumenvale Logistix PLC,GB,Manchester,logistics,www.lumenvalelogistics.co.uk,1440,5,618526.39,2023-10-01
+SC-000677,IRONSTAR SYS PTE LTD,SG,Singapore,software,www.ironstarsystems.sg,510,2,165855.01,2024-02-01
+SC-000678,Sterlingstar Biotech,GB,Manchester,healthcare,https://www.sterlingstarbiotech.co.uk/,53,1,253428.5,2015-06-01
+SC-000679,Summitdale Biotech Private Limited,IN,Mumbai,healthcare,summitdalebiotech.in,130,1,48880.45,2021-10-01
+SC-000680,Quantumforge Logistix Ltd,IN,Mumbai,logistics,https://quantumforgelogistics.in,123,1,81558.52,2018-07-01
+SC-000681,QUANTUMVIEW HEALTH INTL PTE. LTD.,SG,Singapore,healthcare,www.quantumviewhealthinternational.sg,1719,2,296792.53,2025-07-01
+SC-000682,HARBORBRIDGE POWER INTL GMBH,DE,Berlin,energy,https://harborbridgepowerinternational.de,96,1,96398.93,2014-05-01
+SC-000683,Northline Manufacturing International Pvt Ltd,IN,Mumbai,manufacturing,https://www.northlinemanufacturinginternational.in/,494,1,18023.89,2020-12-01
+SC-000684,Graniteridge Industries International,SG,Singapore,manufacturing,graniteridgeindustriesinternational.sg,503,1,51465.03,2020-11-01
+SC-000685,MAPLEDALE & BIOTECH,IN,Mumbai,healthcare,mapledalebiotech.in,2542,5,332643.37,2014-11-01
+SC-000686,Silverport Mfg Limited,GB,London,manufacturing,www.silverportmanufacturing.co.uk,149,1,85668.47,2012-05-01
+SC-000687,granitewave retail inc.,US,Chicago,retail,granitewaveretail.com,289,1,98276.3,2014-03-01
+SC-000688,Ironstar Power Incorporated,US,Chicago,energy,https://ironstarpower.com,1344,1,75312.34,2023-03-01
+SC-000689,Apexbridge Labs Intl Pvt Ltd,IN,Mumbai,software,,188,1,199195.06,2014-06-01
+SC-000690,sterlingcore retail,SG,Singapore,retail,,198,1,46841.5,2015-04-01
+SC-000691,Granitecore & Industries GmbH,DE,Munich,manufacturing,https://www.granitecoreindustries.de/,259,1,240986.05,2017-01-01
+SC-000692,Atlasfield Power Private Limited,IN,Pune,energy,www.atlasfieldpower.in,288,1,94304.35,2023-01-01
+SC-000693,BLUEPEAK FREIGHT GMBH,DE,Berlin,logistics,,208,1,37729.59,2015-12-01
+SC-000694,Lumenridge Retail,SG,Singapore,retail,,508,1,75502.54,2016-12-01
+SC-000695,NORTHFORGE POWER,US,Austin,energy,northforgepower.com,158,1,90668.85,2013-08-01
+SC-000696,Vertexworks Manufacturing,GB,London,manufacturing,,66,1,117139.82,2017-01-01
+SC-000697,Granitepath Medical International,SG,Singapore,healthcare,https://www.granitepathmedicalinternational.sg/,1643,3,372694.27,2023-02-01
+SC-000698,Crescentcrest Logistics International LLC,US,Chicago,logistics,crescentcrestlogisticsinternational.com,691,3,613752.11,2021-10-01
+SC-000699,LUMENDALE SYSTEMS INTERNATIONAL INCORPORATED,US,New York,software,https://www.lumendalesystemsinternational.com/,1057,2,171428.09,2014-11-01
+SC-000700,FALCONGATE FREIGHT INTERNATIONAL GMBH,DE,Munich,logistics,,67,1,210988.77,2021-12-01
+SC-000701,Crescentwave & Logistics Pte. Ltd.,SG,Singapore,logistics,www.crescentwavelogistics.sg,15,1,145077.94,2015-08-01
+SC-000702,PioneerpointS tores Intl Corporation,US,Austin,retail,,55,1,44064.76,2013-02-01
+SC-000703,Apexpoint Stores Privat eLimited,IN,Bengaluru,retail,https://www.apexpointstores.in/,1042,2,287027.25,2024-12-01
+SC-000704,Lumencore Freigh tPte Ltd,SG,Singapore,logistics,lumencorefreight.sg,729,1,51584.69,2024-11-01
+SC-000705,CEDARLIGHT SYSTEMS AG,DE,Berlin,software,https://cedarlightsystems.de,1110,2,542203.17,2014-10-01
+SC-000706,Sterlingport & Logistics,DE,Munich,logistics,,195,1,96815.78,2014-08-01
+SC-000707,crescentfield energy,DE,Berlin,energy,,87,1,90746.91,2012-06-01
+SC-000708,Apexstar Industries International Ltd,GB,London,manufacturing,https://apexstarindustriesinternational.co.uk,1749,2,249857.63,2021-11-01
+SC-000709,Granitewave Medical,DE,Munich,healthcare,,1518,2,268052.37,2020-04-01
+SC-000710,Granitebridge Health AG,DE,Munich,healthcare,,559,1,66665.03,2020-09-01
+SC-000711,SILVERSTAR SOFTWARE LIMITED,GB,Manchester,software,silverstarsoftware.co.uk,177,1,75187.88,2025-06-01
+SC-000712,PIONEERDALE MANUFACTURING PTE. LTD.,SG,Singapore,manufacturing,https://www.pioneerdalemanufacturing.sg/,320,1,88544.98,2019-05-01
+SC-000713,Graniteworks Manufacturing,GB,Manchester,manufacturing,,512,1,154631.69,2021-12-01
+SC-000714,Summitstone & Stores Inc.,US,Chicago,retail,www.summitstonestores.com,578,1,85442.41,2014-06-01
+SC-000715,Harbordale Labs Inc,US,Chicago,software,,1119,2,138310.06,2024-10-01
+SC-000716,ATLASPOINT MEDICAL PTE LTD,SG,Singapore,healthcare,,232,1,104572.33,2025-07-01
+SC-000717,Summitstar Power Intl AG,DE,Munich,energy,www.summitstarpowerinternational.de,732,1,161400.43,2018-04-01
+SC-000718,QUANTUMCORE SOFTWARE,IN,Pune,software,https://quantumcoresoftware.in,2134,4,204840.33,2022-03-01
+SC-000719,Silverpoint Health Intl Incorporated,US,Chicago,healthcare,,253,1,77509.49,2022-09-01
+SC-000720,APEXBRIDGE & RETAIL LTD,IN,Bengaluru,retail,apexbridgeretail.in,1965,4,133255.94,2012-05-01
+SC-000721,harbordale stores,DE,Munich,retail,,308,1,19461.58,2022-02-01
+SC-000722,Apexgate Power Pvt Ltd,IN,Mumbai,energy,apexgatepower.in,294,1,84215.72,2023-06-01
+SC-000723,Orionstar Logistics,SG,Singapore,logistics,https://orionstarlogistics.sg,667,1,92268.5,2012-02-01
+SC-000724,falconcore manufacturing limited,GB,London,manufacturing,https://falconcoremanufacturing.co.uk,193,1,134439.63,2024-03-01
+SC-000725,Atlascore Medical GmbH,DE,Munich,healthcare,https://www.atlascoremedical.de/,96,1,326323.89,2019-11-01
+SC-000726,Maplelight Retail International AG,DE,Munich,retail,https://www.maplelightretailinternational.de/,36,1,77755.36,2016-07-01
+SC-000727,LUMENWORKS MANUFACTURING,IN,Pune,manufacturing,,144,1,139798.91,2016-11-01
+SC-000728,Bluefield Freight Ltd,IN,Mumbai,logistics,,811,1,77700.82,2015-03-01
+SC-000729,falcongate stores inc,US,Austin,retail,falcongatestores.com,148,1,161394.11,2016-12-01
+SC-000730,SUMMITWORKS HEALTH INTERNATIONAL PTE LTD,SG,Singapore,healthcare,https://www.summitworkshealthinternational.sg/,438,1,294307.25,2021-10-01
+SC-000731,Summitbridge Manufacturing Corporation,US,New York,manufacturing,,3127,6,282827.13,2023-04-01
+SC-000732,pioneercore energy ltd,GB,Manchester,energy,www.pioneercoreenergy.co.uk,572,1,51413.64,2023-01-01
+SC-000733,Pioneerpath Power GmbH,DE,Munich,energy,,2733,6,487313.94,2018-04-01
+SC-000734,Quantumpeak Biotech International Pte Ltd,SG,Singapore,healthcare,,678,2,559143.25,2020-04-01
+SC-000735,Silverport Power International Pte. Ltd.,SG,Singapore,energy,www.silverportpowerinternational.sg,3539,4,214569.29,2022-10-01
+SC-000736,Granitefield Power Pte. Ltd.,SG,Singapore,energy,,49,1,80319.11,2019-07-01
+SC-000737,BLUEPORT LABS INTERNATIONAL,US,New York,software,https://www.blueportlabsinternational.com/,3199,10,2016552.48,2022-04-01
+SC-000738,HARBORLIGHT BIOTECH LTD,IN,Mumbai,healthcare,,2395,5,308720.37,2022-09-01
+SC-000739,Summitcore Industries,GB,London,manufacturing,www.summitcoreindustries.co.uk,223,1,75921.56,2018-09-01
+SC-000740,SILVELRINE & RETAIL INTERNATIONAL,DE,Munich,retail,www.silverlineretailinternational.de,643,1,96008.09,2015-04-01
+SC-000741,Ironcrest Software GmbH,DE,Berlin,software,ironcrestsoftware.de,1014,4,277946.5,2020-08-01
+SC-000742,Ironport & Power,DE,Munich,energy,https://www.ironportpower.de/,336,1,24576.43,2019-07-01
+SC-000743,Cedarpoint Labs PLC,GB,Manchester,software,,886,3,888591.12,2022-09-01
+SC-000744,Ironvale Health,GB,Manchester,healthcare,,2827,3,278815.9,2014-08-01
+SC-000745,APEXVALE POWER INTERNATIONAL,SG,Singapore,energy,https://apexvalepowerinternational.sg,337,1,141131.7,2021-07-01
+SC-000746,Apexview Logistics GmbH,DE,Berlin,logistics,www.apexviewlogistics.de,4240,12,2168913.28,2023-11-01
+SC-000747,Apexstar Logistix,US,New York,logistics,https://www.apexstarlogistics.com/,107,1,43429.97,2020-07-01
+SC-000748,Harborport Labs Pte. Ltd.,SG,Singapore,software,www.harborportlabs.sg,292,1,239938.5,2016-10-01
+SC-000749,Bluewave Systems Pvt Ltd,IN,Pune,software,https://www.bluewavesystems.in/,954,2,164230.5,2022-11-01
+SC-000750,Summitpath Power Limited,GB,London,energy,https://www.summitpathpower.co.uk/,182,1,79100.31,2016-11-01
+SC-000751,Vertexfield Software,IN,Mumbai,software,vertexfieldsoftware.in,160,1,61144.74,2024-08-01
+SC-000752,Crescentstar Industries Pvt Ltd,IN,Bengaluru,manufacturing,https://crescentstarindustries.in,15,1,132368.64,2022-11-01
+SC-000753,Northdale Stores GA,DE,Berlin,retail,,923,2,559160.35,2021-09-01
+SC-000754,falconlight medical limited,GB,London,healthcare,https://falconlightmedical.co.uk,1568,6,469335.46,2015-07-01
+SC-000755,Ironworks Stores International GmbH,DE,Munich,retail,ironworksstoresinternational.de,259,1,79833.78,2016-05-01
+SC-000756,VERTEXBRIDGE & LOGISTICS,US,Chicago,logistics,vertexbridgelogistics.com,444,1,95931.86,2017-03-01
+SC-000757,MAPLEDALE FREIGHT,IN,Mumbai,logistics,mapledalefreight.in,215,1,134714.22,2018-07-01
+SC-000758,HARBORLIGHT & FREIGHT PVT LTD,IN,Mumbai,logistics,https://harborlightfreight.in,323,1,84254.5,2017-09-01
+SC-000759,Blueport Mfg GmbH,DE,Munich,manufacturing,https://blueportmanufacturing.de,9430,14,870637.06,2022-09-01
+SC-000760,Orionstone Energy PLC,GB,Manchester,energy,orionstoneenergy.co.uk,471,1,251233.17,2020-06-01
+SC-000761,LUMENSTAR STORES INTERNATIONAL,GB,London,retail,https://lumenstarstoresinternational.co.uk,506,2,98780.73,2012-01-01
+SC-000762,Blueview Logistix Limited,GB,Manchester,logistics,https://blueviewlogistics.co.uk,6425,30,1525868.75,2022-04-01
+SC-000763,Crescentstone Sys,DE,Munich,software,www.crescentstonesystems.de,370,1,41242.19,2025-08-01
+SC-000764,Orionbridge Health International Private Limited,IN,Mumbai,healthcare,https://www.orionbridgehealthinternational.in/,484,1,78807.22,2023-01-01
+SC-000765,Ironwave Retail Pvt Ltd,IN,Pune,retail,,863,2,205304.31,2013-11-01
+SC-000766,LUMENPOINT INDUSTRIES GMBH,DE,Berlin,manufacturing,https://lumenpointindustries.de,376,2,248650.82,2014-10-01
+SC-000767,lumenfield labs pte. ltd.,SG,Singapore,software,https://www.lumenfieldlabs.sg/,281,1,74137.45,2025-06-01
+SC-000768,Crescentwave Power,US,New York,energy,,145,1,142478.68,2017-06-01
+SC-000769,HARBORWAVE STORES LIMITED,GB,Manchester,retail,www.harborwavestores.co.uk,3270,10,1900692.7,2025-03-01
+SC-000770,atlaspoint retail pvt ltd,IN,Bengaluru,retail,https://www.atlaspointretail.in/,6012,10,781102.7,2024-01-01
+SC-000771,Ironstar & Biotech Corp,US,Chicago,healthcare,https://ironstarbiotech.com,1144,3,305161.94,2021-04-01
+SC-000772,Summitpoint Medical International Ltd,GB,London,healthcare,https://summitpointmedicalinternational.co.uk,122,1,101368.0,2012-08-01
+SC-000773,harborgate retail international,DE,Berlin,retail,,111,1,106980.59,2014-12-01
+SC-000774,BLUEPEAK MANUFACTURING INTERNATIONAL,DE,Berlin,manufacturing,www.bluepeakmanufacturinginternational.de,2119,4,215984.77,2013-02-01
+SC-000775,bluebridge systems,US,Chicago,software,,523,3,348874.92,2019-08-01
+SC-000776,Silverlight Power,DE,Munich,energy,,1048,4,85108.87,2017-09-01
+SC-000777,Apexworks & Biotech PLC,GB,London,healthcare,www.apexworksbiotech.co.uk,224,1,85651.04,2022-06-01
+SC-000778,BLUEPOINT ENERGY,DE,Berlin,energy,https://www.bluepointenergy.de/,160,1,49863.35,2017-10-01
+SC-000779,Oriondale Retail Intl AG,DE,Berlin,retail,https://oriondaleretailinternational.de,19,1,121601.62,2016-10-01
+SC-000780,summitcrest inds limited,GB,London,manufacturing,www.summitcrestindustries.co.uk,396,1,92771.5,2017-03-01
+SC-000781,Cedarwave & Systems,IN,Pune,software,https://www.cedarwavesystems.in/,203,1,154152.31,2013-06-01
+SC-000782,Silverwave Medical International,IN,Mumbai,healthcare,www.silverwavemedicalinternational.in,43,1,144262.41,2012-06-01
+SC-000783,lumenvale labs inc,US,New York,software,,384,1,15713.56,2013-02-01
+SC-000784,Lumenstone Retail PLC,GB,Manchester,retail,,791,3,918977.44,2012-09-01
+SC-000785,Summitlight Biotech Ltd,GB,London,healthcare,www.summitlightbiotech.co.uk,73,1,76745.47,2019-09-01
+SC-000786,Blueport Energy Corporation,US,New York,energy,,655,1,265440.19,2014-02-01
+SC-000787,Apexforge Biotech Pte. Ltd.,SG,Singapore,healthcare,www.apexforgebiotech.sg,99,1,98074.41,2019-09-01
+SC-000788,Granitelight Power Ltd,GB,London,energy,,1302,1,103340.44,2016-07-01
+SC-000789,Orionstar Energy,US,New York,energy,,5102,11,764111.01,2024-07-01
+SC-000790,pioneerport power international ag,DE,Berlin,energy,,600,1,189520.47,2021-10-01
+SC-000791,graniteworks & medical limited,GB,London,healthcare,,48,1,87493.37,2021-10-01
+SC-000792,CEDARPEAK HEALTH PTE LTD,SG,Singapore,healthcare,https://www.cedarpeakhealth.sg/,300,1,155726.13,2015-10-01
+SC-000793,Atlaslight Software,IN,Mumbai,software,atlaslightsoftware.in,57,1,98777.81,2023-02-01
+SC-000794,quantumpeak biotech corporation,US,New York,healthcare,https://www.quantumpeakbiotech.com/,214,1,85949.61,2016-12-01
+SC-000795,apexstar energy,GB,Manchester,energy,https://www.apexstarenergy.co.uk/,280,1,86263.42,2021-06-01
+SC-000796,Quantumline Energy Limited,GB,London,energy,https://quantumlineenergy.co.uk,71,1,53193.46,2024-09-01
+SC-000797,Summibtridge Labs Pvt Ltd,IN,Mumbai,software,,124,1,52538.13,2023-10-01
+SC-000798,Bluegate Health International GmbH,DE,Munich,healthcare,https://www.bluegatehealthinternational.de/,266,1,173655.58,2013-08-01
+SC-000799,Harborpeak Inds PLC,GB,Manchester,manufacturing,https://harborpeakindustries.co.uk,22,1,104334.71,2024-02-01
+SC-000800,vertexgate energy,US,Chicago,energy,https://www.vertexgateenergy.com/,183,1,41106.43,2020-02-01
+SC-000801,Novalight Energy,DE,Munich,energy,https://www.novalightenergy.de/,2294,3,190754.26,2025-09-01
+SC-000802,Sterlinggate Freight Pte Ltd,SG,Singapore,logistics,sterlinggatefreight.sg,342,1,155705.28,2016-06-01
+SC-000803,QUANTUMRIDGE MEDICAL,GB,London,healthcare,www.quantumridgemedical.co.uk,293,1,101896.29,2025-02-01
+SC-000804,Novagate Health Private Limited,IN,Pune,healthcare,https://www.novagatehealth.in/,275,1,69165.51,2021-04-01
+SC-000805,NOVAFORGE STORES,SG,Singapore,retail,novaforgestores.sg,139,1,37131.4,2024-12-01
+SC-000806,Crescentcore Retail,DE,Munich,retail,,370,1,76860.48,2022-07-01
+SC-000807,LUMENPORT MEDICAL,US,New York,healthcare,lumenportmedical.com,176,1,229205.36,2015-09-01
+SC-000808,Lumenpoint Health AG,DE,Munich,healthcare,lumenpointhealth.de,165,1,184886.68,2015-12-01
+SC-000809,Pioneervale Industries PLC,GB,Manchester,manufacturing,pioneervaleindustries.co.uk,231,1,43949.42,2012-05-01
+SC-000810,crescentcore & energy international,DE,Berlin,energy,,1542,3,334954.82,2013-06-01
+SC-000811,Graniteline Energy,IN,Pune,energy,www.granitelineenergy.in,1965,2,211605.06,2019-02-01
+SC-000812,Harborview Power Pte. Ltd.,SG,Singapore,energy,,719,1,75911.44,2021-01-01
+SC-000813,Harbordale Software PLC,GB,Manchester,software,https://www.harbordalesoftware.co.uk/,104,1,87946.51,2013-06-01
+SC-000814,apexport retail plc,GB,Manchester,retail,https://www.apexportretail.co.uk/,170,1,29323.63,2015-10-01
+SC-000815,Quantumgate Logistics Limited,GB,Manchester,logistics,www.quantumgatelogistics.co.uk,2073,4,428501.43,2018-11-01
+SC-000816,Ironlight Medical PLC,GB,Manchester,healthcare,,626,2,311373.19,2012-03-01
+SC-000817,Quantumwave Energy AG,DE,Munich,energy,,34,1,275388.9,2014-09-01
+SC-000818,vertexline health,US,Austin,healthcare,vertexlinehealth.com,821,4,603271.39,2012-02-01
+SC-000819,Apexstar Power Limited,GB,London,energy,https://apexstarpower.co.uk,597,1,80603.52,2018-05-01
+SC-000820,BLUEVALE POWER GMBH,DE,Munich,energy,www.bluevalepower.de,274,1,88021.49,2019-04-01
+SC-000821,falconworks stores intl private limited,IN,Pune,retail,falconworksstoresinternational.in,318,1,86484.05,2016-11-01
+SC-000822,Maplepoint & Labs GmbH,DE,Berlin,software,www.maplepointlabs.de,681,1,118205.04,2012-10-01
+SC-000823,Irondale Stores,GB,Manchester,retail,irondalestores.co.uk,257,1,415993.93,2021-03-01
+SC-000824,Harbordale Biotech Private Limited,IN,Bengaluru,healthcare,https://harbordalebiotech.in,1104,4,928515.14,2024-06-01
+SC-000825,Sterlingforge Power Intl,SG,Singapore,energy,https://www.sterlingforgepowerinternational.sg/,877,1,234814.29,2014-08-01
+SC-000826,PIONEERFORGE BIOTECH GMBH,DE,Berlin,healthcare,pioneerforgebiotech.de,2682,3,407549.63,2024-02-01
+SC-000827,Quantumview Energy,GB,Manchester,energy,quantumviewenergy.co.uk,2431,14,3630336.73,2015-05-01
+SC-000828,Orionfield Medical Corporation,US,Austin,healthcare,,579,1,47419.91,2019-08-01
+SC-000829,Cedarpoint Stores International GmbH,DE,Munich,retail,https://www.cedarpointstoresinternational.de/,165,1,50645.26,2019-01-01
+SC-000830,Falconridge Retail Pte Ltd,SG,Singapore,retail,,393,1,47675.82,2017-04-01
+SC-000831,Crescentline Power International Corp,US,Austin,energy,,361,1,83582.38,2014-06-01
+SC-000832,Northgtae & Power GmbH,DE,Munich,energy,www.northgatepower.de,1489,3,566971.98,2013-10-01
+SC-000833,Summitvie wLabs Corp,US,Austin,software,,2298,5,516636.39,2012-12-01
+SC-000834,pioneercrest medical international plc,GB,Manchester,healthcare,,3807,12,694218.25,2017-04-01
+SC-000835,Novaworks Industries Inc,US,Chicago,manufacturing,www.novaworksindustries.com,254,1,62528.62,2014-05-01
+SC-000836,Lumencore Labs Ltd,IN,Bengaluru,software,,2287,8,306082.61,2018-05-01
+SC-000837,QUANTUMVALE ENERGY PTE LTD,SG,Singapore,energy,https://quantumvaleenergy.sg,414,1,41242.05,2024-03-01
+SC-000838,GRANITEFORGE POWER GMBH,DE,Munich,energy,graniteforgepower.de,391,1,77965.46,2012-04-01
+SC-000839,Falconview & Industries Pte Ltd,SG,Singapore,manufacturing,www.falconviewindustries.sg,490,1,239594.16,2020-07-01
+SC-000840,Pioneerforge Industries Pvt Ltd,IN,Pune,manufacturing,,87,1,104475.4,2021-06-01
+SC-000841,Novaport Enegry Limited,GB,Manchester,energy,,93,1,68855.86,2020-10-01
+SC-000842,Falcnoforge Freight Corp,US,Chicago,logistics,www.falconforgefreight.com,169,1,241576.12,2017-10-01
+SC-000843,quantumstar retail corp,US,New York,retail,,1311,5,421707.97,2024-01-01
+SC-000844,MAPLEVIEW STORES PVT LTD,IN,Bengaluru,retail,mapleviewstores.in,1700,5,1352712.21,2023-09-01
+SC-000845,Novaworks Manufacturing Corp,US,Austin,manufacturing,,312,1,74924.11,2025-05-01
+SC-000846,Bluegate & Stores International,GB,Manchester,retail,https://www.bluegatestoresinternational.co.uk/,7655,11,663901.15,2013-10-01
+SC-000847,Ironpeak Biotech,DE,Munich,healthcare,,2406,9,958926.25,2016-05-01
+SC-000848,Apexpath Freight Inc.,US,Chicago,logistics,www.apexpathfreight.com,391,1,331359.55,2014-06-01
+SC-000849,FALCONVALE LOGISTIX LTD,GB,London,logistics,https://falconvalelogistics.co.uk,131,1,139089.03,2024-02-01
+SC-000850,Silverdale Biotech,SG,Singapore,healthcare,https://silverdalebiotech.sg,1356,4,718359.28,2023-08-01
+SC-000851,Lumenfeild Stores Inc.,US,New York,retail,https://lumenfieldstores.com,525,1,135049.48,2017-02-01
+SC-000852,GRANITECREST FREIGHT INTL AG,DE,Berlin,logistics,granitecrestfreightinternational.de,339,1,33407.98,2022-03-01
+SC-000853,Silverbridge & Power AG,DE,Munich,energy,www.silverbridgepower.de,8056,58,14044893.27,2013-02-01
+SC-000854,GRANITEWAVE RETAIL INTERNATIONAL GMBH,DE,Berlin,retail,https://granitewaveretailinternational.de,1264,3,195932.39,2023-10-01
+SC-000855,atlasridge retail,DE,Munich,retail,https://www.atlasridgeretail.de/,643,2,509176.02,2014-04-01
+SC-000856,Granitedale Software,GB,London,software,https://www.granitedalesoftware.co.uk/,463,1,26945.02,2016-01-01
+SC-000857,Falcondale Power PLC,GB,Manchester,energy,falcondalepower.co.uk,196,1,112889.97,2019-05-01
+SC-000858,Silverline Sytsems Pte Ltd,SG,Singapore,software,www.silverlinesystems.sg,535,2,203296.23,2018-10-01
+SC-000859,Sterlingforge Industries GmbH,DE,Berlin,manufacturing,https://sterlingforgeindustries.de,75,1,140591.01,2020-07-01
+SC-000860,HARBORFIELD & ENERGY,US,Chicago,energy,,350,1,120804.22,2020-07-01
+SC-000861,Falocncrest & Biotech Pvt Ltd,IN,Pune,healthcare,www.falconcrestbiotech.in,249,1,91028.89,2023-12-01
+SC-000862,SILVERILNE POWER,US,New York,energy,,1080,3,281022.36,2015-04-01
+SC-000863,Cedarbridge Power PLC,GB,London,energy,https://www.cedarbridgepower.co.uk/,724,1,163196.78,2019-04-01
+SC-000864,Sterlingbridge Stores International Pvt Ltd,IN,Mumbai,retail,sterlingbridgestoresinternational.in,213,1,35921.18,2013-05-01
+SC-000865,FALCONVIEW ENERGY,US,Chicago,energy,https://www.falconviewenergy.com/,144,1,120358.81,2021-12-01
+SC-000866,STERLINGRIDGE SYSTEMS,GB,Manchester,software,https://www.sterlingridgesystems.co.uk/,234,1,96078.19,2023-12-01
+SC-000867,Apexview Biotech Corporation,US,Chicago,healthcare,apexviewbiotech.com,771,1,207626.48,2025-09-01
+SC-000868,Altasview Retail,GB,London,retail,https://atlasviewretail.co.uk,473,1,183306.38,2022-04-01
+SC-000869,Apexbridge Logistix Pvt Ltd,IN,Pune,logistics,apexbridgelogistics.in,197,1,126889.21,2020-02-01
+SC-000870,Quantumport & Freight International Pte. Ltd.,SG,Singapore,logistics,,386,1,138243.0,2021-05-01
+SC-000871,Sterlingworks Retail AG,DE,Munich,retail,,2228,3,596409.14,2015-06-01
+SC-000872,BLUEVIEW SYSTEMS CORP,US,Chicago,software,https://blueviewsystems.com,105,1,92148.12,2016-10-01
+SC-000873,Oriongate Retail Corp,US,Chicago,retail,,162,1,79532.19,2012-09-01
+SC-000874,Ironlight Biotech,IN,Bengaluru,healthcare,ironlightbiotech.in,2408,3,327153.74,2023-09-01
+SC-000875,Irongate Labs Pvt Ltd,IN,Pune,software,irongatelabs.in,3357,4,381699.52,2014-07-01
+SC-000876,Lumenridge Biotech PLC,GB,Manchester,healthcare,www.lumenridgebiotech.co.uk,18,1,61029.48,2019-04-01
+SC-000877,Quantumworks Biotech International Pvt Ltd,IN,Bengaluru,healthcare,https://quantumworksbiotechinternational.in,152,1,99837.09,2019-01-01
+SC-000878,PIONEERCORE BIOTECH PLC,GB,London,healthcare,https://pioneercorebiotech.co.uk,94,1,76573.65,2013-09-01
+SC-000879,Cedarbridge Freight Ltd,GB,London,logistics,https://cedarbridgefreight.co.uk,277,1,62166.09,2021-01-01
+SC-000880,Bluedale & Energy International,US,Chicago,energy,,137,1,127084.56,2021-03-01
+SC-000881,ATLASPOINT ENERGY PTE. LTD.,SG,Singapore,energy,www.atlaspointenergy.sg,152,1,57180.98,2019-02-01
+SC-000882,Northvale Software Intl,SG,Singapore,software,www.northvalesoftwareinternational.sg,82,1,75820.39,2021-12-01
+SC-000883,Summitfield Industries International Inc,US,Chicago,manufacturing,https://summitfieldindustriesinternational.com,5198,24,4247527.02,2020-12-01
+SC-000884,Vertexstar Industries Private Limited,IN,Pune,manufacturing,https://vertexstarindustries.in,1661,5,712297.23,2016-07-01
+SC-000885,Apexfield Energy,IN,Bengaluru,energy,,3502,14,4073621.2,2019-07-01
+SC-000886,silvergate industries,US,New York,manufacturing,,306,1,114793.7,2021-02-01
+SC-000887,Apexworks & Power AG,DE,Berlin,energy,https://apexworkspower.de,505,1,93522.44,2019-03-01
+SC-000888,IRONDALE & HEALTH AG,DE,Berlin,healthcare,www.irondalehealth.de,108,1,120886.36,2017-02-01
+SC-000889,Sterlingcore Industries Limited,GB,London,manufacturing,sterlingcoreindustries.co.uk,155,1,146952.9,2020-07-01
+SC-000890,Falconcrest Manufacturing,SG,Singapore,manufacturing,https://www.falconcrestmanufacturing.sg/,1532,4,1156290.97,2014-03-01
+SC-000891,Novacore & Biotech International Corporation,US,New York,healthcare,https://www.novacorebiotechinternational.com/,1286,3,241132.0,2020-05-01
+SC-000892,Ironworks Industries International Limited,GB,London,manufacturing,www.ironworksindustriesinternational.co.uk,13353,25,5668881.65,2017-01-01
+SC-000893,LUMENLINE LABS,DE,Munich,software,https://www.lumenlinelabs.de/,1452,4,572498.36,2016-03-01
+SC-000894,Sterlingvale Energy AG,DE,Munich,energy,https://www.sterlingvaleenergy.de/,804,2,241834.95,2023-07-01
+SC-000895,HARBORLIGHT SYSTEMS,US,Austin,software,https://harborlightsystems.com,428,1,111583.96,2021-12-01
+SC-000896,Atlasport Power Pte. Ltd.,SG,Singapore,energy,https://atlasportpower.sg,164,1,151158.13,2024-05-01
+SC-000897,QUANTUMCREST ENERGY PVT LTD,IN,Bengaluru,energy,www.quantumcrestenergy.in,2151,3,215616.63,2020-09-01
+SC-000898,FALCONRIDGE MEDICAL INC.,US,Austin,healthcare,,454,1,55191.74,2015-06-01
+SC-000899,Atlasdale Energy,IN,Bengaluru,energy,atlasdaleenergy.in,1846,3,210294.18,2020-09-01
+SC-000900,Orionvale & Industries,US,Chicago,manufacturing,orionvaleindustries.com,131,1,162717.48,2017-02-01
+SC-000901,ORIONVALE FREIGHT INTERNATIONAL,US,Chicago,logistics,https://orionvalefreightinternational.com,935,3,408860.86,2015-11-01
+SC-000902,irongate manufacturing intrenational gmbh,DE,Berlin,manufacturing,,275,1,60537.51,2021-12-01
+SC-000903,Maplewave Software GmbH,DE,Munich,software,https://www.maplewavesoftware.de/,2060,8,520975.87,2012-01-01
+SC-000904,QUANTUMSTAR LABS GMBH,DE,Berlin,software,quantumstarlabs.de,67,1,50165.04,2013-02-01
+SC-000905,orionfield industries pte ltd,SG,Singapore,manufacturing,orionfieldindustries.sg,836,2,111482.75,2015-02-01
+SC-000906,Atlasfield Logistics Pte Ltd,SG,Singapore,logistics,https://www.atlasfieldlogistics.sg/,4317,6,473972.13,2012-12-01
+SC-000907,Sterlingstar Power Limited,GB,Manchester,energy,https://sterlingstarpower.co.uk,2514,6,875195.99,2022-12-01
+SC-000908,CRESCENTWORKS LABS,IN,Pune,software,,167,1,88455.38,2022-05-01
+SC-000909,Maplegate Industries International Pte. Ltd.,SG,Singapore,manufacturing,maplegateindustriesinternational.sg,78,1,46276.77,2015-08-01
+SC-000910,Bluewaev & Software Ltd,GB,London,software,https://www.bluewavesoftware.co.uk/,14889,48,8220491.24,2020-12-01
+SC-000911,BluepathF reight Corp,US,Chicago,logistics,https://www.bluepathfreight.com/,71,1,50333.5,2013-07-01
+SC-000912,Maplepoint Energy GmbH,DE,Berlin,energy,www.maplepointenergy.de,563,1,199246.54,2015-11-01
+SC-000913,Novadale Energy,SG,Singapore,energy,novadaleenergy.sg,59,1,297344.71,2020-04-01
+SC-000914,CRESCENTPOINT BIOTECH,IN,Bengaluru,healthcare,crescentpointbiotech.in,579,1,56088.8,2012-03-01
+SC-000915,Northfield Power International Ltd,IN,Pune,energy,https://www.northfieldpowerinternational.in/,255,1,50364.68,2025-09-01
+SC-000916,Harborcrest Sys Intl Private Limited,IN,Mumbai,software,www.harborcrestsystemsinternational.in,2631,8,1020304.13,2015-07-01
+SC-000917,Lumenpoint Stroes Pvt Ltd,IN,Mumbai,retail,https://www.lumenpointstores.in/,1217,4,220780.13,2020-06-01
+SC-000918,Apexpoint Energy LLC,US,New York,energy,https://apexpointenergy.com,2799,6,557396.06,2013-07-01
+SC-000919,Pioneerpeak Software Ltd,IN,Bengaluru,software,www.pioneerpeaksoftware.in,911,2,539157.34,2013-06-01
+SC-000920,Ironforge Freight Limited,GB,Manchester,logistics,ironforgefreight.co.uk,163,1,52852.3,2019-01-01
+SC-000921,Summitline Freight LLC,US,Chicago,logistics,https://summitlinefreight.com,2277,5,973109.8,2025-04-01
+SC-000922,Quantumline Labs Pte Ltd,SG,Singapore,software,quantumlinelabs.sg,281,1,127097.2,2015-01-01
+SC-000923,Summitdale Power,SG,Singapore,energy,summitdalepower.sg,244,1,301792.6,2017-04-01
+SC-000924,Cedarcore Freight Ltd,GB,Manchester,logistics,https://www.cedarcorefreight.co.uk/,719,2,295504.74,2023-05-01
+SC-000925,summitwave energy,GB,Manchester,energy,https://summitwaveenergy.co.uk,48,1,53634.31,2015-05-01
+SC-000926,HARBORVIEW MEDICAL PRIVATE LIMITED,IN,Mumbai,healthcare,https://www.harborviewmedical.in/,612,1,84799.34,2018-05-01
+SC-000927,Summitstar Labs PLC,GB,Manchester,software,summitstarlabs.co.uk,1068,1,55904.14,2017-08-01
+SC-000928,BLUELIGHT POWER PTE LTD,SG,Singapore,energy,https://www.bluelightpower.sg/,656,1,101281.65,2017-02-01
+SC-000929,Novacrest Logistix Corporation,US,Chicago,logistics,www.novacrestlogistics.com,2864,3,233452.23,2018-11-01
+SC-000930,Northfield Mfg Corporation,US,Austin,manufacturing,www.northfieldmanufacturing.com,25,1,185486.17,2016-05-01
+SC-000931,Bluecrest Biotech,IN,Pune,healthcare,https://www.bluecrestbiotech.in/,1053,5,439551.47,2019-03-01
+SC-000932,HARBORLINE ENERGY INC,US,Austin,energy,https://www.harborlineenergy.com/,243,1,116096.49,2013-06-01
+SC-000933,Orionfield Stores LLC,US,Chicago,retail,https://www.orionfieldstores.com/,209,1,101657.34,2022-12-01
+SC-000934,Cedarport Inds Pte. Ltd.,SG,Singapore,manufacturing,,1105,2,137840.34,2014-08-01
+SC-000935,Vertexpoint & Systems Private Limited,IN,Pune,software,www.vertexpointsystems.in,1587,3,288300.24,2018-01-01
+SC-000936,Summitworks Stores Private Limited,IN,Mumbai,retail,www.summitworksstores.in,634,1,33227.83,2019-03-01
+SC-000937,Lumenfield Logistics,US,Austin,logistics,www.lumenfieldlogistics.com,45,1,59061.28,2012-08-01
+SC-000938,PIONEERLIGHT FREIGHT PVT LTD,IN,Bengaluru,logistics,www.pioneerlightfreight.in,68,1,109761.14,2017-04-01
+SC-000939,Vertexline Freight,US,Chicago,logistics,,3085,6,285674.23,2021-03-01
+SC-000940,Pioneerstar Biotech Pte. Ltd.,SG,Singapore,healthcare,pioneerstarbiotech.sg,2259,5,417899.3,2024-05-01
+SC-000941,Summitpath Power International,DE,Berlin,energy,,117,1,237602.85,2012-12-01
+SC-000942,orioncore & software pvt ltd,IN,Bengaluru,software,,219,1,226983.54,2020-10-01
+SC-000943,Quantumcrest Retail Pte. Ltd.,SG,Singapore,retail,https://www.quantumcrestretail.sg/,981,3,158936.77,2018-05-01
+SC-000944,Harborcore Energy LLC,US,Chicago,energy,https://www.harborcoreenergy.com/,178,1,440829.6,2020-10-01
+SC-000945,Cedarcrest Power AG,DE,Berlin,energy,cedarcrestpower.de,1259,2,179705.04,2015-09-01
+SC-000946,Ironwave & Software,DE,Munich,software,www.ironwavesoftware.de,1576,6,320612.82,2019-12-01
+SC-000947,HARBORSTAR RETAIL INC.,US,New York,retail,harborstarretail.com,297,1,47194.53,2024-02-01
+SC-000948,Atlaslight Manufacturing,US,Austin,manufacturing,https://www.atlaslightmanufacturing.com/,631,2,203733.28,2013-07-01
+SC-000949,NORTHLIGHT RETAIL,DE,Munich,retail,https://northlightretail.de,92,1,213642.56,2016-09-01
+SC-000950,Pioneerfield Freight Ltd,GB,London,logistics,pioneerfieldfreight.co.uk,186,1,143261.61,2015-10-01
+SC-000951,Granitefield Energy Inc,US,New York,energy,granitefieldenergy.com,853,3,82820.41,2013-05-01
+SC-000952,Summitport Softwar ePte. Ltd.,SG,Singapore,software,,403,1,53074.06,2013-08-01
+SC-000953,SILVERFORGE FREIGHT,DE,Berlin,logistics,https://www.silverforgefreight.de/,108,1,44105.85,2015-08-01
+SC-000954,Silverview Power International AG,DE,Berlin,energy,www.silverviewpowerinternational.de,361,1,77355.93,2015-03-01
+SC-000955,Sterlingfield Stores Pte. Ltd.,SG,Singapore,retail,,705,1,96321.83,2013-08-01
+SC-000956,Silverport Stores Corp,US,Austin,retail,www.silverportstores.com,733,1,130316.33,2021-01-01
+SC-000957,Northworks Mnaufacturing,GB,Manchester,manufacturing,https://northworksmanufacturing.co.uk,91,1,149062.38,2013-12-01
+SC-000958,northfield freight international,IN,Bengaluru,logistics,,16,1,58356.66,2024-08-01
+SC-000959,LUMENLINE MFG,US,New York,manufacturing,www.lumenlinemanufacturing.com,2922,6,312711.79,2017-11-01
+SC-000960,Pioneerpath Stores,SG,Singapore,retail,,80,1,84633.43,2018-12-01
+SC-000961,Atlaspath Freight Pte. Ltd.,SG,Singapore,logistics,,67,1,103502.92,2022-05-01
+SC-000962,bluebridge logistics pte. ltd.,SG,Singapore,logistics,bluebridgelogistics.sg,1578,3,268776.87,2019-12-01
+SC-000963,Apexview Health,IN,Pune,healthcare,https://www.apexviewhealth.in/,688,2,85127.43,2017-07-01
+SC-000964,Lumenfield Energy Ltd,GB,London,energy,www.lumenfieldenergy.co.uk,1593,4,370060.53,2021-01-01
+SC-000965,Northbridge Inds Intl,SG,Singapore,manufacturing,www.northbridgeindustriesinternational.sg,716,1,44116.42,2021-01-01
+SC-000966,Novapoint & Software GmbH,DE,Berlin,software,,1317,3,510512.11,2015-04-01
+SC-000967,crescnetwave mfg pvt ltd,IN,Mumbai,manufacturing,https://crescentwavemanufacturing.in,1113,2,220496.12,2017-01-01
+SC-000968,falconridge freight,IN,Bengaluru,logistics,falconridgefreight.in,87,1,57144.5,2015-07-01
+SC-000969,Cedarstone Industries,US,Chicago,manufacturing,www.cedarstoneindustries.com,314,2,63484.49,2024-04-01
+SC-000970,Bluepath Logistix Pvt Ltd,IN,Bengaluru,logistics,bluepathlogistics.in,183,1,114068.27,2024-09-01
+SC-000971,ATLASLIGHT HEALTH GMBH,DE,Berlin,healthcare,https://atlaslighthealth.de,134,1,74426.37,2013-03-01
+SC-000972,Sterlingline Software Private Limited,IN,Bengaluru,software,www.sterlinglinesoftware.in,115,1,44669.99,2012-02-01
+SC-000973,Pioneerridge Helath,SG,Singapore,healthcare,https://pioneerridgehealth.sg,157,1,82758.32,2016-03-01
+SC-000974,Cedarcrest Freight Pte Ltd,SG,Singapore,logistics,www.cedarcrestfreight.sg,429,1,90260.95,2019-06-01
+SC-000975,Cedarridge Industries,SG,Singapore,manufacturing,www.cedarridgeindustries.sg,393,1,111749.39,2013-08-01
+SC-000976,PIONEERPATH ENERGY,SG,Singapore,energy,https://www.pioneerpathenergy.sg/,162,1,80941.35,2017-03-01
+SC-000977,harborwave health international corp,US,New York,healthcare,harborwavehealthinternational.com,945,2,128217.82,2021-07-01
+SC-000978,bluedale sfotware,IN,Mumbai,software,,143,1,155076.01,2023-09-01
+SC-000979,irongate power pte ltd,SG,Singapore,energy,irongatepower.sg,315,1,188584.4,2017-12-01
+SC-000980,Maplecore Medical Inc,US,New York,healthcare,www.maplecoremedical.com,3668,9,1796519.94,2013-10-01
+SC-000981,Vertexpeak Energy LLC,US,New York,energy,https://www.vertexpeakenergy.com/,5135,9,1217315.76,2022-03-01
+SC-000982,Orionbridge & Health Ltd,GB,Manchester,healthcare,www.orionbridgehealth.co.uk,602,1,189753.72,2013-09-01
+SC-000983,harborcrest labs,DE,Berlin,software,harborcrestlabs.de,4570,11,2143727.49,2021-03-01
+SC-000984,Vertexwave Systems International,GB,London,software,https://www.vertexwavesystemsinternational.co.uk/,2559,7,355914.84,2019-11-01
+SC-000985,Harborcore Health GmbH,DE,Munich,healthcare,https://www.harborcorehealth.de/,91,1,81144.31,2017-02-01
+SC-000986,PIONEERCORE LABS PTE LTD,SG,Singapore,software,https://pioneercorelabs.sg,1684,4,279646.77,2018-05-01
+SC-000987,Summitwave Medical Ltd,IN,Mumbai,healthcare,www.summitwavemedical.in,90,1,121850.21,2025-12-01
+SC-000988,Oriondale Medical International,IN,Bengaluru,healthcare,www.oriondalemedicalinternational.in,104,1,61115.07,2018-03-01
+SC-000989,Summitpath Retail Pte. Ltd.,SG,Singapore,retail,https://summitpathretail.sg,475,1,77641.73,2016-04-01
+SC-000990,Granitevale Energy Pte. Ltd.,SG,Singapore,energy,www.granitevaleenergy.sg,1072,3,475403.75,2020-03-01
+SC-000991,MAPLEPOINT RETAIL,IN,Pune,retail,,398,1,67546.06,2023-11-01
+SC-000992,Novaline Medical Limited,GB,Manchester,healthcare,,1868,3,433617.7,2024-05-01
+SC-000993,Sterlingline Labs Pvt Ltd,IN,Bengaluru,software,,219,1,23759.42,2016-02-01
+SC-000994,CEDARPEAK & MANUFACTURING CROPORATION,US,Chicago,manufacturing,https://www.cedarpeakmanufacturing.com/,2011,3,274724.74,2012-03-01
+SC-000995,Apexforge Stores Inocrporated,US,Chicago,retail,www.apexforgestores.com,173,1,78014.33,2014-02-01
+SC-000996,SILVERPOINT LABS INTERNATIONAL GMBH,DE,Berlin,software,,109,1,175854.71,2023-02-01
+SC-000997,Summitwave Systems GmbH,DE,Berlin,software,,121,1,44388.23,2025-08-01
+SC-000998,orionwave retail,GB,London,retail,https://www.orionwaveretail.co.uk/,1205,2,65148.54,2012-09-01
+SC-000999,Novaridge Energy Pte Ltd,SG,Singapore,energy,,133,1,83923.7,2022-12-01
+SC-001000,Summitpeak Energy,GB,London,energy,,256,1,33714.03,2016-04-01
+SC-001001,Crescentdal eMedical,DE,Munich,healthcare,,258,1,70765.32,2014-04-01
+SC-001002,Crescentlight & Logistics Pte. Ltd.,SG,Singapore,logistics,www.crescentlightlogistics.sg,675,1,63838.92,2025-04-01
+SC-001003,Falconstone Retail PLC,GB,London,retail,falconstoneretail.co.uk,879,1,62990.88,2018-05-01
+SC-001004,Lumenpath Logistix Ltd,GB,Manchester,logistics,lumenpathlogistics.co.uk,53,1,47659.55,2023-04-01
+SC-001005,Northport Logistics Ltd,IN,Mumbai,logistics,https://www.northportlogistics.in/,632,1,175654.28,2024-01-01
+SC-001006,Lumencore Industries Private Limited,IN,Pune,manufacturing,https://lumencoreindustries.in,1480,3,267073.77,2018-02-01
+SC-001007,FALCONVALE SOFTWARE,SG,Singapore,software,,2304,7,141909.29,2013-08-01
+SC-001008,silverfield freight gmbh,DE,Munich,logistics,https://silverfieldfreight.de,146,1,131308.05,2020-04-01
+SC-001009,GRANITEWAVE FREIGHT PRIVATE LIMITED,IN,Pune,logistics,,93,1,74912.3,2017-07-01
+SC-001010,Granitegate Stores International,GB,London,retail,granitegatestoresinternational.co.uk,2431,6,1661121.55,2014-06-01
+SC-001011,Falconpoint Retail,IN,Mumbai,retail,www.falconpointretail.in,60,1,40179.52,2018-09-01
+SC-001012,QUANTUMWAVE SOFTWARE LIMITED,GB,Manchester,software,https://quantumwavesoftware.co.uk,295,1,129551.88,2013-11-01
+SC-001013,Vertexgate Retail,US,Austin,retail,https://vertexgateretail.com,255,2,90377.84,2019-12-01
+SC-001014,Ironpeak Logistics Limited,GB,London,logistics,ironpeaklogistics.co.uk,899,2,155690.62,2025-01-01
+SC-001015,APEXFORGE RETAIL CORPORATION,US,New York,retail,,4677,10,427887.5,2019-11-01
+SC-001016,apexforge software,US,Austin,software,https://apexforgesoftware.com,1442,6,517350.69,2016-04-01
+SC-001017,PIONEERWAVE ENERGY PTE. LTD.,SG,Singapore,energy,https://pioneerwaveenergy.sg,172,1,116472.96,2018-05-01
+SC-001018,NORTHPATH FREIGHT,IN,Mumbai,logistics,https://www.northpathfreight.in/,215,1,147581.06,2020-02-01
+SC-001019,IRONCORE ENERGY INTERNATIONAL LLC,US,Austin,energy,ironcoreenergyinternational.com,342,1,86488.2,2012-03-01
+SC-001020,APEXLINE MANUFACTURING,IN,Bengaluru,manufacturing,,266,1,124840.0,2020-05-01
+SC-001021,Falconvale & Retail Ltd,IN,Pune,retail,,240,1,60797.66,2015-06-01
+SC-001022,MAPLECORE LOGISTICS,SG,Singapore,logistics,,470,1,41155.86,2015-08-01
+SC-001023,harborbridge & systems pte ltd,SG,Singapore,software,www.harborbridgesystems.sg,259,1,210990.03,2012-07-01
+SC-001024,Maplebridge Biotech,DE,Berlin,healthcare,,65,1,145042.52,2023-03-01
+SC-001025,Harborpath Biotech,US,New York,healthcare,harborpathbiotech.com,115,1,97882.09,2021-01-01
+SC-001026,Granitecore Logistics International PLC,GB,Manchester,logistics,https://granitecorelogisticsinternational.co.uk,2035,4,389585.95,2022-10-01
+SC-001027,Novafield Labs Private Limited,IN,Mumbai,software,,121,1,189344.18,2022-03-01
+SC-001028,Cedarline Medical Corporation,US,New York,healthcare,,447,1,33793.67,2025-06-01
+SC-001029,Silverlight Biotech International Ltd,GB,Manchester,healthcare,www.silverlightbiotechinternational.co.uk,128,1,151666.05,2025-02-01
+SC-001030,Vertexridge Logistics Ltd,IN,Mumbai,logistics,vertexridgelogistics.in,127,1,323137.51,2020-07-01
+SC-001031,Silverforge Industries Private Limited,IN,Mumbai,manufacturing,,242,1,105984.93,2013-07-01
+SC-001032,Silverveiw Energy LLC,US,Chicago,energy,www.silverviewenergy.com,676,1,45222.2,2024-09-01
+SC-001033,Atlasgate Industries PLC,GB,London,manufacturing,www.atlasgateindustries.co.uk,27,1,77865.15,2018-12-01
+SC-001034,mapledale & health,SG,Singapore,healthcare,https://www.mapledalehealth.sg/,320,1,40566.49,2023-01-01
+SC-001035,Bluevale Stores International,DE,Munich,retail,https://bluevalestoresinternational.de,2591,9,641723.89,2014-01-01
+SC-001036,Summitforge Software Corporation,US,New York,software,summitforgesoftware.com,133,1,49050.38,2022-04-01
+SC-001037,CEDARVIEW FREIGHT INTERNATIONAL PTE LTD,SG,Singapore,logistics,https://www.cedarviewfreightinternational.sg/,289,1,94011.17,2019-01-01
+SC-001038,Northcrest Freight Ltd,GB,Manchester,logistics,northcrestfreight.co.uk,690,1,72046.92,2017-05-01
+SC-001039,orionridge power private limited,IN,Pune,energy,https://orionridgepower.in,2246,3,656499.39,2022-04-01
+SC-001040,Crescentgate Freight GmbH,DE,Berlin,logistics,crescentgatefreight.de,139,1,225021.92,2018-11-01
+SC-001041,northridge stores plc,GB,London,retail,northridgestores.co.uk,1222,4,357449.17,2013-07-01
+SC-001042,Crescentcrest Logistics Ltd,IN,Bengaluru,logistics,crescentcrestlogistics.in,226,1,98982.96,2017-01-01
+SC-001043,MAPLESTONE LOGISTIX TLD,GB,Manchester,logistics,https://www.maplestonelogistics.co.uk/,86,1,88115.86,2022-05-01
+SC-001044,falconridge logistix,GB,Manchester,logistics,falconridgelogistics.co.uk,3525,7,228481.83,2019-03-01
+SC-001045,Ironstone Industries AG,DE,Berlin,manufacturing,https://ironstoneindustries.de,1250,2,351227.61,2025-09-01
+SC-001046,Verterxidge & Health,IN,Bengaluru,healthcare,https://vertexridgehealth.in,193,1,146873.66,2021-03-01
+SC-001047,PIONEERFIELD RETAIL PTE. LTD.,SG,Singapore,retail,,21018,44,3512183.03,2021-11-01
+SC-001048,Quantumgate Freight Intl Limited,GB,London,logistics,https://www.quantumgatefreightinternational.co.uk/,382,1,60221.36,2014-01-01
+SC-001049,atlasstone logistics pvt ltd,IN,Bengaluru,logistics,,496,1,26339.34,2024-03-01
+SC-001050,Oriondale Power Ltd,IN,Pune,energy,https://oriondalepower.in,179,1,31878.12,2024-10-01
+SC-001051,Quantumview Biotech Pte. Ltd.,SG,Singapore,healthcare,https://www.quantumviewbiotech.sg/,14,1,97555.54,2012-02-01
+SC-001052,apexport energy,DE,Berlin,energy,https://apexportenergy.de,470,1,70990.95,2014-11-01
+SC-001053,LUMENPATH POWER PLC,GB,London,energy,www.lumenpathpower.co.uk,234,1,100726.7,2019-06-01
+SC-001054,Orionpeak Inds Incorporated,US,New York,manufacturing,orionpeakindustries.com,97,1,169544.04,2015-10-01
+SC-001055,ATLASPEAK STORES,GB,Manchester,retail,https://www.atlaspeakstores.co.uk/,1233,2,142587.66,2017-03-01
+SC-001056,Silverbridge Energy,GB,London,energy,,266,1,65074.75,2024-07-01
+SC-001057,Atlasforge & Health,DE,Munich,healthcare,https://atlasforgehealth.de,395,1,111950.22,2022-01-01
+SC-001058,Cedarline Stores,US,New York,retail,www.cedarlinestores.com,1608,6,411833.99,2013-06-01
+SC-001059,mapleworks power private limited,IN,Bengaluru,energy,https://www.mapleworkspower.in/,159,1,87293.79,2018-03-01
+SC-001060,graniteopint labs,SG,Singapore,software,https://www.granitepointlabs.sg/,2565,5,314739.6,2016-10-01
+SC-001061,Summitpoint Labs Pte. Ltd.,SG,Singapore,software,www.summitpointlabs.sg,399,1,91886.08,2014-12-01
+SC-001062,Quantumworks Mfg Intl Corporation,US,Austin,manufacturing,www.quantumworksmanufacturinginternational.com,366,1,39670.39,2012-07-01
+SC-001063,Lumenview Manufacturing Pte. Ltd.,SG,Singapore,manufacturing,www.lumenviewmanufacturing.sg,108,1,115142.86,2017-07-01
+SC-001064,Maplestone Health International Pte Ltd,SG,Singapore,healthcare,www.maplestonehealthinternational.sg,580,1,74453.6,2015-06-01
+SC-001065,Maplelight Systems,DE,Munich,software,https://www.maplelightsystems.de/,545,1,161267.0,2019-10-01
+SC-001066,Quantumcrest Sys,SG,Singapore,software,,48,1,200309.19,2020-03-01
+SC-001067,Maplecrest Sys,GB,Manchester,software,maplecrestsystems.co.uk,196,1,72653.18,2017-04-01
+SC-001068,Granitepath Retail,IN,Bengaluru,retail,,1158,3,247079.24,2014-07-01
+SC-001069,harborgate eneryg gmbh,DE,Berlin,energy,www.harborgateenergy.de,239,1,283144.55,2025-10-01
+SC-001070,Northlight Manufacturing International,SG,Singapore,manufacturing,www.northlightmanufacturinginternational.sg,349,1,57358.51,2025-01-01
+SC-001071,Sterlingview Power,GB,London,energy,,902,1,239622.27,2015-09-01
+SC-001072,Pioneergate Freight Ltd,GB,Manchester,logistics,pioneergatefreight.co.uk,216,1,49302.14,2021-10-01
+SC-001073,Vertexbridge Labs Ltd,IN,Pune,software,www.vertexbridgelabs.in,479,1,92633.94,2016-01-01
+SC-001074,Crescentwave&  Software International,US,Austin,software,,380,1,109357.51,2025-04-01
+SC-001075,Mapleview Health Intl,DE,Munich,healthcare,mapleviewhealthinternational.de,145,1,81406.8,2021-05-01
+SC-001076,Silverpath Industries Pte Ltd,SG,Singapore,manufacturing,silverpathindustries.sg,185,1,241296.77,2022-06-01
+SC-001077,NORTHBRIDGE ENERGY GMBH,DE,Berlin,energy,,19,1,82817.71,2012-08-01
+SC-001078,Novaview Manufacturing Ltd,IN,Bengaluru,manufacturing,https://novaviewmanufacturing.in,179,1,55164.74,2025-01-01
+SC-001079,Silverwave & Retail,SG,Singapore,retail,https://silverwaveretail.sg,1571,7,1319774.96,2015-02-01
+SC-001080,Granitepath Energy Ltd,IN,Bengaluru,energy,,564,1,138289.78,2019-08-01
+SC-001081,Crescentdale Systems GmbH,DE,Berlin,software,,318,1,28915.76,2018-02-01
+SC-001082,IRONVALE POWRE,US,Chicago,energy,ironvalepower.com,100,1,86154.03,2021-04-01
+SC-001083,HARBORPATH HEALTH CORP,US,Austin,healthcare,,205,1,45295.08,2016-05-01
+SC-001084,Pioneerport & Software PLC,GB,Manchester,software,pioneerportsoftware.co.uk,219,1,110385.0,2019-12-01
+SC-001085,Crescentport Labs Inc.,US,Austin,software,,6148,6,713984.9,2012-12-01
+SC-001086,Bluewave Power GmbH,DE,Munich,energy,bluewavepower.de,145,1,112897.37,2023-09-01
+SC-001087,MAPLEVALE POWER,DE,Munich,energy,www.maplevalepower.de,366,1,106942.64,2025-09-01
+SC-001088,Orionlight Labs Incorporated,US,Chicago,software,,67,1,131593.71,2025-02-01
+SC-001089,Sterlingline Freight Ltd,GB,Manchester,logistics,,755,3,412937.36,2023-02-01
+SC-001090,vertexpath & retail,SG,Singapore,retail,https://vertexpathretail.sg,78,1,95230.58,2015-10-01
+SC-001091,PIONEERGATE HEALTH INTERNATIONAL,SG,Singapore,healthcare,pioneergatehealthinternational.sg,270,1,85392.83,2016-01-01
+SC-001092,Pioneerview Medical,IN,Pune,healthcare,https://pioneerviewmedical.in,619,2,101502.87,2013-09-01
+SC-001093,Ironpath & Power Ltd,GB,Manchester,energy,www.ironpathpower.co.uk,877,6,569742.29,2013-09-01
+SC-001094,Crescentpoint Energy Intl Limited,GB,Manchester,energy,crescentpointenergyinternational.co.uk,1082,3,264280.43,2015-09-01
+SC-001095,Northpath Manufacturing,DE,Munich,manufacturing,northpathmanufacturing.de,88,1,50535.92,2022-08-01
+SC-001096,Summitridge Manufacturing AG,DE,Berlin,manufacturing,https://www.summitridgemanufacturing.de/,103,1,141231.91,2016-12-01
+SC-001097,Crescentvale Manufacturing Pte Ltd,SG,Singapore,manufacturing,www.crescentvalemanufacturing.sg,105,1,75111.86,2012-04-01
+SC-001098,Lumenridge Retail International AG,DE,Munich,retail,lumenridgeretailinternational.de,13,1,77326.76,2024-07-01
+SC-001099,Summitivew Stores Pte. Ltd.,SG,Singapore,retail,,447,1,69822.51,2022-12-01
+SC-001100,Crescentcrest Labs Ltd,GB,Manchester,software,https://crescentcrestlabs.co.uk,753,1,58592.09,2025-04-01
+SC-001101,Ironlight Energy Inc.,US,Chicago,energy,,56,1,90429.54,2020-05-01
+SC-001102,CEDARVALE ENERGY INTERNATIONAL PTE. LTD.,SG,Singapore,energy,,229,1,165356.4,2013-02-01
+SC-001103,Orionlight Logistics International Incorporated,US,New York,logistics,www.orionlightlogisticsinternational.com,192,1,105726.35,2014-01-01
+SC-001104,Crescentridge & Power AG,DE,Berlin,energy,https://crescentridgepower.de,216,1,56375.93,2023-05-01
+SC-001105,Ironcerst & Biotech,IN,Pune,healthcare,www.ironcrestbiotech.in,341,1,67669.66,2013-08-01
+SC-001106,BLUEWORKS LOGISTICS PLC,GB,Manchester,logistics,www.blueworkslogistics.co.uk,135,1,53010.39,2021-05-01
+SC-001107,Falconlight Industries,SG,Singapore,manufacturing,,585,1,99713.61,2018-03-01
+SC-001108,Lumenwave Logistix,SG,Singapore,logistics,lumenwavelogistics.sg,3253,12,3070540.76,2014-12-01
+SC-001109,Silvervale Manufacturing,GB,London,manufacturing,https://www.silvervalemanufacturing.co.uk/,732,1,147841.64,2012-04-01
+SC-001110,Summitworks Freight Inc,US,New York,logistics,summitworksfreight.com,707,1,76174.06,2018-07-01
+SC-001111,Crescentpoint Power,DE,Berlin,energy,crescentpointpower.de,53,1,116919.76,2022-11-01
+SC-001112,Harborline Freight,SG,Singapore,logistics,,166,1,48420.65,2015-10-01
+SC-001113,APEXPEAK SYS GMBH,DE,Berlin,software,www.apexpeaksystems.de,506,1,116354.06,2017-03-01
+SC-001114,Sterlingcrest Biotech GmbH,DE,Berlin,healthcare,https://sterlingcrestbiotech.de,1817,4,94340.84,2021-08-01
+SC-001115,Cedarbridge Software International Inc,US,Austin,software,cedarbridgesoftwareinternational.com,1878,4,684974.81,2012-10-01
+SC-001116,Northpath Industries Pvt Ltd,IN,Mumbai,manufacturing,https://www.northpathindustries.in/,546,1,125150.86,2016-11-01
+SC-001117,Pioneerport & Power,US,Austin,energy,,176,1,144010.11,2017-05-01
+SC-001118,orionstone retail,SG,Singapore,retail,orionstoneretail.sg,394,1,35755.65,2013-09-01
+SC-001119,Northforge Energy Pte. Ltd.,SG,Singapore,energy,,33,1,109480.78,2025-05-01
+SC-001120,ORIONLIGHT BIOTECH INTERNATIONAL LIMITED,GB,Manchester,healthcare,https://orionlightbiotechinternational.co.uk,191,1,182875.82,2014-02-01
+SC-001121,Cedardale Industries Incorporated,US,Chicago,manufacturing,,99,1,53394.6,2024-07-01
+SC-001122,Harborfield Stores Ltd,GB,Manchester,retail,https://harborfieldstores.co.uk,351,1,95880.42,2019-11-01
+SC-001123,MAPLEPATH STORES AG,DE,Berlin,retail,maplepathstores.de,367,1,166751.47,2017-09-01
+SC-001124,Atlasworsk Power Pte Ltd,SG,Singapore,energy,atlasworkspower.sg,55,1,87813.46,2018-08-01
+SC-001125,Lumenwave Software Inc,US,Chicago,software,,605,1,98299.29,2014-03-01
+SC-001126,Atlascore & Stores Ltd,GB,London,retail,atlascorestores.co.uk,2526,8,1077860.61,2023-07-01
+SC-001127,Orionbridge Energy,SG,Singapore,energy,https://www.orionbridgeenergy.sg/,2335,4,278828.13,2021-01-01
+SC-001128,Quantumbridge & Manufacturing GmbH,DE,Munich,manufacturing,https://www.quantumbridgemanufacturing.de/,437,1,245873.45,2018-12-01
+SC-001129,Apexview Retail,GB,London,retail,apexviewretail.co.uk,8972,15,1023071.42,2020-04-01
+SC-001130,Silverforge Health PLC,GB,Manchester,healthcare,https://www.silverforgehealth.co.uk/,261,1,143333.66,2020-01-01
+SC-001131,Harborpeak Power International GmbH,DE,Munich,energy,https://www.harborpeakpowerinternational.de/,2453,6,469574.34,2024-12-01
+SC-001132,Northlight Freight Pvt Ltd,IN,Pune,logistics,,392,1,63493.74,2012-10-01
+SC-001133,STERLINGPEAK FREIGHT PVT LTD,IN,Bengaluru,logistics,https://www.sterlingpeakfreight.in/,80,1,86729.26,2015-11-01
+SC-001134,northpeak logistixc orp,US,Austin,logistics,https://northpeaklogistics.com,146,1,163994.88,2015-03-01
+SC-001135,Apexpeak Medical,DE,Berlin,healthcare,www.apexpeakmedical.de,332,1,63211.88,2016-03-01
+SC-001136,Orionwave Energy,US,Austin,energy,,147,1,42346.2,2020-06-01
+SC-001137,Lumebnridge Biotech Ltd,GB,London,healthcare,lumenbridgebiotech.co.uk,409,1,141101.13,2013-07-01
+SC-001138,Vertexlight Labs International Pvt Ltd,IN,Bengaluru,software,,15236,34,1216506.84,2016-08-01
+SC-001139,Silverdale Medicla GmbH,DE,Berlin,healthcare,https://silverdalemedical.de,36,1,65946.87,2025-02-01
+SC-001140,APEXLIGHT & POWER INTERNATIONAL AG,DE,Berlin,energy,https://www.apexlightpowerinternational.de/,2426,6,2311776.91,2017-07-01
+SC-001141,vertexstone industries international pte ltd,SG,Singapore,manufacturing,,649,1,59994.99,2012-12-01
+SC-001142,Summitwave Stores International,DE,Berlin,retail,,538,1,37849.27,2024-07-01
+SC-001143,GRANITEPORT STORES,GB,London,retail,https://www.graniteportstores.co.uk/,372,1,30559.69,2015-04-01
+SC-001144,Quantumline Biotech Pte Ltd,SG,Singapore,healthcare,https://www.quantumlinebiotech.sg/,1794,9,332585.75,2012-08-01
+SC-001145,silverfield power pte ltd,SG,Singapore,energy,https://silverfieldpower.sg,375,1,189870.9,2014-10-01
+SC-001146,QUANTUMCORE INDUSTRIES AG,DE,Berlin,manufacturing,https://quantumcoreindustries.de,136,1,121406.42,2023-01-01
+SC-001147,Vertexstone Inds Ltd,GB,Manchester,manufacturing,https://vertexstoneindustries.co.uk,145,1,93541.02,2020-03-01
+SC-001148,Harborwave Indsutries Pte. Ltd.,SG,Singapore,manufacturing,harborwaveindustries.sg,141,1,111339.74,2025-01-01
+SC-001149,Novacore Sys PLC,GB,London,software,https://www.novacoresystems.co.uk/,540,1,141422.13,2024-05-01
+SC-001150,maplestar manufacturing,US,Austin,manufacturing,https://www.maplestarmanufacturing.com/,998,2,424984.08,2022-10-01
+SC-001151,Ironworks Labs Intl Pvt Ltd,IN,Pune,software,https://www.ironworkslabsinternational.in/,965,1,97405.31,2023-10-01
+SC-001152,Vertexcore Retail,GB,Manchester,retail,,1065,3,108919.96,2021-12-01
+SC-001153,Pioneercrest Logistcis International AG,DE,Munich,logistics,www.pioneercrestlogisticsinternational.de,19,1,148113.67,2014-07-01
+SC-001154,QUANTUMPEAK SYSTEMS PVT LTD,IN,Mumbai,software,https://quantumpeaksystems.in,183,1,39144.03,2018-02-01
+SC-001155,Orionstone Labs GmbH,DE,Berlin,software,https://orionstonelabs.de,104,1,232403.34,2020-06-01
+SC-001156,SILVERBRIDGE MEDICAL PLC,GB,Manchester,healthcare,www.silverbridgemedical.co.uk,651,1,143648.55,2014-04-01
+SC-001157,Sterlingbridge Freight,IN,Pune,logistics,www.sterlingbridgefreight.in,1287,2,206609.16,2025-11-01
+SC-001158,Crescentstar Software Private Limited,IN,Mumbai,software,,57,1,146566.15,2020-09-01
+SC-001159,IRONFIELD SYSTEMS,IN,Bengaluru,software,https://www.ironfieldsystems.in/,312,1,278682.29,2012-06-01
+SC-001160,lumencore health,IN,Bengaluru,healthcare,,207,1,132384.86,2023-02-01
+SC-001161,Cedardale Freight AG,DE,Munich,logistics,https://cedardalefreight.de,1486,2,198306.03,2018-01-01
+SC-001162,Lumengate Stores Pte. Ltd.,SG,Singapore,retail,https://www.lumengatestores.sg/,621,1,107772.06,2015-11-01
+SC-001163,Summitview Power,IN,Pune,energy,www.summitviewpower.in,1529,3,280577.75,2018-02-01
+SC-001164,Atlasgate Biotech Corporation,US,Chicago,healthcare,www.atlasgatebiotech.com,2014,4,268322.75,2012-02-01
+SC-001165,Sterlingfield Retail Private Limited,IN,Mumbai,retail,https://sterlingfieldretail.in,357,2,139010.61,2017-08-01
+SC-001166,Apexstar Stores AG,DE,Berlin,retail,https://www.apexstarstores.de/,181,1,44708.51,2017-02-01
+SC-001167,Habrorview Stores Limited,GB,Manchester,retail,https://www.harborviewstores.co.uk/,554,1,120591.17,2017-09-01
+SC-001168,Orionpoint Retail Corporation,US,New York,retail,,1786,6,451886.07,2013-07-01
+SC-001169,SUMMITLINE SYSTEMS PTE LTD,SG,Singapore,software,https://summitlinesystems.sg,1731,5,523814.93,2013-09-01
+SC-001170,SUMMITSTONE POWER PRIVATE LIMITED,IN,Bengaluru,energy,www.summitstonepower.in,827,1,35910.21,2020-07-01
+SC-001171,SILVERRIDGE FREIGHT INTERNATIONAL,DE,Berlin,logistics,https://www.silverridgefreightinternational.de/,968,3,323703.44,2025-01-01
+SC-001172,Quantumvale Industrise Pvt Ltd,IN,Mumbai,manufacturing,https://quantumvaleindustries.in,181,1,197370.76,2014-04-01
+SC-001173,VERTEXPATH POWER INTERNATIONAL PTE LTD,SG,Singapore,energy,www.vertexpathpowerinternational.sg,87,1,251660.51,2012-10-01
+SC-001174,summitpoint industries pte ltd,SG,Singapore,manufacturing,,265,1,40974.15,2024-07-01
+SC-001175,Crescentworks Power International,US,New York,energy,https://www.crescentworkspowerinternational.com/,22,1,56490.06,2014-05-01
+SC-001176,GRANITEPORT & POWER LIMITED,GB,Manchester,energy,graniteportpower.co.uk,394,1,170955.92,2016-06-01
+SC-001177,Lumenwave Labs AG,DE,Berlin,software,https://lumenwavelabs.de,821,2,270835.56,2020-01-01
+SC-001178,Northpoint Manufacturing International Ltd,IN,Mumbai,manufacturing,https://northpointmanufacturinginternational.in,253,1,111569.13,2021-11-01
+SC-001179,Granitefield SystemsL td,IN,Mumbai,software,www.granitefieldsystems.in,245,1,91238.84,2022-01-01
+SC-001180,Atlasworks Industries International,GB,Manchester,manufacturing,www.atlasworksindustriesinternational.co.uk,278,1,264384.06,2017-09-01
+SC-001181,APEXBRIDGE & LOGISTICS INTERNATIONAL,DE,Berlin,logistics,apexbridgelogisticsinternational.de,440,1,155420.87,2015-02-01
+SC-001182,Cedarworks Retail Limited,GB,London,retail,https://cedarworksretail.co.uk,522,1,122848.77,2013-11-01
+SC-001183,Apexworks & Industries Pte. Ltd.,SG,Singapore,manufacturing,www.apexworksindustries.sg,686,1,191092.86,2015-01-01
+SC-001184,SILVERSTONE SYSTEMS,US,Chicago,software,https://www.silverstonesystems.com/,483,1,167597.17,2023-09-01
+SC-001185,Granitewave Software Corporation,US,New York,software,www.granitewavesoftware.com,2207,5,408417.69,2018-01-01
+SC-001186,Sterlingstone Industries Corporation,US,Chicago,manufacturing,https://www.sterlingstoneindustries.com/,709,1,210678.81,2018-08-01
+SC-001187,Northpoint & Software Pte Ltd,SG,Singapore,software,https://www.northpointsoftware.sg/,305,1,77275.69,2018-03-01
+SC-001188,Orionport Manufacturing GmbH,DE,Munich,manufacturing,orionportmanufacturing.de,140,1,136809.44,2019-09-01
+SC-001189,Mapledale Software Inc.,US,Austin,software,https://mapledalesoftware.com,6147,18,2293913.91,2018-10-01
+SC-001190,Lumenview Health,IN,Pune,healthcare,,2338,3,677350.61,2019-12-01
+SC-001191,Ironbridge Mfg Inc,US,New York,manufacturing,www.ironbridgemanufacturing.com,621,2,86157.67,2014-04-01
+SC-001192,CRESCENTBRIDGE BIOTECH,DE,Munich,healthcare,https://www.crescentbridgebiotech.de/,46,1,58620.11,2017-05-01
+SC-001193,Graniteview Health,IN,Pune,healthcare,https://graniteviewhealth.in,945,2,285908.62,2024-08-01
+SC-001194,ironcore freight llc,US,New York,logistics,https://www.ironcorefreight.com/,396,2,109020.77,2017-06-01
+SC-001195,Falconforge Biotech Intl PLC,GB,London,healthcare,www.falconforgebiotechinternational.co.uk,96,1,87722.98,2019-09-01
+SC-001196,Summitpeak Retail Icnorporated,US,Chicago,retail,https://www.summitpeakretail.com/,6750,15,2140630.53,2014-07-01
+SC-001197,Cedarridge Software Incorporated,US,Austin,software,,10626,32,6548445.91,2012-03-01
+SC-001198,VERTEXSTAR POWER INTERNATIONAL CORP,US,Austin,energy,vertexstarpowerinternational.com,225,2,209598.8,2014-02-01
+SC-001199,Harborwave Power,IN,Bengaluru,energy,harborwavepower.in,107,1,86835.77,2020-09-01
+SC-001200,Blueview Software,GB,Manchester,software,blueviewsoftware.co.uk,187,1,286877.23,2020-03-01

@@ -1,0 +1,4 @@
+# Minimum versions for base-image packages with fixable CRITICAL CVEs (Trivy, 2026-10-21).
+PyJWT>=2.14.0      # CVE-2026-102268
+anyio>=4.14.2      # CVE-2026-63374
+certifi>=2026.10.19  # GHSA-6q48-6c7w-9gw2
