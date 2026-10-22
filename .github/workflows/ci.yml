@@ -29,6 +29,10 @@ jobs:
       - run: pytest -q
       - name: shellcheck
         run: docker run --rm -v "$PWD:/mnt" -w /mnt koalaman/shellcheck:v0.11.0 -S warning scripts/ci/*.sh scripts/local/*.sh scripts/*.sh
+      - name: ruff
+        run: docker run --rm -v "$PWD:/io" -w /io ghcr.io/astral-sh/ruff:0.14.0 check .
+      - name: hadolint
+        run: docker run --rm -i hadolint/hadolint:v2.14.0 < app/Dockerfile
       - name: render manifests (fails on unresolved vars)
         env: { LAKE_BUCKET: example-bucket, GLUE_DATABASE: corporate_registry }
         run: |

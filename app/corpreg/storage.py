@@ -7,12 +7,12 @@ AWS_* environment variables point at SeaweedFS.
 from __future__ import annotations
 
 import os
-from functools import lru_cache
+from functools import cache
 
 import pyarrow.fs as pafs
 
 
-@lru_cache(maxsize=None)
+@cache
 def _s3() -> pafs.S3FileSystem:
     endpoint = os.getenv("S3_ENDPOINT_URL")  # only set for local S3-compatible stores
     if endpoint:

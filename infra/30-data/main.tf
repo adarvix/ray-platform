@@ -1,18 +1,5 @@
 # Layer 30 - data plane: lake bucket, Iceberg catalog (Glue), image registry, secrets, logs.
 # Lifecycle is independent of the cluster: you can destroy/rebuild EKS without touching data.
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws    = { source = "hashicorp/aws", version = "~> 6.0" }
-    random = { source = "hashicorp/random", version = "~> 3.7" }
-  }
-  backend "s3" {}
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "30-data" } }
-}
 
 data "aws_caller_identity" "current" {}
 
@@ -208,7 +195,3 @@ resource "aws_ssm_parameter" "outputs" {
   type  = "String"
   value = each.value
 }
-
-output "lake_bucket" { value = aws_s3_bucket.lake.bucket }
-output "ecr_repository_url" { value = aws_ecr_repository.pipeline.repository_url }
-output "llm_secret_name" { value = aws_secretsmanager_secret.llm_api_key.name }

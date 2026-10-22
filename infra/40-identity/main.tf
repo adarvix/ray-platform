@@ -8,18 +8,6 @@
 #   ci-infra-apply  (OIDC)        terraform apply; protected environment with required reviewers
 #
 # No static AWS keys exist anywhere: pods use projected service-account tokens, CI uses OIDC.
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 6.0" }
-  }
-  backend "s3" {}
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "40-identity" } }
-}
 
 data "aws_caller_identity" "current" {}
 
@@ -363,6 +351,3 @@ resource "aws_ssm_parameter" "outputs" {
   type  = "String"
   value = each.value
 }
-
-output "ci_role_arns" { value = { for k, v in aws_iam_role.ci : k => v.arn } }
-output "ray_job_role_arn" { value = module.ray_job_role.arn }

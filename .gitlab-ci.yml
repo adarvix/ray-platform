@@ -67,6 +67,22 @@ shellcheck:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
+ruff:
+  stage: test
+  image: { name: "ghcr.io/astral-sh/ruff:0.14.0-alpine", entrypoint: [""] }
+  script:
+    - ruff check .
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+hadolint:
+  stage: test
+  image: hadolint/hadolint:v2.14.0-alpine
+  script:
+    - hadolint app/Dockerfile
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
 terraform-static:
   stage: test
   extends: .terraform

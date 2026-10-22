@@ -1,16 +1,4 @@
 # Layer 10 - network. Changes rarely; blast radius is everything, so it has its own state.
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 6.0" }
-  }
-  backend "s3" {} # bucket/region/use_lockfile from envs/<env>/backend.hcl; key passed by `make`
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "10-network" } }
-}
 
 locals {
   name         = "${var.project}-${var.env}"
@@ -90,6 +78,3 @@ resource "aws_ssm_parameter" "outputs" {
   type  = "String"
   value = each.value
 }
-
-output "vpc_id" { value = module.vpc.vpc_id }
-output "private_subnet_ids" { value = module.vpc.private_subnets }

@@ -1,19 +1,5 @@
 # Layer 50 - in-cluster platform ("paved road"): autoscaling, Ray operator, secrets, observability.
 # Install order: Karpenter -> operators (CRDs) -> platform-baseline chart (CRs that use those CRDs).
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws        = { source = "hashicorp/aws", version = "~> 6.0" }
-    helm       = { source = "hashicorp/helm", version = "~> 3.0" }
-    kubernetes = { source = "hashicorp/kubernetes", version = "~> 3.0" }
-  }
-  backend "s3" {}
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "50-platform" } }
-}
 
 locals {
   ssm = "/${var.project}/${var.env}"
@@ -32,28 +18,6 @@ data "aws_ssm_parameter" "in" {
 }
 
 data "aws_eks_cluster" "this" { name = local.p["eks/cluster_name"] }
-
-provider "helm" {
-  kubernetes = {
-    host                   = data.aws_eks_cluster.this.endpoint
-    cluster_ca_certificate = base64decode(data.aws_eks_cluster.this.certificate_authority[0].data)
-    exec = {
-      api_version = "client.authentication.k8s.io/v1beta1"
-      command     = "aws"
-      args        = ["eks", "get-token", "--cluster-name", data.aws_eks_cluster.this.name, "--region", var.region]
-    }
-  }
-}
-
-provider "kubernetes" {
-  host                   = data.aws_eks_cluster.this.endpoint
-  cluster_ca_certificate = base64decode(data.aws_eks_cluster.this.certificate_authority[0].data)
-  exec {
-    api_version = "client.authentication.k8s.io/v1beta1"
-    command     = "aws"
-    args        = ["eks", "get-token", "--cluster-name", data.aws_eks_cluster.this.name, "--region", var.region]
-  }
-}
 
 # Default StorageClass (encrypted gp3) for Prometheus/Grafana volumes.
 resource "kubernetes_storage_class_v1" "gp3" {
@@ -272,8 +236,4 @@ resource "helm_release" "platform_baseline" {
     quota = var.ray_namespace_quota
   })]
   depends_on = [helm_release.karpenter, helm_release.kuberay, helm_release.external_secrets, helm_release.monitoring]
-}
-
-output "grafana_password_cmd" {
-  value = "kubectl -n monitoring get secret kube-prometheus-stack-grafana -o jsonpath='{.data.admin-password}' | base64 -d"
 }

@@ -1,16 +1,5 @@
 # Layer 00 - remote state. Applied once, by a human, with local state (chicken-and-egg).
 # Uses S3 native state locking (Terraform >= 1.10 `use_lockfile`), so no DynamoDB table.
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 6.0" }
-  }
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "00-bootstrap" } }
-}
 
 data "aws_caller_identity" "current" {}
 
@@ -63,6 +52,3 @@ resource "aws_s3_bucket_policy" "state" {
     }]
   })
 }
-
-output "state_bucket" { value = aws_s3_bucket.state.bucket }
-output "state_kms_key_arn" { value = aws_kms_key.state.arn }

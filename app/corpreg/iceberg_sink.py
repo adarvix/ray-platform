@@ -18,8 +18,12 @@ import time
 import pandas as pd
 import pyarrow as pa
 from pyiceberg.catalog import Catalog, load_catalog
-from pyiceberg.exceptions import (CommitFailedException, CommitStateUnknownException, NamespaceAlreadyExistsError,
-                                  ValidationException)
+from pyiceberg.exceptions import (
+    CommitFailedException,
+    CommitStateUnknownException,
+    NamespaceAlreadyExistsError,
+    ValidationException,
+)
 from pyiceberg.expressions import EqualTo
 from pyiceberg.partitioning import PartitionField, PartitionSpec
 from pyiceberg.schema import Schema

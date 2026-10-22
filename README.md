@@ -212,7 +212,7 @@ Only stateless, retryable work runs on Spot. Recovery happens in layers:
 1. **Diversify.** `ray-worker-spot` allows c/m/r families, 4–16 vCPU, amd64 + arm64 (multi-arch image). Karpenter's price-capacity-optimized allocation draws from many Spot pools, which means fewer interruptions and fewer capacity errors.
 2. **Fall back.** If Spot is unavailable, the `ray-worker-ondemand` NodePool (weight 10, its own CPU cap) is used automatically.
 3. **Drain on notice.** Karpenter reads the 2-minute interruption notice and rebalance events from SQS (EventBridge rules in Terraform), then cordons and drains before reclaim.
-4. **No voluntary disruption mid-job.** Consolidation is `WhenEmpty`, and Ray pods carry `karpenter.sh/do-not-disrupt`.
+4. **No voluntary disruption mid-job.** Consolidation is `WhenEmpty`, and Ray pods carry `karpenter.sh/do-not-disrupt`. That annotation does not stop `expireAfter: 168h`, but worker nodes scale to zero between runs and rarely live that long; if one expires mid-run, it is handled like a Spot reclaim.
 5. **Ray-level recovery.** Tasks are retried, resolver actors restart, and Ray Train resumes from the last S3 checkpoint.
 6. **Job-level recovery.** `backoffLimit: 2` reruns the whole job, and the rerun is safe because every write is idempotent.
 
@@ -255,7 +255,7 @@ Never on Spot: the Ray head (losing it loses the job), Karpenter, operators and 
 
 | Trigger | GitHub Actions | GitLab CI | Does |
 |---|---|---|---|
-| Pull / merge request | `ci.yml` | MR pipeline | pytest (unit + Ray scheduling + manifest policy); manifest render; image build + Trivy; `terraform fmt/validate`; Trivy IaC scan; `terraform plan` per layer, posted to the PR |
+| Pull / merge request | `ci.yml` | MR pipeline | pytest (unit + Ray scheduling + manifest policy); ruff, shellcheck, hadolint; manifest render; image build + Trivy; `terraform fmt/validate`; Trivy IaC scan; `terraform plan` per layer, posted to the PR |
 | Merge, `app/**` or `k8s/**` | `release.yml` | `build-push`, `run-pipeline` | Multi-arch build → ECR (`:<git-sha>`) → render RayJob → apply → wait → red if the job fails |
 | Merge, `infra/**` | `infra.yml` | `terraform-apply` (manual) | Reviewer-gated environment; layers applied strictly in order |
 

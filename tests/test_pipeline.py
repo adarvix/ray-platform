@@ -8,8 +8,14 @@ import pytest
 sys.path.insert(0, str(Path(__file__).parents[1] / "app"))
 
 from corpreg.datagen import generate  # noqa: E402
-from corpreg.resolution import (EntityResolver, normalize_domain, normalize_name, pairwise_quality,  # noqa: E402
-                                stable_id, standardize)
+from corpreg.resolution import (  # noqa: E402
+    EntityResolver,
+    normalize_domain,
+    normalize_name,
+    pairwise_quality,
+    stable_id,
+    standardize,
+)
 
 
 @pytest.fixture(scope="module")

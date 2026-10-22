@@ -72,6 +72,7 @@ def train_and_evaluate(golden: pd.DataFrame, run_id: str, storage_uri: str, num_
     import xgboost
     from ray.train import CheckpointConfig, FailureConfig, RunConfig, ScalingConfig
     from ray.train.xgboost import RayTrainReportCallback, XGBoostTrainer
+
     from corpreg.storage import resolve
 
     labelled = golden[golden.annual_revenue_usd.notna() & (golden.annual_revenue_usd > 0)]

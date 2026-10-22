@@ -18,3 +18,5 @@ scripts/ci/tf.sh apply 20-eks
 ```
 
 Apply order is `10 → 20 → 30 → 40 → 50`. Destroy in reverse.
+
+Each layer uses the standard file split: `terraform.tf` (version pins, backend), `providers.tf`, `main.tf`, `variables.tf`, `outputs.tf`. Shared code lives in `modules/` (`workload-role`: one IRSA role pinned to one ServiceAccount).

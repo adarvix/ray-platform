@@ -1,17 +1,5 @@
 # Layer 20 - EKS control plane + the always-on system node group.
 # Worker capacity is NOT here: Karpenter (layer 50) provisions Ray worker nodes on demand.
-terraform {
-  required_version = ">= 1.10"
-  required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 6.0" }
-  }
-  backend "s3" {}
-}
-
-provider "aws" {
-  region = var.region
-  default_tags { tags = { Project = var.project, Environment = var.env, ManagedBy = "terraform", Layer = "20-eks" } }
-}
 
 locals {
   cluster_name = "${var.project}-${var.env}"
@@ -111,9 +99,4 @@ resource "aws_ssm_parameter" "outputs" {
   name  = "${local.ssm}/eks/${each.key}"
   type  = "String"
   value = each.value
-}
-
-output "cluster_name" { value = module.eks.cluster_name }
-output "configure_kubectl" {
-  value = "aws eks update-kubeconfig --region ${var.region} --name ${module.eks.cluster_name}"
 }
