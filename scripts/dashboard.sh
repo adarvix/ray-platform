@@ -10,7 +10,8 @@
 # Usage: scripts/dashboard.sh [aws|local]
 set -euo pipefail
 MODE="${1:-aws}"
-CTX_ARGS=(); [[ "$MODE" == local ]] && CTX_ARGS=(--context "${KUBE_CONTEXT:-orbstack}")
+if [[ "$MODE" == local ]]; then CTX_ARGS=(--context "${KUBE_CONTEXT:-orbstack}")
+else CTX_ARGS=(--context "${KUBE_CONTEXT:-corpreg-${ENV_NAME:-dev}}"); fi  # never the current context
 k() { kubectl ${CTX_ARGS[@]+"${CTX_ARGS[@]}"} -n ray "$@"; }
 
 # Newest *running* head pod. (A RayJob's head Service outlives its cluster until the RayJob is

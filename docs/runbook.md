@@ -18,6 +18,8 @@
 
 ## Alert → first actions
 
+Commands below assume the EKS context from the README (`aws eks update-kubeconfig ... --alias corpreg-dev`, then `kubectl config use-context corpreg-dev`).
+
 **RayJobFailed**
 1. `kubectl -n ray get rayjob <name> -o yaml`: read `status.message` and `status.failed`.
 2. Read the driver output: `kubectl -n ray logs job/<name>`, or in CloudWatch Logs Insights:

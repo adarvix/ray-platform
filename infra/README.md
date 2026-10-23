@@ -15,8 +15,9 @@ Each layer has its own state (`<env>/<layer>.tfstate` in the bootstrap bucket, S
 scripts/ci/tf.sh static            # fmt + validate all layers, no AWS needed
 scripts/ci/tf.sh plan 20-eks       # uses envs/dev/backend.hcl + envs/dev/20-eks.tfvars if present
 scripts/ci/tf.sh apply 20-eks
+scripts/ci/tf.sh destroy 20-eks    # humans only; `make destroy-all` does 50 → 10 after a confirmation
 ```
 
-Apply order is `10 → 20 → 30 → 40 → 50`. Destroy in reverse.
+Apply order is `10 → 20 → 30 → 40 → 50`. Destroy in reverse (`make destroy-all`).
 
 Each layer uses the standard file split: `terraform.tf` (version pins, backend), `providers.tf`, `main.tf`, `variables.tf`, `outputs.tf`. Shared code lives in `modules/` (`workload-role`: one IRSA role pinned to one ServiceAccount).

@@ -3,6 +3,7 @@
 #   tf.sh static            fmt + validate + mocked policy tests on every layer (no cloud access)
 #   tf.sh plan  <layer>     plan one layer against remote state -> <layer>/plan.txt
 #   tf.sh apply <layer>     apply one layer (CI: only from the reviewer-gated environment)
+#   tf.sh destroy <layer>   destroy one layer (humans only, via make destroy-all)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -53,6 +54,10 @@ case "$CMD" in
   apply)
     layer="${2:?layer}"; init "$layer"; varfile_args "$layer"
     terraform -chdir="$ROOT/infra/$layer" apply -lock-timeout=5m -auto-approve ${VAR_ARGS[@]+"${VAR_ARGS[@]}"}
+    ;;
+  destroy)  # humans only (make destroy-all asks for confirmation first); never wired into CI
+    layer="${2:?layer}"; init "$layer"; varfile_args "$layer"
+    terraform -chdir="$ROOT/infra/$layer" destroy -lock-timeout=5m -auto-approve ${VAR_ARGS[@]+"${VAR_ARGS[@]}"}
     ;;
   *) echo "unknown command $CMD" >&2; exit 2 ;;
 esac

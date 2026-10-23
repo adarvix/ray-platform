@@ -1,0 +1,16 @@
+# Local mirror of the kube-prometheus-stack values in infra/50-platform/main.tf
+# (same discovery settings; no node selectors, persistence or resource sizing locally).
+prometheus:
+  prometheusSpec:
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    scrapeInterval: 10s   # short Ray runs: catch them while they are alive
+grafana:
+  sidecar:
+    dashboards: { enabled: true, searchNamespace: ALL }
+  grafana.ini:
+    security: { allow_embedding: true }
+    auth.anonymous: { enabled: false }
+prometheus-node-exporter:
+  tolerations: [{ operator: Exists }]

@@ -52,7 +52,7 @@ def resolve_entities(cfg: Settings, unified: rd.Dataset) -> pd.DataFrame:
     # Ray nodes labelled corpreg.io/pool=resolver (the resolver worker group, which in turn
     # is pinned to the resolver Karpenter NodePool by nodeSelector + toleration).
     resolved = unified.groupby("country", num_partitions=cfg.shuffle_partitions).map_groups(
-        EntityResolver, batch_format="pandas", concurrency=cfg.resolver_concurrency, num_cpus=1,
+        EntityResolver, batch_format="pandas", compute=rd.ActorPoolStrategy(size=cfg.resolver_concurrency), num_cpus=1,
         label_selector={POOL_LABEL_KEY: cfg.resolver_pool_label}, max_restarts=3, max_task_retries=3)
     # Golden records are O(entities), bounded and small enough to collect on the driver.
     return resolved.to_pandas()

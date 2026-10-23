@@ -29,52 +29,54 @@ Design choices and the alternatives I considered are in [docs/decisions.md](docs
 ## Architecture
 
 ```mermaid
-flowchart LR
-  subgraph CI["CI (GitHub Actions / GitLab CI) - OIDC, no stored keys"]
-    PR["PR: tests · image scan · tf plan"] --> MERGE["merge to main"]
-    MERGE --> APP["release: build → ECR → RayJob"]
-    MERGE --> INFRA["infra: reviewer-gated terraform apply"]
+flowchart TB
+  subgraph CI["CI/CD · OIDC, no keys"]
+    PR["Pull request<br/>tests · lint · scans · terraform plan"] --> MERGE["Merge to main"]
+    MERGE --> REL["release workflow<br/>build → ECR → RayJob → wait"]
+    MERGE --> INFRA["infra workflow<br/>reviewer-gated terraform apply"]
   end
 
-  subgraph AWS["AWS account"]
-    subgraph VPC["VPC - private subnets"]
-      subgraph EKS["EKS 1.37"]
-        subgraph SYS["system node group · On-Demand"]
-          KR["KubeRay operator"]
-          KP["Karpenter"]
-          MON["Prometheus · Grafana · Alertmanager"]
-          ESO["External Secrets"]
-          HEAD["Ray head + driver<br/>(num-cpus=0)"]
-        end
-        subgraph SPOT["Karpenter NodePool · Spot (On-Demand fallback)"]
-          W["Ray CPU workers<br/>Ray Data · Ray Train"]
-        end
-        subgraph RES["Karpenter NodePool · resolver · On-Demand"]
-          R["Ray resolver workers<br/>EntityResolver actors"]
-        end
-        FB["Fluent Bit DaemonSet"]
-      end
+  subgraph EKS["EKS 1.37 · private"]
+    subgraph SYS["System · On-Demand"]
+      KR["KubeRay operator"]
+      HEAD["Ray head + driver<br/>num-cpus=0"]
+      KP["Karpenter"]
+      ESO["External Secrets"]
+      MON["Prometheus · Grafana"]
     end
-    S3[("S3 lake<br/>raw/ · warehouse/ · artifacts/")]
-    GLUE[("Glue Data Catalog<br/>Iceberg tables")]
-    SM[("Secrets Manager<br/>LLM key · dashboard token")]
-    CW[("CloudWatch Logs")]
-    ECR[("ECR · immutable tags")]
-    SQS[("SQS · Spot interruption events")]
+    subgraph WRK["Workers · Spot"]
+      W["Ray CPU workers<br/>Ray Data · Ray Train"]
+    end
+    subgraph RES["Resolver · tainted"]
+      R["EntityResolver actors<br/>only pods with LLM key"]
+    end
+    FB["Fluent Bit · every node"]
   end
 
-  APP --> ECR
-  APP -- "kubectl apply RayJob" --> KR
-  KR --> HEAD & W & R
-  HEAD -- "IRSA" --> GLUE
-  HEAD & W -- "IRSA · S3 gateway endpoint" --> S3
-  R -. "only pods with LLM_API_KEY" .- ESO
-  ESO -- "IRSA" --> SM
-  SQS --> KP
-  KP -- "provisions / drains" --> SPOT & RES
-  FB --> CW
-  MON -. "scrapes" .- HEAD & W & R
+  ECR[("ECR")]
+  S3[("S3 lake · KMS")]
+  GLUE[("Glue Catalog · Iceberg")]
+  SM[("Secrets Manager")]
+  SQS[("SQS · Spot notices")]
+  CW[("CloudWatch Logs")]
+
+  REL -->|"1 push image"| ECR
+  REL -->|"2 apply RayJob"| KR
+  KR -->|"3 create cluster"| HEAD
+  KR -->|"3"| W
+  KR -->|"3"| R
+  KP -->|"4 add nodes"| W
+  KP -->|"4"| R
+  W -->|"5 read / write data"| S3
+  HEAD -->|"5 Iceberg commit"| GLUE
+  SM -->|"6 LLM key"| ESO
+  ESO -.->|"6 resolver only"| R
+  FB -->|"7 logs"| CW
+  SQS -->|"8 Spot notice: drain"| KP
+  MON -.->|"scrapes"| HEAD
 ```
+
+Source: [docs/architecture.mmd](docs/architecture.mmd). Numbered arrows follow one run: 1 push image, 2 apply RayJob, 3 KubeRay creates the cluster, 4 Karpenter adds nodes, 5 data in S3 + Iceberg commit in Glue, 6 LLM key to resolver pods only, 7 logs to CloudWatch, 8 Spot notice drains the node.
 
 **Pipeline flow** ([`app/ray_pipeline.py`](app/ray_pipeline.py)):
 
@@ -97,10 +99,13 @@ read 2 CSVs (Ray Data, parallel) → standardize → groupby(country) → Entity
 | `k8s/local/` | Local stand-ins: SeaweedFS (S3 API) + Apache Iceberg REST catalog |
 | `scripts/ci/` | All CI logic. GitHub and GitLab only call these |
 | `tests/` | Unit, Ray multi-node scheduling, Iceberg idempotency, manifest-policy tests |
+| `docs/` | Architecture diagram (Mermaid source), design decisions, runbook |
 
 ---
 
 ## Quick start
+
+Tools: Docker (OrbStack, Docker Desktop or similar) and `python3` for the demo; [`uv`](https://docs.astral.sh/uv/) for `make venv`; `kubectl` and `helm` for the Kubernetes and AWS paths.
 
 ### 1. Verify on a laptop in 2 minutes (Docker only)
 
@@ -121,44 +126,66 @@ This runs the complete pipeline twice in the production image: real Ray (Ray Dat
   iceberg upsert: inserted=0 updated=0 snapshots_total=1      <- replay is a no-op
 ```
 
+Tests (unit, Ray scheduling, Iceberg, manifest policy) and the Terraform checks:
+
+```bash
+make venv        # once: Python 3.12 virtualenv in .venv with the pinned dev dependencies
+make test
+make tf-static   # terraform fmt + validate + policy tests with mocked AWS (no account needed)
+```
+
 ### 2. Run it as a RayJob on local Kubernetes (OrbStack / kind / Docker Desktop)
 
 ```bash
+make venv             # if not done above (local-schedule uses it)
 make local-up         # KubeRay 1.7.1, SeaweedFS (S3), Iceberg REST catalog, `ray` namespace (restricted PSS)
 make local-run        # renders + applies the RayJob, waits for the verdict, prints the driver summary
 make local-chaos      # kills a CPU worker mid-training; the job must still succeed
-make local-dashboard  # Ray dashboard via port-forward + Ray token auth
+make local-dashboard  # Ray dashboard on http://localhost:8265 (token copied to the clipboard)
+make local-observability  # optional: Prometheus + Grafana with the platform's monitors, alerts and dashboard
 make local-schedule   # installs the nightly RayCronJob
 make local-down
 ```
 
-Scripts refuse to run against any kube context that is not a local cluster. Give Docker/OrbStack ≥ 10 GiB of memory. At 8 GiB the job still succeeds, but memory pressure on the VM stretches a run from about 1 minute to about 11.
+The scripts use the `orbstack` context by default (`KUBE_CONTEXT=kind-<name>` or `docker-desktop` for others) and refuse any context that is not a local cluster. Give Docker/OrbStack ≥ 10 GiB of memory. At 8 GiB the job still succeeds, but memory pressure on the VM stretches a run from about 1 minute to about 11.
 
 Observed on OrbStack (Kubernetes 1.36): run 1 inserted 1,504 rows (precision 0.983 / recall 0.992, R² 0.94); the replay committed `inserted=0 updated=0` with no new snapshot.
 
 ### 3. Deploy to AWS
 
-Prerequisites: an AWS sandbox account, Terraform ≥ 1.10, AWS CLI, kubectl, Helm, Docker with buildx.
+Also needed: an AWS sandbox account with admin credentials in your shell, Terraform ≥ 1.10, AWS CLI v2, Docker with `buildx`.
 
 ```bash
-make bootstrap                       # 1. state bucket (local state, run once by a human)
-# 2. put the account id / your CIDR / repo name into infra/envs/dev/*.hcl|*.tfvars
-make apply LAYER=10-network          # 3. apply layers in order (or: make apply-all)
-make apply LAYER=20-eks
-make apply LAYER=30-data
-make apply LAYER=40-identity
-make apply LAYER=50-platform
-aws eks update-kubeconfig --name corpreg-dev --region ap-south-1
-aws secretsmanager put-secret-value --secret-id corpreg-dev/llm-api-key --secret-string '<key>'  # optional
-make seed-data                       # 4. upload the two source CSVs to s3://<lake>/raw
-make run                             # 5. build + push image, run the RayJob, wait for verdict
-make schedule                        # 6. nightly RayCronJob
+export AWS_REGION=ap-south-1
+make venv
+
+# 1. Terraform state bucket (local state, run once by a human)
+make bootstrap                       # prints state_bucket and state_kms_key_arn
+
+# 2. Fill in the placeholders
+#    infra/envs/dev/backend.hcl        bucket            = <state_bucket>
+#    infra/envs/dev/40-identity.tfvars state_bucket      = <state_bucket>
+#                                      state_kms_key_arn = <state_kms_key_arn>
+#                                      github_repository = "<owner>/<repo>"   (or gitlab_project_path)
+#    infra/envs/dev/20-eks.tfvars      endpoint_public_access_cidrs = ["<your IP>/32"]
+
+# 3. All layers, in order (or one at a time: make apply LAYER=20-eks)
+make apply-all                       # EKS alone takes about 15 minutes
+aws eks update-kubeconfig --name corpreg-dev --region $AWS_REGION --alias corpreg-dev
+
+# 4. Optional: the LLM key (the pipeline falls back to rule-based matching without it)
+aws secretsmanager put-secret-value --secret-id corpreg-dev/llm-api-key --secret-string '<key>'
+
+# 5. Run
+make seed-data                       # writes the synthetic source CSVs to s3://<lake>/raw
+make run                             # build + scan + push image, run the RayJob, wait for the verdict
+make schedule                        # nightly RayCronJob
 make dashboard                       # Ray dashboard (port-forward + token from Secrets Manager)
 ```
 
-For CI, set repository variables `AWS_PLAN_ROLE_ARN`, `AWS_DEPLOY_ROLE_ARN` and `AWS_APPLY_ROLE_ARN` (outputs of `40-identity`), and create the environments `dev` and `infra-dev` (with required reviewers).
+For CI, run `terraform -chdir=infra/40-identity output ci_role_arns` and store the three ARNs as repository variables `AWS_PLAN_ROLE_ARN`, `AWS_DEPLOY_ROLE_ARN` and `AWS_APPLY_ROLE_ARN`. Then create the environments `dev` and `infra-dev` (give `infra-dev` required reviewers). Until those variables exist, the AWS jobs are skipped, not failed.
 
-Teardown: apply in reverse with `terraform destroy` (50 → 10). The lake bucket has `force_destroy` only outside `prod`.
+Teardown: `make destroy-all` asks you to type the environment name, deletes any RayJobs, then destroys layers 50 → 10. In non-prod the lake bucket, ECR images and secrets are deleted with them. The state bucket from step 1 is kept (`prevent_destroy`); remove it by hand if you want it gone.
 
 ---
 
@@ -172,7 +199,7 @@ Teardown: apply in reverse with `terraform destroy` (50 → 10). The lake bucket
 | `object-store-memory` | Explicit (2 GiB on 8 GiB workers) | Predictable. Must stay below the shm `sizeLimit`, and both below the pod memory limit, because memory-backed emptyDir counts against the container's memory. |
 | CPU/memory limits | `limits == requests` | KubeRay derives Ray's CPU/memory from the container; equal values keep Ray's view and the cgroup in sync (no throttling or OOM surprises). |
 | Shuffle | `sort_shuffle_pull_based`, `num_partitions=8` (env) | Ray Data's hash shuffle defaults to 200 partitions and aggregator actors that each reserve ~1 GiB. On small workers this deadlocked the shuffle (found in the Kubernetes run). Hash shuffle is the right choice for TB-scale groupbys. |
-| Resolver actor pool | `concurrency=N`, `max_restarts=3`, `max_task_retries=3` | A stateful actor (LLM client, cache) that survives worker loss. |
+| Resolver actor pool | `compute=ActorPoolStrategy(size=N)`, `max_restarts=3`, `max_task_retries=3` | A stateful actor (LLM client, cache) that survives worker loss. |
 | Autoscaler `idleTimeoutSeconds` | `300` | At 60s, workers were removed during the driver's Iceberg commit and re-added for training. On EKS that means new Spot nodes and minutes of churn. |
 | Ray Train | `XGBoostTrainer` (V2), `ScalingConfig(num_workers=2)`, checkpoints every 25 rounds to S3, `FailureConfig(max_failures=3)`, resume via `get_checkpoint()` | Spot-safe training: a reclaimed worker costs at most 25 rounds. `max_failures` covers ordinary worker errors; Ray Train tags a drained or killed node as `Source: preemption` and retries it without using that budget (seen in `make local-chaos`). Metrics are reported only with checkpoints; per-round reporting made training 12× slower (6 min → 30 s). |
 
@@ -199,7 +226,7 @@ Two layers, each enforcing its own boundary ([D3](docs/decisions.md#d3-placing-e
 ```python
 # app/ray_pipeline.py
 unified.groupby("country", ...).map_groups(
-    EntityResolver, concurrency=N, num_cpus=1,
+    EntityResolver, compute=ActorPoolStrategy(size=N), num_cpus=1,
     label_selector={"corpreg.io/pool": "resolver"})   # Ray will only place the actor pool there
 ```
 
@@ -295,6 +322,8 @@ Trade-offs:
 |---|---|
 | Pipeline end to end: ingest → resolution → Iceberg upsert → Ray Train → predictions | `make demo` (production image, real Ray, real Iceberg catalog) |
 | Same pipeline as a RayJob through KubeRay 1.7.1 on Kubernetes, pods admitted under restricted Pod Security, Iceberg REST catalog on S3-API storage; replay = 0 inserts/updates | `make local-up && make local-run` twice (OrbStack, Kubernetes 1.36) |
+| Monitoring with the same kube-prometheus-stack chart as EKS: Prometheus scrapes the Ray head (node, autoscaler, dashboard exporters), workers and KubeRay; all 10 alert rules evaluate; a deliberately failed run fires `RayJobFailed`; Grafana loads the platform dashboard | `make local-observability`, then `make local-run` (failure case: precision gate raised to 0.9999) |
+| Ray dashboard access: no token → 401, wrong token → 403, right token → 200 | `make local-dashboard` during a run |
 | Spot-style worker loss mid-training: Ray Train restarts the worker group and resumes from the S3 checkpoint; the job still succeeds | `make local-chaos` (force-deletes a CPU worker pod after the first checkpoint) |
 | Failure path: Ray Train retry → job FAILED → `backoffLimit` reruns on fresh clusters → non-zero exit; failed head retained for debugging | Observed during local sizing (head OOM), see [runbook](docs/runbook.md) |
 | Idempotency: replay → 0 inserts, 0 updates, no new snapshot | `make demo` run 2, `test_iceberg_upsert_is_idempotent`, `test_resolution_is_independent_of_row_order` |

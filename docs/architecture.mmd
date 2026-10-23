@@ -1,0 +1,47 @@
+%% Architecture: one scheduled pipeline run on EKS. Numbered edges follow a single run.
+%% The same diagram is embedded in README.md; keep the two in sync.
+flowchart TB
+  subgraph CI["CI/CD · OIDC, no keys"]
+    PR["Pull request<br/>tests · lint · scans · terraform plan"] --> MERGE["Merge to main"]
+    MERGE --> REL["release workflow<br/>build → ECR → RayJob → wait"]
+    MERGE --> INFRA["infra workflow<br/>reviewer-gated terraform apply"]
+  end
+
+  subgraph EKS["EKS 1.37 · private"]
+    subgraph SYS["System · On-Demand"]
+      KR["KubeRay operator"]
+      HEAD["Ray head + driver<br/>num-cpus=0"]
+      KP["Karpenter"]
+      ESO["External Secrets"]
+      MON["Prometheus · Grafana"]
+    end
+    subgraph WRK["Workers · Spot"]
+      W["Ray CPU workers<br/>Ray Data · Ray Train"]
+    end
+    subgraph RES["Resolver · tainted"]
+      R["EntityResolver actors<br/>only pods with LLM key"]
+    end
+    FB["Fluent Bit · every node"]
+  end
+
+  ECR[("ECR")]
+  S3[("S3 lake · KMS")]
+  GLUE[("Glue Catalog · Iceberg")]
+  SM[("Secrets Manager")]
+  SQS[("SQS · Spot notices")]
+  CW[("CloudWatch Logs")]
+
+  REL -->|"1 push image"| ECR
+  REL -->|"2 apply RayJob"| KR
+  KR -->|"3 create cluster"| HEAD
+  KR -->|"3"| W
+  KR -->|"3"| R
+  KP -->|"4 add nodes"| W
+  KP -->|"4"| R
+  W -->|"5 read / write data"| S3
+  HEAD -->|"5 Iceberg commit"| GLUE
+  SM -->|"6 LLM key"| ESO
+  ESO -.->|"6 resolver only"| R
+  FB -->|"7 logs"| CW
+  SQS -->|"8 Spot notice: drain"| KP
+  MON -.->|"scrapes"| HEAD
