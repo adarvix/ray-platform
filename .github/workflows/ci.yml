@@ -51,6 +51,9 @@ jobs:
           restore-keys: trivy-db-
       - run: scripts/ci/build-push.sh --no-push
         env: { GIT_SHA: "${{ github.sha }}" }
+      # Trivy runs as root in its container; hand the DB back to the runner user so the cache can be saved.
+      - if: always()
+        run: sudo chown -R "$(id -u):$(id -g)" ~/.cache/trivy
 
   terraform-static:
     name: terraform fmt / validate / misconfig scan
