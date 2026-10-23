@@ -56,10 +56,13 @@ apply: ## make apply LAYER=20-eks
 	scripts/ci/tf.sh apply $(LAYER)
 apply-all: ## apply every layer in dependency order
 	@for l in 10-network 20-eks 30-data 40-identity 50-platform; do scripts/ci/tf.sh apply $$l || exit 1; done
-destroy-all: ## delete Ray jobs, then destroy layers 50 → 10 (asks for confirmation; state bucket is kept)
+# Prometheus' volume comes from a StatefulSet claim, which helm uninstall leaves behind; deleting
+# the claim first lets the EBS CSI driver remove the disk before the cluster goes (found on a real teardown).
+destroy-all: ## delete Ray jobs and monitoring volumes, then destroy layers 50 → 10 (asks for confirmation; state bucket is kept)
 	@read -r -p "Destroy every AWS layer of '$(ENV_NAME)'? Type the env name to confirm: " c && [ "$$c" = "$(ENV_NAME)" ]
 	-aws eks update-kubeconfig --name corpreg-$(ENV_NAME) --region $${AWS_REGION:-ap-south-1} --alias corpreg-$(ENV_NAME) >/dev/null && \
-	  kubectl --context corpreg-$(ENV_NAME) -n ray delete rayjobs,raycronjobs --all --wait=true
+	  kubectl --context corpreg-$(ENV_NAME) -n ray delete rayjobs,raycronjobs --all --wait=true && \
+	  kubectl --context corpreg-$(ENV_NAME) -n monitoring delete pvc --all --wait=false
 	@for l in 50-platform 40-identity 30-data 20-eks 10-network; do scripts/ci/tf.sh destroy $$l || exit 1; done
 seed-data: ## upload the synthetic source CSVs to s3://<lake>/raw (upstream systems would do this)
 	eval "$$(scripts/ci/env-from-ssm.sh)" && cd app && ../$(PY) -m corpreg.datagen --out s3://$$LAKE_BUCKET/raw

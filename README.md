@@ -6,7 +6,7 @@ A "paved road" for scheduled Ray pipelines on Kubernetes. The scheduled job:
 3. Upserts the harmonized registry into an Apache Iceberg table in one transactional commit.
 4. Trains a distributed XGBoost model with Ray Train to predict annual revenue.
 
-> **Status:** the pipeline runs end to end locally, both in a container and as a `RayJob` through KubeRay under restricted Pod Security. The AWS Terraform validates, passes the IaC scan, and was rehearsed against an AWS API emulator, but it has **not been applied to a real AWS account**. IRSA, Karpenter Spot behaviour and CI against a live cluster still need a sandbox. Details: [What is verified](#what-is-verified-and-what-is-not).
+> **Status:** tested in three stages. (1) Locally, in a container and as a `RayJob` through KubeRay under restricted Pod Security. (2) Against an AWS API emulator. (3) On a real AWS account: all layers applied, the pipeline ran on EKS with Karpenter Spot workers, IRSA to S3/Glue/KMS and an Iceberg commit, then everything was destroyed. The real run found six problems that the earlier stages could not; all six are fixed in this repo. Still untested: a real Spot interruption (AWS FIS) and the CI workflows against a live account. Details: [What is verified](#what-is-verified-and-what-is-not).
 
 ---
 
@@ -183,9 +183,14 @@ make schedule                        # nightly RayCronJob
 make dashboard                       # Ray dashboard (port-forward + token from Secrets Manager)
 ```
 
+Notes from the real run:
+- The region is a variable everywhere. New AWS accounts can be locked to one Region by an organization policy and start with a 5 vCPU quota; the stack needs about 8 On-Demand vCPUs plus Spot, so request 16+ first.
+- `make run` builds a ~4 GB multi-arch image on your machine and pushes it. On a slow uplink that takes hours; the normal path is the CI release workflow, or any builder inside AWS (I used a one-off CodeBuild project: 134 s).
+- Layer 50 creates the Spot service-linked role that a new account lacks. If your account already has it, set `create_spot_service_linked_role = false`.
+
 For CI, run `terraform -chdir=infra/40-identity output ci_role_arns` and store the three ARNs as repository variables `AWS_PLAN_ROLE_ARN`, `AWS_DEPLOY_ROLE_ARN` and `AWS_APPLY_ROLE_ARN`. Then create the environments `dev` and `infra-dev` (give `infra-dev` required reviewers). Until those variables exist, the AWS jobs are skipped, not failed.
 
-Teardown: `make destroy-all` asks you to type the environment name, deletes any RayJobs, then destroys layers 50 → 10. In non-prod the lake bucket, ECR images and secrets are deleted with them. The state bucket from step 1 is kept (`prevent_destroy`); remove it by hand if you want it gone.
+Teardown: `make destroy-all` asks you to type the environment name, deletes any RayJobs and the Prometheus volume claim, then destroys layers 50 → 10. In non-prod the lake bucket, ECR images and secrets are deleted with them. The state bucket and its KMS key from step 1 are kept (`prevent_destroy`); remove them by hand if you want them gone (empty every object version, delete the bucket, schedule the key for deletion).
 
 ---
 
@@ -299,7 +304,7 @@ Both systems call the same `scripts/ci/*.sh`, so behaviour is identical and swit
 - Logs:
   - A Fluent Bit DaemonSet that tolerates every taint, so it also runs on Spot nodes.
   - It ships head, worker and submitter stdout/stderr to CloudWatch Logs, with Kubernetes metadata.
-  - The pipeline logs JSON with `run_id`, so one Logs Insights query follows a run across all pods.
+  - The pipeline logs JSON with `run_id`, so one Logs Insights query follows a run through the submitter and head pods. Worker output reaches CloudWatch through the driver's forwarded logs; worker pods' own lines carry no `run_id`.
 - Known gap: Ray's own process logs under `/tmp/ray` are visible in the dashboard while the cluster lives. Next step: KubeRay History Server (beta in 1.7) for finished ephemeral clusters.
 
 ## Serverless alternative
@@ -333,18 +338,42 @@ Trade-offs:
 | All six Terraform layers: `fmt` + `validate`; IaC misconfiguration scan | `make tf-static`; Trivy (0 unaccepted HIGH/CRITICAL) |
 | Apply rehearsal on an AWS API emulator ([LocalEmu](https://github.com/localemu/localemu)): layers 00, 10, 30 applied through `tf.sh`; 40 created all IAM roles; 50 created the Karpenter SQS queue and interruption rules. The pipeline ran against emulated S3 + Glue catalog (replay: 0 inserts/updates) | Emulator gaps stop the rest: EKS access entries, add-ons, Pod Identity, and Helm into the cluster. IAM was not enforced, so this says nothing about policy completeness |
 
-| Not yet verified (needs an AWS sandbox) | Risk / what to check |
+**On real AWS** (ap-southeast-2, `make apply-all` with a throwaway env, image built by CodeBuild, RayJob submitted with `scripts/ci/run-rayjob.sh`, then `make destroy-all` and a sweep of the account):
+
+| Verified | Result |
 |---|---|
-| `terraform apply` of layers 10–50 | Module/provider interplay at apply time, quotas, Helm install ordering |
-| IRSA end to end (PyArrow S3 + PyIceberg Glue + KMS from pods) | Policy completeness, e.g. Glue actions PyIceberg calls on commit |
-| Karpenter Spot behaviour: interruption drain, On-Demand fallback, arm64 scheduling | Run a Spot interruption experiment with AWS FIS |
-| External Secrets → resolver pod; Ray token auth on EKS | Secret sync and KubeRay token mounting |
-| CI workflows against a live account (OIDC trust, plan comments, RayJob wait) | First real PR and merge |
+| All layers 10–50 apply and destroy cleanly | After the fixes below; 157 resources destroyed, nothing left in the account |
+| Pipeline on EKS through IRSA (PyArrow S3, PyIceberg Glue, KMS) | Run 2 and 3 SUCCEEDED in ~96 s: 1,504 golden records, precision 0.983 / recall 0.992, R² 0.947, 491 predictions |
+| Karpenter Spot and fallback | CPU worker on Spot (m8g.2xlarge, arm64), resolver on On-Demand c6g.xlarge. Before the Spot role fix, Spot failed and the On-Demand pool took over within 10 s. Worker nodes scaled to zero after each run |
+| Failure handling | Run 1 (before the IRSA fix): Ray Train retry → `backoffLimit` reran the job twice on fresh clusters → FAILED → non-zero exit |
+| Idempotency across retries | All three attempts of run 1 reached the upsert; the table holds one snapshot (1,504 rows, `run_id` aws-run-1). Later runs: 0 inserts / 0 updates |
+| Secrets | External Secrets synced the LLM key; only the resolver pod has `LLM_API_KEY` |
+| Dashboard access | `make dashboard`: no token 401, wrong token 403, right token 200 |
+| Metrics | Prometheus targets `up` for Ray head (3 exporters), workers, KubeRay and Karpenter; Grafana dashboard loads |
+| Logs and query | One CloudWatch Logs Insights query by `run_id` found run 1's traceback after its pods were gone; Athena reads the Iceberg tables and `$snapshots` |
+
+Problems the real run found, all fixed here:
+
+| # | Symptom | Fix |
+|---|---|---|
+| 1 | `AssociateAccessPolicy` 404: Terraform created the access policy association before its access entry | Reference the entry's `principal_arn` so Terraform orders them ([40-identity](infra/40-identity/main.tf)) |
+| 2 | `LimitExceeded … PolicySize: 6144` on the Karpenter controller policy | `enable_inline_policy = true` ([50-platform](infra/50-platform/main.tf)) |
+| 3 | Spot launches failed with `ServiceLinkedRoleCreationNotPermitted` on a new account | Terraform creates `AWSServiceRoleForEC2Spot` ([50-platform](infra/50-platform/main.tf)) |
+| 4 | Ray Train: `ACCESS_DENIED during HeadBucket`. PyArrow's bucket check is `s3:ListBucket` without a prefix, which the prefix condition denied | Bucket-level `ListBucket`; object access stays prefix-scoped ([40-identity](infra/40-identity/main.tf)) |
+| 5 | No Karpenter metrics: its chart renders the ServiceMonitor only if the CRD exists, and Karpenter installs before Prometheus | ServiceMonitor moved into `platform-baseline` ([observability.yaml](infra/50-platform/charts/platform-baseline/templates/observability.yaml)) |
+| 6 | Prometheus' 50 GiB EBS volume survived `destroy-all` (StatefulSet claims outlive `helm uninstall`) | `destroy-all` deletes the monitoring claims first ([Makefile](Makefile)) |
+
+| Not yet verified | Risk / what to check |
+|---|---|
+| A real Spot interruption (2-minute notice → drain → Ray Train resume) | Run an AWS FIS experiment; locally covered by `make local-chaos` |
+| CI workflows against a live account (OIDC trust, plan comments, RayJob wait) | First real PR and merge. The CI roles were created but not wired to repository variables |
 | Concurrent writers on the same Iceberg table | Two overlapping runs; expect a conflict-retry log line, not data loss |
+| Multi-AZ failure | Spread is configured (subnets in 3 AZs), not tested |
 
 ## Limitations and next steps
 
-- Apply on AWS and close the table above, including a Spot interruption test with AWS FIS.
+- A Spot interruption test with AWS FIS, and the CI workflows against a live account.
+- Install the snapshot CRDs (or turn off the snapshotter sidecar): the EBS CSI driver logs a harmless but constant `VolumeSnapshotClass` error on EKS.
 - In-VPC CI runners (Actions Runner Controller), then a private-only EKS endpoint.
 - KubeRay History Server for finished-job dashboards; Amazon Managed Prometheus/Grafana.
 - FQDN egress allow-list; image signing (cosign) with admission verification.

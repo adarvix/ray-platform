@@ -40,11 +40,14 @@ module "ray_job_role" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid       = "ListOnlyOwnPrefixes"
-        Effect    = "Allow"
-        Action    = ["s3:ListBucket", "s3:GetBucketLocation"]
-        Resource  = local.p["data/lake_bucket_arn"]
-        Condition = { StringLike = { "s3:prefix" = ["raw/*", "warehouse/*", "artifacts/*", "raw", "warehouse", "artifacts", ""] } }
+        # Bucket-level, no prefix condition: PyArrow (Ray Train's checkpoint storage) calls
+        # HeadBucket, which IAM evaluates as s3:ListBucket without an s3:prefix key, so a prefix
+        # condition denies it (found on a real apply). The bucket is dedicated to this pipeline;
+        # object reads/writes below stay scoped to raw/, warehouse/ and artifacts/.
+        Sid      = "ListLakeBucket"
+        Effect   = "Allow"
+        Action   = ["s3:ListBucket", "s3:GetBucketLocation"]
+        Resource = local.p["data/lake_bucket_arn"]
       },
       {
         Sid      = "ReadInputs"
@@ -312,7 +315,7 @@ resource "aws_eks_access_entry" "ci_plan" {
 resource "aws_eks_access_policy_association" "ci_plan" {
   count         = contains(keys(aws_iam_role.ci), "plan") ? 1 : 0
   cluster_name  = local.p["eks/cluster_name"]
-  principal_arn = aws_iam_role.ci["plan"].arn
+  principal_arn = aws_eks_access_entry.ci_plan[0].principal_arn                     # ordering: the entry must exist first
   policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminViewPolicy" # helm state lives in Secrets
   access_scope { type = "cluster" }
 }
@@ -326,7 +329,7 @@ resource "aws_eks_access_entry" "ci_apply" {
 resource "aws_eks_access_policy_association" "ci_apply" {
   count         = contains(keys(aws_iam_role.ci), "apply") ? 1 : 0
   cluster_name  = local.p["eks/cluster_name"]
-  principal_arn = aws_iam_role.ci["apply"].arn
+  principal_arn = aws_eks_access_entry.ci_apply[0].principal_arn # ordering: the entry must exist first
   policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
   access_scope { type = "cluster" }
 }

@@ -111,3 +111,16 @@ metadata:
 data:
   corpreg-platform.json: |-
 {{ .Files.Get "dashboards/corpreg-platform.json" | indent 4 }}
+---
+# Karpenter metrics (NodePool usage/limits, Spot interruptions). Lives here, not in Karpenter's chart:
+# that chart renders its ServiceMonitor only if the Prometheus CRDs exist at install time, and
+# Karpenter is installed before kube-prometheus-stack (found on a real apply: no Karpenter target).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: karpenter
+  namespace: kube-system
+spec:
+  selector: { matchLabels: { app.kubernetes.io/name: karpenter, app.kubernetes.io/instance: karpenter } }
+  endpoints:
+    - { port: http-metrics, path: /metrics }

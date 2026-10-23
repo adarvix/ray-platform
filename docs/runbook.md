@@ -34,7 +34,10 @@ Commands below assume the EKS context from the README (`aws eks update-kubeconfi
 
 **RayPodsPending**: `kubectl -n ray describe pod <pod>`.
 - `Insufficient cpu/memory` with no new node: Karpenter. Check `kubectl -n kube-system logs deploy/karpenter`; look for insufficient capacity, NodePool limits, or `karpenter_cloudprovider_errors_total`.
+- Account vCPU quota: new accounts start at 5 On-Demand and 5 Spot vCPUs. Karpenter logs `VcpuLimitExceeded` or `MaxSpotInstanceCountExceeded`; raise the quotas in Service Quotas.
 - `exceeded quota`: the namespace `ResourceQuota`.
+
+**Workers always On-Demand, never Spot**: Karpenter logs `AuthFailure.ServiceLinkedRoleCreationNotPermitted`. The account has never launched Spot, so `AWSServiceRoleForEC2Spot` is missing. Layer 50 creates it unless `create_spot_service_linked_role = false`. Jobs keep running on the On-Demand fallback meanwhile.
 
 **RayObjectStoreSpilling**: the workload outgrew the object store. Raise `object-store-memory` and the `/dev/shm` `sizeLimit` together, keeping both under the pod memory limit. Or reduce Ray Data block size / concurrency.
 

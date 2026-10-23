@@ -34,6 +34,14 @@ resource "kubernetes_storage_class_v1" "gp3" {
 # ---------------------------------------------------------------- Karpenter
 # AWS side: controller role (Pod Identity), node role, SQS interruption queue + EventBridge
 # rules for Spot interruption / rebalance / instance state changes.
+# EC2 needs this service-linked role before an account's first Spot launch, and Karpenter's
+# controller is not allowed to create it. Without it every Spot launch fails with
+# ServiceLinkedRoleCreationNotPermitted and Karpenter falls back to On-Demand (found on a real apply).
+resource "aws_iam_service_linked_role" "spot" {
+  count            = var.create_spot_service_linked_role ? 1 : 0
+  aws_service_name = "spot.amazonaws.com"
+}
+
 module "karpenter" {
   source  = "terraform-aws-modules/eks/aws//modules/karpenter"
   version = "~> 21.0"
@@ -43,6 +51,9 @@ module "karpenter" {
   node_iam_role_use_name_prefix   = false
   node_iam_role_name              = "${local.p["eks/cluster_name"]}-karpenter-node"
   create_pod_identity_association = true
+  # The controller policy exceeds the 6,144-char managed-policy limit (found on a real apply);
+  # inline role policies allow 10,240.
+  enable_inline_policy = true
   node_iam_role_additional_policies = {
     ssm = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore" # break-glass via SSM, no SSH keys
   }
@@ -62,7 +73,9 @@ resource "helm_release" "karpenter" {
       clusterName       = local.p["eks/cluster_name"]
       interruptionQueue = module.karpenter.queue_name # 2-min Spot notice -> cordon + drain before reclaim
     }
-    serviceMonitor = { enabled = true }
+    # Off on purpose: the chart only renders its ServiceMonitor if the Prometheus CRDs already
+    # exist, and Karpenter installs before kube-prometheus-stack. platform-baseline ships it.
+    serviceMonitor = { enabled = false }
     controller     = { resources = { requests = { cpu = "250m", memory = "512Mi" }, limits = { memory = "1Gi" } } }
   })]
   depends_on = [module.karpenter]

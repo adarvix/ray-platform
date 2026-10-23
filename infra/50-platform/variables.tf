@@ -44,3 +44,9 @@ variable "ray_namespace_quota" {
   type        = object({ cpu = string, memory = string, pods = string })
   default     = { cpu = "128", memory = "512Gi", pods = "100" }
 }
+
+variable "create_spot_service_linked_role" {
+  description = "Create AWSServiceRoleForEC2Spot. Needed once per account before the first Spot launch; set false if the account already has it."
+  type        = bool
+  default     = true
+}
