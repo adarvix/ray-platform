@@ -42,7 +42,7 @@ def test_resolver_actor_pool_lands_only_on_labelled_node(cluster):
 
     ds = rd.from_pandas(pd.DataFrame({"country": ["US", "GB", "DE", "IN", "SG"] * 4, "x": range(20)}))
     nodes = ds.groupby("country").map_groups(
-        PlacementProbe, batch_format="pandas", concurrency=2, num_cpus=1,
+        PlacementProbe, batch_format="pandas", compute=rd.ActorPoolStrategy(size=2), num_cpus=1,
         label_selector={POOL_LABEL_KEY: "resolver"}).to_pandas()["node"]
     assert set(nodes) == {cluster["resolver"]}
 

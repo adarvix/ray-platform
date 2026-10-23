@@ -38,6 +38,8 @@ local-chaos: ## simulated Spot reclaim: kill the worker mid-training, job must s
 	scripts/local/chaos.sh
 local-schedule: ## install the nightly RayCronJob locally
 	$(PY) k8s/render.py --env local --image corpreg:dev --cron "0 2 * * *" | kubectl --context $${KUBE_CONTEXT:-orbstack} apply -f -
+local-observability: ## Prometheus + Grafana with the platform's PodMonitors, alerts and dashboard (after local-up)
+	scripts/local/observability.sh
 local-dashboard: ## port-forward the local Ray dashboard (token copied to clipboard)
 	scripts/dashboard.sh local
 local-down: ## remove everything local-up created
@@ -54,6 +56,11 @@ apply: ## make apply LAYER=20-eks
 	scripts/ci/tf.sh apply $(LAYER)
 apply-all: ## apply every layer in dependency order
 	@for l in 10-network 20-eks 30-data 40-identity 50-platform; do scripts/ci/tf.sh apply $$l || exit 1; done
+destroy-all: ## delete Ray jobs, then destroy layers 50 → 10 (asks for confirmation; state bucket is kept)
+	@read -r -p "Destroy every AWS layer of '$(ENV_NAME)'? Type the env name to confirm: " c && [ "$$c" = "$(ENV_NAME)" ]
+	-aws eks update-kubeconfig --name corpreg-$(ENV_NAME) --region $${AWS_REGION:-ap-south-1} --alias corpreg-$(ENV_NAME) >/dev/null && \
+	  kubectl --context corpreg-$(ENV_NAME) -n ray delete rayjobs,raycronjobs --all --wait=true
+	@for l in 50-platform 40-identity 30-data 20-eks 10-network; do scripts/ci/tf.sh destroy $$l || exit 1; done
 seed-data: ## upload the synthetic source CSVs to s3://<lake>/raw (upstream systems would do this)
 	eval "$$(scripts/ci/env-from-ssm.sh)" && cd app && ../$(PY) -m corpreg.datagen --out s3://$$LAKE_BUCKET/raw
 run: ## build+push image and run the pipeline RayJob on EKS (what CI does on merge)
@@ -61,8 +68,8 @@ run: ## build+push image and run the pipeline RayJob on EKS (what CI does on mer
 	  IMAGE=$$ECR_REPOSITORY_URL:$$GIT_SHA && scripts/ci/build-push.sh && IMAGE=$$IMAGE scripts/ci/run-rayjob.sh
 schedule: ## install the nightly RayCronJob on EKS
 	eval "$$(scripts/ci/env-from-ssm.sh)" && export AWS_REGION LAKE_BUCKET GLUE_DATABASE && \
-	  $(PY) k8s/render.py --env aws --image $$ECR_REPOSITORY_URL:$$(git rev-parse --short=12 HEAD) --cron "0 2 * * *" | kubectl apply -f -
+	  $(PY) k8s/render.py --env aws --image $$ECR_REPOSITORY_URL:$$(git rev-parse --short=12 HEAD) --cron "0 2 * * *" | kubectl --context corpreg-$(ENV_NAME) apply -f -
 dashboard: ## Ray dashboard on EKS via authenticated port-forward + Ray token
 	scripts/dashboard.sh aws
 
-.PHONY: help venv test demo local-up local-run local-chaos local-schedule local-dashboard local-down tf-static bootstrap plan apply apply-all seed-data run schedule dashboard
+.PHONY: help venv test demo local-up local-run local-chaos local-schedule local-observability local-dashboard local-down tf-static bootstrap plan apply apply-all destroy-all seed-data run schedule dashboard

@@ -76,6 +76,9 @@ spec:
                 - { containerPort: 8265, name: dashboard }
                 - { containerPort: 10001, name: client }
                 - { containerPort: 8080, name: metrics }
+                # Declared so the ray-head PodMonitor can select them by name (autoscaler, dashboard exporters).
+                - { containerPort: 44217, name: as-metrics }
+                - { containerPort: 44227, name: dash-metrics }
               # The driver runs here: it collects golden records and commits to Iceberg.
               resources: { requests: { cpu: "1", memory: 4Gi }, limits: { cpu: "1", memory: 4Gi } }
               securityContext: *ctrsec
